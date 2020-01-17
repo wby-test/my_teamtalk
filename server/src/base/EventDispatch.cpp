@@ -122,6 +122,7 @@ CEventDispatch* CEventDispatch::Instance()
 
 void CEventDispatch::AddEvent(SOCKET fd, uint8_t socket_event)
 {
+	////使用类封装锁，实现RAII！不用手动释放锁
 	CAutoLock func_lock(&m_lock);
 
 	if ((socket_event & SOCKET_READ) != 0)

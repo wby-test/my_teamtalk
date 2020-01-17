@@ -224,7 +224,8 @@ void CBaseSocket::SetSendBufSize(uint32_t send_size)
 
 	socklen_t len = 4;
 	int size = 0;
-	////检查是否设置完整
+	////检查是否设置完整， getsockopt第四个参数在windows中是char*，
+	////在unix中是void*， 略有区别。
 	getsockopt(m_socket, SOL_SOCKET, SO_SNDBUF, &size, &len);
 	log("socket=%d send_buf_size=%d", m_socket, size);
 }
