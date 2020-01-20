@@ -7,7 +7,7 @@ CEventDispatch* CEventDispatch::m_pEventDispatch = NULL;
 
 CEventDispatch::CEventDispatch()
 {
-    running = false;
+    m_running = false;
 #ifdef _WIN32
 	FD_ZERO(&m_read_set);
 	FD_ZERO(&m_write_set);
@@ -69,6 +69,7 @@ void CEventDispatch::RemoveTimer(callback_t callback, void* user_data)
 		if (pItem->callback == callback && pItem->user_data == user_data)
 		{
 			m_timer_list.erase(it);
+			////需要delete掉
 			delete pItem;
 			return;
 		}
@@ -106,6 +107,13 @@ void CEventDispatch::_CheckLoop()
         TimerItem* pItem = *it;
         pItem->callback(pItem->user_data, NETLIB_MSG_LOOP, 0, NULL);
     }
+
+	#if 0 // 使用auto
+	for (auto it = m_loop_list.begin(); it != m_loop_list.end(); it++) {
+        TimerItem* pItem = *it;
+        pItem->callback(pItem->user_data, NETLIB_MSG_LOOP, 0, NULL);
+    }
+	#endif
 }
 
 CEventDispatch* CEventDispatch::Instance()
@@ -122,7 +130,7 @@ CEventDispatch* CEventDispatch::Instance()
 
 void CEventDispatch::AddEvent(SOCKET fd, uint8_t socket_event)
 {
-	////使用类封装锁，实现RAII！不用手动释放锁
+	////CAutoLock使用类封装 锁，实现RAII！不用手动释放锁
 	CAutoLock func_lock(&m_lock);
 
 	if ((socket_event & SOCKET_READ) != 0)
@@ -168,11 +176,11 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
 	timeout.tv_sec = 0;
 	timeout.tv_usec = wait_timeout * 1000;	// 10 millisecond
 
-    if(running)
+    if(m_running)
         return;
-    running = true;
+    m_running = true;
     
-    while (running)
+    while (m_running)
 	{
 		_CheckTimer();
         _CheckLoop();
@@ -244,7 +252,7 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
 
 void CEventDispatch::StopDispatch()
 {
-    running = false;
+    m_running = false;
 }
 
 #elif __APPLE__
@@ -291,11 +299,11 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
 	timeout.tv_sec = 0;
 	timeout.tv_nsec = wait_timeout * 1000000;
 
-    if(running)
+    if(m_running)
         return;
-    running = true;
+    m_running = true;
     
-    while (running)
+    while (m_running)
 	{
 		nfds = kevent(m_kqfd, NULL, 0, events, 1024, &timeout);
 
@@ -328,7 +336,7 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
 
 void CEventDispatch::StopDispatch()
 {
-    running = false;
+    m_running = false;
 }
 
 #else
@@ -357,11 +365,11 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
 	struct epoll_event events[1024];
 	int nfds = 0;
 
-    if(running)
+    if(m_running)
         return;
-    running = true;
+    m_running = true;
     
-	while (running)
+	while (m_running)
 	{
 		nfds = epoll_wait(m_epfd, events, 1024, wait_timeout);
 		for (int i = 0; i < nfds; i++)
@@ -409,7 +417,7 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
 
 void CEventDispatch::StopDispatch()
 {
-    running = false;
+    m_running = false;
 }
 
 

@@ -49,7 +49,7 @@ OOB data is available for reading (only if SO_OOBINLINE is disabled).
 
 - 异常事件就绪
 
-  > socket 上收到带外数据。 <https://www.cnblogs.com/c-slmax/p/5553857.html>
+  > socket 上收到带外数据。 <https://www.cnblogs.com/c-slmax/p/5553857.html>OOB
 */
 ////
 enum {
@@ -75,7 +75,7 @@ public:
 	void StartDispatch(uint32_t wait_timeout = 100);
     void StopDispatch();
     
-    bool isRunning() {return running;}
+    bool isRunning() {return m_running;}
 
 	static CEventDispatch* Instance();
 protected:
@@ -108,7 +108,7 @@ private:
 
 	static CEventDispatch* m_pEventDispatch;
     
-    bool running;
+    bool m_running;
 };
 
 #endif

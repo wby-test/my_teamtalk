@@ -1,6 +1,7 @@
 #ifndef __NETLIB_H__
 #define __NETLIB_H__
 
+//对BaseSocket 和 Event的封装
 #include "ostype.h"
 
 #define NETLIB_OPT_SET_CALLBACK			1	

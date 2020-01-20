@@ -36,6 +36,7 @@ int netlib_listen(
 		callback_t	callback,
 		void*		callback_data)
 {
+	//// pSocket 未delete， 是在别处使用吗??
 	CBaseSocket* pSocket = new CBaseSocket();
 	if (!pSocket)
 		return NETLIB_ERROR;
@@ -70,6 +71,7 @@ int netlib_send(net_handle_t handle, void* buf, int len)
 		return NETLIB_ERROR;
 	}
 	int ret = pSocket->Send(buf, len);
+	////FindBaseSocket 增加1， 使用完成后减少引用次数1
 	pSocket->ReleaseRef();
 	return ret;
 }
