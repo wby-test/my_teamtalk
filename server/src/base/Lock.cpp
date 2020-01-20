@@ -12,6 +12,11 @@
 
 #include "Lock.h"
 
+//// windows critical 和 mutex 区别
+//// mutex为内核对象，可以进程间共享
+//// 因此可以用此保证程序单实例
+//// critical不是内核对象， 不可以进
+//// 程间共享。
 CLock::CLock()
 {
 #ifdef _WIN32
