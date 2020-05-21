@@ -12,6 +12,9 @@
         "xhash": "cpp",
         "xstring": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
-    }
+        "xutility": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp"
+    },
+    "git.ignoreLimitWarning": true
 }

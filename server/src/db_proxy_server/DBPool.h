@@ -39,6 +39,8 @@ private:
  * 暂时只用于插入IMMessage表，因为只有那里有SQL注入的风险，
  * 以后可以把全部接口用这个来实现替换
  */
+
+////sql注入，为什么只有IMMessage表有sql注入的风险；
 class CPrepareStatement {
 public:
 	CPrepareStatement();

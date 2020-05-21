@@ -92,6 +92,7 @@ class CacheManager {
 public:
 	virtual ~CacheManager();
 
+	////构造函数私有化， 可以使用静态成员函数调用构造函数，以此生成类对象；
 	static CacheManager* getInstance();
 
 	int Init();

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/wby/src/my_teamtalk/server/src/slog/slog_api.cpp
+slog_api.h
+/home/wby/src/my_teamtalk/server/src/slog/slog_api.h
+log4cxx/logger.h
+/home/wby/src/my_teamtalk/server/src/slog/log4cxx/logger.h
+log4cxx/basicconfigurator.h
+/home/wby/src/my_teamtalk/server/src/slog/log4cxx/basicconfigurator.h
+log4cxx/propertyconfigurator.h
+/home/wby/src/my_teamtalk/server/src/slog/log4cxx/propertyconfigurator.h
+log4cxx/helpers/exception.h
+/home/wby/src/my_teamtalk/server/src/slog/log4cxx/helpers/exception.h
+stdarg.h
+-
+
+/home/wby/src/my_teamtalk/server/src/slog/slog_api.h
+stdio.h
+-
+

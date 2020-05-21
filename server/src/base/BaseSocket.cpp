@@ -81,6 +81,7 @@ int CBaseSocket::Listen(const char* server_ip, uint16_t port, callback_t callbac
 	log("CBaseSocket::Listen on %s:%d", server_ip, port);
 
 	AddBaseSocket(this);
+	////只监听read和excep??
 	CEventDispatch::Instance()->AddEvent(m_socket, SOCKET_READ | SOCKET_EXCEP);
 	return NETLIB_OK;
 }
@@ -278,6 +279,7 @@ void CBaseSocket::_SetNonblock(SOCKET fd)
 void CBaseSocket::_SetReuseAddr(SOCKET fd)
 {
 	int reuse = 1;
+	////&reuse 为什么强制转换成char*??
 	int ret = setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, (char*)&reuse, sizeof(reuse));
 	if (ret == SOCKET_ERROR)
 	{
@@ -312,7 +314,6 @@ void CBaseSocket::_SetAddr(const char* ip, const uint16_t port, sockaddr_in* pAd
 		}
 
 		////1、取用的第一IP，怎么可以循环使用网络状态最好的那个IP呢??
-		////2、把字符串当int类型直接解析??
 		pAddr->sin_addr.s_addr = *(uint32_t*)host->h_addr; 
 	}
 }

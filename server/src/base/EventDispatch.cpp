@@ -78,6 +78,7 @@ void CEventDispatch::RemoveTimer(callback_t callback, void* user_data)
 
 void CEventDispatch::_CheckTimer()
 {
+	////毫米级别。
 	uint64_t curr_tick = get_tick_count();
 	list<TimerItem*>::iterator it;
 
@@ -380,6 +381,7 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
 				continue;
             
             //Commit by zhfu @2015-02-28
+			////对端关闭连接。
             #ifdef EPOLLRDHUP
             if (events[i].events & EPOLLRDHUP)
             {

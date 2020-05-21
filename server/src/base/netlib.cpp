@@ -100,6 +100,7 @@ int netlib_close(net_handle_t handle)
 
 int netlib_option(net_handle_t handle, int opt, void* optval)
 {
+	////g_socket_map 初始化地方；
 	CBaseSocket* pSocket = FindBaseSocket(handle);
 	if (!pSocket)
 		return NETLIB_ERROR;

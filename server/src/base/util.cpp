@@ -65,6 +65,7 @@ uint64_t get_tick_count()
 	struct timeval tval;
 	uint64_t ret_tick;
 
+    ////第二个参数是历史产物始终置NULL。
 	gettimeofday(&tval, NULL);
 
 	ret_tick = tval.tv_sec * 1000L + tval.tv_usec / 1000L;
