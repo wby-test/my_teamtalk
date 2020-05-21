@@ -310,6 +310,7 @@ CDBPool::CDBPool(const char* pool_name, const char* db_server_ip, uint16_t db_se
 
 CDBPool::~CDBPool()
 {
+	////list中的指针为什么不直接删除？？
 	for (list<CDBConn*>::iterator it = m_free_list.begin(); it != m_free_list.end(); it++) {
 		CDBConn* pConn = *it;
 		delete pConn;
@@ -341,6 +342,7 @@ int CDBPool::Init()
  */
 CDBConn* CDBPool::GetDBConn()
 {
+	////此处wait的用意？
 	m_free_notify.Lock();
 
 	while (m_free_list.empty()) {

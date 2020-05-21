@@ -83,6 +83,8 @@ int init_proxy_conn(uint32_t thread_num)
 
 	netlib_add_loop(proxy_loop_callback, NULL);
 
+	////SIGTERM：终止进程的默认信号，kill和killall默认发送的信号，该信号可以预先清除和释放其它资源。SIGKILL
+	////则不会；正确的做法是先使用SIGTERM然后对那些没有响应的进程使用SIGKILL。
 	signal(SIGTERM, sig_handler);
 
 	return netlib_register_timer(proxy_timer_callback, NULL, 1000);

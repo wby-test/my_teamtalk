@@ -57,6 +57,7 @@ int CacheConn::Init()
 	if (!m_pContext || m_pContext->err) {
 		if (m_pContext) {
 			log("redisConnect failed: %s", m_pContext->errstr);
+			////redis连接出现err错误，说明连接已经建立但出错，需要释放掉相关资源；
 			redisFree(m_pContext);
 			m_pContext = NULL;
 		} else {

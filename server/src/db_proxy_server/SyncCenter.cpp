@@ -127,7 +127,8 @@ void CSyncCenter::init()
 
         string strLastUpdateGroup = pCacheConn->get("last_update_group");
         pCacheManager->RelCacheConn(pCacheConn);
-	if(strTotalUpdate != "")
+	    
+        if(strTotalUpdate != "")
         {
             m_nLastUpdate = string2int(strTotalUpdate);
         }
@@ -135,6 +136,9 @@ void CSyncCenter::init()
         {
             updateTotalUpdate(time(NULL));
         }
+        
+
+        ////此处是否应该设置条件设置反了？？
         if(strLastUpdateGroup.empty())
         {
             m_nLastUpdateGroup = string2int(strLastUpdateGroup);

@@ -21,8 +21,8 @@ enum {
 class CDbAttachData
 {
 public:
-	CDbAttachData(uint32_t type, uint32_t handle, uint32_t service_type = 0);				// 序列化
-	CDbAttachData(uchar_t* attach_data, uint32_t attach_len);	// 反序列化
+	CDbAttachData(uint32_t type, uint32_t handle, uint32_t service_type = 0);				// 序列化,将对象转换成字节序列
+	CDbAttachData(uchar_t* attach_data, uint32_t attach_len);	// 反序列化，将自己序列转换成对象
 	virtual ~CDbAttachData() {}
 
 	uchar_t* GetBuffer() {return m_buf.GetBuffer(); }
