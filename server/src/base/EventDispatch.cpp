@@ -381,6 +381,9 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
             
             //Commit by zhfu @2015-02-28
             #ifdef EPOLLRDHUP
+			////Stream socket peer closed connection, or shut down writing half of connection. 
+			////(This flag is especially useful for writing simple code to detect peer shutdown
+		    ////when using Edge Triggered monitoring.)
             if (events[i].events & EPOLLRDHUP)
             {
                 //log("On Peer Close, socket=%d, ev_fd);
@@ -401,6 +404,7 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
 				pSocket->OnWrite();
 			}
 
+			//// EPOLLPRI: for socket this is a out of band data
 			if (events[i].events & (EPOLLPRI | EPOLLERR | EPOLLHUP))
 			{
 				//log("OnClose, socket=%d\n", ev_fd);

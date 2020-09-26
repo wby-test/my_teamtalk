@@ -135,6 +135,7 @@ int netlib_option(net_handle_t handle, int opt, void* optval)
 		break;
 	}
 
+//// why to releaseRef??
 	pSocket->ReleaseRef();
 	return NETLIB_OK;
 }

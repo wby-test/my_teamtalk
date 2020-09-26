@@ -191,7 +191,7 @@ void CBaseSocket::OnWrite()
 		int error = 0;
 		socklen_t len = sizeof(error);
 #ifdef _WIN32
-
+////notice : the diff linux with windows, type of fourth param
 		getsockopt(m_socket, SOL_SOCKET, SO_ERROR, (char*)&error, &len);
 #else
 		getsockopt(m_socket, SOL_SOCKET, SO_ERROR, (void*)&error, &len);

@@ -201,7 +201,7 @@ void CDBServConn::HandlePdu(CImPdu* pPdu)
         case CID_OTHER_HEARTBEAT:
             break;
         case CID_OTHER_VALIDATE_RSP:
-            _HandleValidateResponse(pPdu );
+            _HandleValidateResponse(pPdu);
             break;
         case CID_LOGIN_RES_DEVICETOKEN:
             _HandleSetDeviceTokenResponse(pPdu);

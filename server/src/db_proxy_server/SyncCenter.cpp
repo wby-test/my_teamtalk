@@ -138,7 +138,7 @@ void CSyncCenter::init()
         }
         
 
-        ////此处是否应该设置条件设置反了？？
+        ////此处是否应该设置条件设置反了？？--->no
         if(strLastUpdateGroup.empty())
         {
             m_nLastUpdateGroup = string2int(strLastUpdateGroup);
