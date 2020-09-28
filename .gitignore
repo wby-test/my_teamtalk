@@ -58,3 +58,4 @@ iKutil.log
 
 /.vscode/
 /im-server-1/
+cmake-build-debug
