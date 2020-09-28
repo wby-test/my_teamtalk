@@ -1,3 +1,0 @@
-/home/wby/project/my_teamtalk/server/src/db_proxy_server/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/wby/project/my_teamtalk/server/src/db_proxy_server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/wby/project/my_teamtalk/server/src/db_proxy_server/cmake-build-debug/CMakeFiles/db_proxy_server.dir
