@@ -1,11 +1,4 @@
-/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/wby/project/my_teamtalk/server/src/db_proxy_server
--- The CXX compiler identification is GNU 9.3.0
--- Check for working CXX compiler: /usr/bin/c++
--- Check for working CXX compiler: /usr/bin/c++ - works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
+/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/wby/project/my_teamtalk/server/src/db_proxy_server
 CMake Warning (dev) at CMakeLists.txt:24 (LINK_DIRECTORIES):
   This command specifies the relative path
 

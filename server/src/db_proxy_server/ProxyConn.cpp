@@ -79,6 +79,7 @@ static void sig_handler(int sig_no)
 int init_proxy_conn(uint32_t thread_num)
 {
 	//// bind message with message handle, store in map
+	//// store message typeID and message handle function
 	s_handler_map = CHandlerMap::getInstance();
 	g_thread_pool.Init(thread_num);
 
@@ -86,7 +87,7 @@ int init_proxy_conn(uint32_t thread_num)
 
 	////SIGTERM：终止进程的默认信号，kill和killall默认发送的信号，该信号可以预先清除和释放其它资源。after 5 seconds ,send 
 	////SIGKILL, but SIGKILL则不会；正确的做法是先使用SIGTERM然后对那些没有响应的进程使用SIGKILL。
-
+	//// 终止进程的清理工作
 	signal(SIGTERM, sig_handler);
 
 	return netlib_register_timer(proxy_timer_callback, NULL, 1000);
