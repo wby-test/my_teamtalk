@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.19)
 PROJECT(db_proxy_server)
 
 AUX_SOURCE_DIRECTORY(./ SRC_LIST)

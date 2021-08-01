@@ -25,7 +25,7 @@ static CLock* g_pLock = new CLock();
 static CRWLock *g_pRWDeptLock = new CRWLock();
 
 CSyncCenter* CSyncCenter::m_pInstance = NULL;
-bool CSyncCenter::m_bSyncGroupChatRuning = false;
+bool CSyncCenter::m_bSyncGroupChatRunning = false;
 /**
  *  单例
  *
@@ -47,7 +47,7 @@ CSyncCenter* CSyncCenter::getInstance()
 CSyncCenter::CSyncCenter()
 :m_nGroupChatThreadId(0),
 m_nLastUpdateGroup(time(NULL)),
-m_bSyncGroupChatWaitting(true),
+m_bSyncGroupChatWaiting(true),
 m_pLockGroupChat(new CLock())
 //m_pLock(new CLock())
 {
@@ -105,9 +105,9 @@ void CSyncCenter::startSync()
  */
 void CSyncCenter::stopSync()
 {
-    m_bSyncGroupChatWaitting = false;
+    m_bSyncGroupChatWaiting = false;
     m_pCondGroupChat->notify();
-    while (m_bSyncGroupChatRuning ) {
+    while (m_bSyncGroupChatRunning ) {
         usleep(500);
     }
 }
@@ -210,7 +210,7 @@ void CSyncCenter::updateLastUpdateGroup(uint32_t nUpdated)
  */
 void* CSyncCenter::doSyncGroupChat(void* arg)
 {
-    m_bSyncGroupChatRuning = true;
+    m_bSyncGroupChatRunning = true;
     CDBManager* pDBManager = CDBManager::getInstance();
     map<uint32_t, uint32_t> mapChangedGroup;
     do{
@@ -261,8 +261,8 @@ void* CSyncCenter::doSyncGroupChat(void* arg)
             }
         }
 //    } while (!m_pInstance->m_pCondSync->waitTime(5*1000));
-    } while (m_pInstance->m_bSyncGroupChatWaitting && !(m_pInstance->m_pCondGroupChat->waitTime(5*1000)));
-//    } while(m_pInstance->m_bSyncGroupChatWaitting);
-    m_bSyncGroupChatRuning = false;
+    } while (m_pInstance->m_bSyncGroupChatWaiting && !(m_pInstance->m_pCondGroupChat->waitTime(5*1000)));
+//    } while(m_pInstance->m_bSyncGroupChatWaiting);
+    m_bSyncGroupChatRunning = false;
     return NULL;
 }

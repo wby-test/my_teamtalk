@@ -36,7 +36,7 @@ int netlib_listen(
 		callback_t	callback,
 		void*		callback_data)
 {
-	//// pSocket 未delete， 是在别处使用吗??
+	//// pSocket 未delete， 是在别处使用吗??  a : 该socket句柄在后面建立连接，接受发送数据也会使用。
 	CBaseSocket* pSocket = new CBaseSocket();
 	if (!pSocket)
 		return NETLIB_ERROR;
