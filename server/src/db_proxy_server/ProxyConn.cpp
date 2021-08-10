@@ -25,6 +25,7 @@ static CThreadPool g_thread_pool;
 
 void proxy_timer_callback(void* callback_data, uint8_t msg, uint32_t handle, void* pParam)
 {
+    //// 为什么用it_old 保存当前的迭代器？与直接使用迭代器完成后再进行it++有什么区别？
 	uint64_t cur_time = get_tick_count();
 	for (ConnMap_t::iterator it = g_proxy_conn_map.begin(); it != g_proxy_conn_map.end(); ) {
 		ConnMap_t::iterator it_old = it;

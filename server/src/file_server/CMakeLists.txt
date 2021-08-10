@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 2.6)
-PROJECT(fileserver)
+cmake_minimum_required(VERSION 3.19)
+PROJECT(file_server)
 
 AUX_SOURCE_DIRECTORY(./ SRC_LIST1)
 AUX_SOURCE_DIRECTORY(../base/pb/protocol SRC_LIST2)
