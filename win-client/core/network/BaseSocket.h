@@ -7,6 +7,7 @@
 
 #include "network/ostype.h"
 #include "network/util.h"
+#include <string>
 
 enum
 {

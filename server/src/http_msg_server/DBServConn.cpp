@@ -23,7 +23,7 @@ using namespace std;
 
 using namespace IM::BaseDefine;
 
-extern hash_map<string, auth_struct*> g_hm_http_auth;
+extern unordered_map<string, auth_struct*> g_hm_http_auth;
 bool g_bOnSync = false;
 
 uint64_t    g_last_recv_auth = 0;

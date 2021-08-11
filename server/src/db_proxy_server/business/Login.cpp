@@ -25,7 +25,7 @@
 
 CInterLoginStrategy g_loginStrategy;
 
-hash_map<string, list<uint32_t> > g_hmLimits;
+unordered_map<string, list<uint32_t> > g_hmLimits;
 CLock g_cLimitLock;
 namespace DB_PROXY {
     

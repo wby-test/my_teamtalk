@@ -13,11 +13,11 @@
 #include "socket/base_io_stream.h"
 #include "thread/base_thread.hpp"
 #ifdef _WIN32
-#include <hash_map>
+#include <unordered_map>
 #include <list>
 using namespace stdext;
 #else
-#include <ext/hash_map>
+#include <ext/unordered_map>
 using namespace __gnu_cxx;
 #endif
 
@@ -58,7 +58,7 @@ private:
     void _ClearPushSessionForMap();
     
 private:
-    hash_map<uint32_t /* sockid */, push_session_ptr> m_MapPushSessionBySockID;
+    unordered_map<uint32_t /* sockid */, push_session_ptr> m_MapPushSessionBySockID;
     CBaseMutex m_MapIOPushSessionBySockIDMutex; 
     
     apns_client_ptr m_pAPNSClient;

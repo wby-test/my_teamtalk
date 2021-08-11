@@ -66,7 +66,7 @@ protected:
     CHttpParserWrapper m_cHttpParser;
 };
 
-typedef hash_map<uint32_t, CHttpConn*> HttpConnMap_t;
+typedef unordered_map<uint32_t, CHttpConn*> HttpConnMap_t;
 
 CHttpConn* FindHttpConnByHandle(uint32_t handle);
 void init_http_conn();

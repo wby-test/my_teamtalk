@@ -1,0 +1,2830 @@
+cmake_minimum_required(VERSION 3.19)
+project(my_teamtalk)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(android/app/src/main/jni/include)
+include_directories(android/app/src/main/jni/include/speex)
+include_directories(android/app/src/main/jni/libspeex)
+include_directories(ios/TeamTalk)
+include_directories(ios/TeamTalk/Category)
+include_directories(ios/TeamTalk/Config)
+include_directories(ios/TeamTalk/Control)
+include_directories(ios/TeamTalk/Entity)
+include_directories(ios/TeamTalk/Exist/AQGridView)
+include_directories(ios/TeamTalk/Exist/AvatarBrowser)
+include_directories(ios/TeamTalk/Exist/JSMessage)
+include_directories(ios/TeamTalk/Exist/LCActionSheet)
+include_directories(ios/TeamTalk/Exist/ProtocolBuffers)
+include_directories(ios/TeamTalk/Exist/Reachability)
+include_directories(ios/TeamTalk/Exist/Security)
+include_directories(ios/TeamTalk/Exist/Voice)
+include_directories(ios/TeamTalk/Exist/Voice/Code/Libs)
+include_directories(ios/TeamTalk/Exist/Voice/Code/Libs/libogg/ogg)
+include_directories(ios/TeamTalk/Exist/Voice/Code/Libs/libspeex)
+include_directories(ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex)
+include_directories(ios/TeamTalk/Exist/Voice/manager)
+include_directories(ios/TeamTalk/Exist/Voice/manager/Codec)
+include_directories(ios/TeamTalk/Exist/Voice/manager/PublicUtility)
+include_directories(ios/TeamTalk/GlobalData/RuntimeStatus)
+include_directories(ios/TeamTalk/GlobalData/StateMaintance)
+include_directories(ios/TeamTalk/Module/Bubble)
+include_directories(ios/TeamTalk/Module/Chatting)
+include_directories(ios/TeamTalk/Module/Contacts)
+include_directories(ios/TeamTalk/Module/Emotions)
+include_directories(ios/TeamTalk/Module/Group)
+include_directories(ios/TeamTalk/Module/Login)
+include_directories(ios/TeamTalk/Module/Messages)
+include_directories(ios/TeamTalk/Module/PhotosCache)
+include_directories(ios/TeamTalk/Module/Search)
+include_directories(ios/TeamTalk/Module/Session)
+include_directories(ios/TeamTalk/Module/TCPAPI)
+include_directories(ios/TeamTalk/Module/TCPAPI/ClientManager)
+include_directories(ios/TeamTalk/Module/TCPAPI/RequestAPI/Login)
+include_directories(ios/TeamTalk/Module/TCPAPI/RequestAPI/Msg)
+include_directories(ios/TeamTalk/Module/TCPAPI/RequestAPI/Users)
+include_directories(ios/TeamTalk/Module/TCPAPI/Stream)
+include_directories(ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Kickoff)
+include_directories(ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Msg)
+include_directories(ios/TeamTalk/Module/TCPAPI/UnrequestAPI/PcLogin)
+include_directories(ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Signature)
+include_directories(ios/TeamTalk/Module/Users)
+include_directories(ios/TeamTalk/Util)
+include_directories(ios/TeamTalk/Util/Http)
+include_directories(ios/TeamTalk/Util/Notification)
+include_directories(ios/TeamTalk/Util/SundriesCenter)
+include_directories(ios/TeamTalk/Util/URLProtocal)
+include_directories(ios/TeamTalk/ViewController/Album)
+include_directories(ios/TeamTalk/ViewController/Album/Cells)
+include_directories(ios/TeamTalk/ViewController/Album/Control)
+include_directories(ios/TeamTalk/ViewController/Base)
+include_directories(ios/TeamTalk/ViewController/Chatting/Chatting)
+include_directories(ios/TeamTalk/ViewController/Chatting/Chatting/Cells)
+include_directories(ios/TeamTalk/ViewController/Chatting/Chatting/Control)
+include_directories(ios/TeamTalk/ViewController/Chatting/ChattingEdit)
+include_directories(ios/TeamTalk/ViewController/Chatting/ChattingEdit/Cell)
+include_directories(ios/TeamTalk/ViewController/Chatting/Group)
+include_directories(ios/TeamTalk/ViewController/Chatting/Group/Cells)
+include_directories(ios/TeamTalk/ViewController/Contacts)
+include_directories(ios/TeamTalk/ViewController/Contacts/Cells)
+include_directories(ios/TeamTalk/ViewController/Contacts/Control)
+include_directories(ios/TeamTalk/ViewController/Find)
+include_directories(ios/TeamTalk/ViewController/Login)
+include_directories(ios/TeamTalk/ViewController/My)
+include_directories(ios/TeamTalk/ViewController/RecentContacts)
+include_directories(ios/TeamTalk/ViewController/RecentContacts/Cells)
+include_directories(ios/TeamTalk/ViewController/Root)
+include_directories(ios/TeamTalk/ViewController/ScanQR)
+include_directories(ios/TeamTalk/ViewController/Search)
+include_directories(ios/TeamTalk/ViewController/Web)
+include_directories(mac/CrashReporter.framework)
+include_directories(mac/CrashReporter.framework/Versions)
+include_directories(mac/CrashReporter.framework/Versions/A)
+include_directories(mac/CrashReporter.framework/Versions/A/Headers)
+include_directories(mac/Sparkle.framework)
+include_directories(mac/Sparkle.framework/Versions)
+include_directories(mac/Sparkle.framework/Versions/A)
+include_directories(mac/Sparkle.framework/Versions/A/Headers)
+include_directories(mac/TeamTalk)
+include_directories(mac/TeamTalk/API)
+include_directories(mac/TeamTalk/API/APIGroup)
+include_directories(mac/TeamTalk/API/UnrequestAPI)
+include_directories(mac/TeamTalk/API/UnrequestAPI/Message)
+include_directories(mac/TeamTalk/Category)
+include_directories(mac/TeamTalk/ColorfulView)
+include_directories(mac/TeamTalk/contacts&chats)
+include_directories(mac/TeamTalk/CrashReport)
+include_directories(mac/TeamTalk/DDLogic)
+include_directories(mac/TeamTalk/DDLogic/module)
+include_directories(mac/TeamTalk/DDLogic/task)
+include_directories(mac/TeamTalk/EGOImageLoader)
+include_directories(mac/TeamTalk/FileTransfer)
+include_directories(mac/TeamTalk/Frameworks)
+include_directories(mac/TeamTalk/Frameworks/ShortcutRecorder.framework)
+include_directories(mac/TeamTalk/Frameworks/ShortcutRecorder.framework/Versions)
+include_directories(mac/TeamTalk/Frameworks/ShortcutRecorder.framework/Versions/A)
+include_directories(mac/TeamTalk/Frameworks/ShortcutRecorder.framework/Versions/A/Headers)
+include_directories(mac/TeamTalk/HelpLib)
+include_directories(mac/TeamTalk/HelpLib/ImageCache)
+include_directories(mac/TeamTalk/http)
+include_directories(mac/TeamTalk/interface)
+include_directories(mac/TeamTalk/interface/altertWindow)
+include_directories(mac/TeamTalk/interface/cells)
+include_directories(mac/TeamTalk/interface/chat)
+include_directories(mac/TeamTalk/interface/chat/addChatGroup)
+include_directories("mac/TeamTalk/interface/chat/addChatGroup/tree support")
+include_directories(mac/TeamTalk/interface/contactList/contactList)
+include_directories(mac/TeamTalk/interface/contactList/standardWindow)
+include_directories(mac/TeamTalk/interface/contactList/userIconChanging)
+include_directories(mac/TeamTalk/interface/emotion)
+include_directories("mac/TeamTalk/interface/login window")
+include_directories(mac/TeamTalk/interface/mainWindow)
+include_directories(mac/TeamTalk/interface/mainWindow/searchField)
+include_directories(mac/TeamTalk/interface/UserData)
+include_directories(mac/TeamTalk/Libraries/libsecurity)
+include_directories(mac/TeamTalk/Libraries/Log4Cocoa)
+include_directories(mac/TeamTalk/Libraries/Reachability)
+include_directories(mac/TeamTalk/MessageReview)
+include_directories(mac/TeamTalk/modules)
+include_directories(mac/TeamTalk/modules/Chatting)
+include_directories(mac/TeamTalk/modules/common)
+include_directories(mac/TeamTalk/modules/DB)
+include_directories(mac/TeamTalk/modules/dbmanager)
+include_directories(mac/TeamTalk/modules/Http)
+include_directories(mac/TeamTalk/modules/login)
+include_directories(mac/TeamTalk/modules/Main)
+include_directories(mac/TeamTalk/modules/message)
+include_directories(mac/TeamTalk/modules/OriginEntity)
+include_directories(mac/TeamTalk/modules/OriginEntity/Grouyp)
+include_directories(mac/TeamTalk/modules/OriginEntity/User)
+include_directories(mac/TeamTalk/modules/OriginModule)
+include_directories(mac/TeamTalk/modules/OriginModule/GroupModule)
+include_directories(mac/TeamTalk/modules/OriginModule/UserModule)
+include_directories(mac/TeamTalk/modules/pb)
+include_directories(mac/TeamTalk/modules/session)
+include_directories(mac/TeamTalk/modules/Session1/Entity)
+include_directories(mac/TeamTalk/modules/Session1/Module)
+include_directories(mac/TeamTalk/modules/SysConfig/Entity)
+include_directories(mac/TeamTalk/modules/SysConfig/Module)
+include_directories(mac/TeamTalk/net/mtalk)
+include_directories(mac/TeamTalk/net/mtalk/data)
+include_directories(mac/TeamTalk/net/mtalk/handlers)
+include_directories(mac/TeamTalk/net/mtalk/mac)
+include_directories(mac/TeamTalk/net/mtalk/util)
+include_directories(mac/TeamTalk/perference)
+include_directories(mac/TeamTalk/preference)
+include_directories(mac/TeamTalk/protocol)
+include_directories(mac/TeamTalk/SBJson)
+include_directories(mac/TeamTalk/ScreenCapture)
+include_directories(mac/TeamTalk/ServiceAccount)
+include_directories(mac/TeamTalk/Services)
+include_directories(mac/TeamTalk/shortcut)
+include_directories(mac/TeamTalk/ShortcutRecorder.framework)
+include_directories(mac/TeamTalk/ShortcutRecorder.framework/Versions)
+include_directories(mac/TeamTalk/ShortcutRecorder.framework/Versions/A)
+include_directories(mac/TeamTalk/ShortcutRecorder.framework/Versions/A/Headers)
+include_directories(mac/TeamTalk/StateMaintenance)
+include_directories(mac/TeamTalk/utilities)
+include_directories(mac/TeamTalk/utilities/additions)
+include_directories(mac/TeamTalk/utilities/Constant)
+include_directories(mac/TeamTalk/utilities/Extensions)
+include_directories(mac/TeamTalk/utilities/funNewClasses)
+include_directories(mac/TeamTalk/utilities/funNewControls/gridIphotoStyleView)
+include_directories(mac/TeamTalk/utilities/keychainAccess)
+include_directories(mac/TeamTalk/utilities/scrollbarAutoHidding)
+include_directories(mac/TeamTalk/utilities/ScrollToRefresh)
+include_directories(server/src/base)
+include_directories(server/src/base/jsoncpp)
+include_directories(server/src/base/jsoncpp/json)
+include_directories(server/src/base/pb/google)
+include_directories(server/src/base/pb/google/protobuf)
+include_directories(server/src/base/pb/google/protobuf/compiler)
+include_directories(server/src/base/pb/google/protobuf/compiler/cpp)
+include_directories(server/src/base/pb/google/protobuf/compiler/java)
+include_directories(server/src/base/pb/google/protobuf/compiler/python)
+include_directories(server/src/base/pb/google/protobuf/io)
+include_directories(server/src/base/pb/google/protobuf/stubs)
+include_directories(server/src/base/pb/protocol)
+include_directories(server/src/base/security)
+include_directories(server/src/base/slog)
+include_directories(server/src/db_proxy_server)
+include_directories(server/src/db_proxy_server/business)
+include_directories(server/src/file_server)
+include_directories(server/src/http_msg_server)
+include_directories(server/src/libsecurity/android/jni)
+include_directories(server/src/libsecurity/include)
+include_directories(server/src/libsecurity/src)
+include_directories(server/src/login_server)
+include_directories(server/src/msfs)
+include_directories(server/src/msg_server)
+include_directories(server/src/protobuf)
+include_directories(server/src/protobuf/include)
+include_directories(server/src/protobuf/include/google)
+include_directories(server/src/protobuf/include/google/protobuf)
+include_directories(server/src/protobuf/include/google/protobuf/compiler)
+include_directories(server/src/protobuf/include/google/protobuf/compiler/cpp)
+include_directories(server/src/protobuf/include/google/protobuf/compiler/java)
+include_directories(server/src/protobuf/include/google/protobuf/compiler/python)
+include_directories(server/src/protobuf/include/google/protobuf/io)
+include_directories(server/src/protobuf/include/google/protobuf/stubs)
+include_directories(server/src/push_server)
+include_directories(server/src/push_server/bufferloop)
+include_directories(server/src/push_server/sigslot)
+include_directories(server/src/push_server/socket)
+include_directories(server/src/push_server/thread)
+include_directories(server/src/push_server/timer)
+include_directories(server/src/push_server/type)
+include_directories(server/src/route_server)
+include_directories(server/src/slog)
+include_directories(server/src/test)
+include_directories(win-client/3rdParty/include)
+include_directories(win-client/3rdParty/include/google)
+include_directories(win-client/3rdParty/include/google/protobuf)
+include_directories(win-client/3rdParty/include/google/protobuf/compiler)
+include_directories(win-client/3rdParty/include/google/protobuf/compiler/cpp)
+include_directories(win-client/3rdParty/include/google/protobuf/compiler/java)
+include_directories(win-client/3rdParty/include/google/protobuf/compiler/python)
+include_directories(win-client/3rdParty/include/google/protobuf/io)
+include_directories(win-client/3rdParty/include/google/protobuf/stubs)
+include_directories(win-client/3rdParty/include/sqlite3)
+include_directories(win-client/3rdParty/src/cxImage/cxImage)
+include_directories(win-client/3rdParty/src/cxImage/jpeg)
+include_directories(win-client/3rdParty/src/cxImage/png)
+include_directories(win-client/3rdParty/src/cxImage/zlib)
+include_directories(win-client/3rdParty/src/http/httpclient)
+include_directories(win-client/3rdParty/src/json/include)
+include_directories(win-client/3rdParty/src/json/include/json)
+include_directories(win-client/3rdParty/src/json/src/lib_json)
+include_directories(win-client/3rdParty/src/json/src/test_lib_json)
+include_directories(win-client/3rdParty/src/libogg/include)
+include_directories(win-client/3rdParty/src/libogg/include/ogg)
+include_directories(win-client/3rdParty/src/libspeex)
+include_directories(win-client/3rdParty/src/libspeex/include)
+include_directories(win-client/3rdParty/src/libspeex/include/speex)
+include_directories(win-client/3rdParty/src/libspeex/libspeex)
+include_directories(win-client/3rdParty/src/libspeex/src)
+include_directories(win-client/3rdParty/src/yaolog)
+include_directories(win-client/core/DuiLib)
+include_directories(win-client/core/DuiLib/Control)
+include_directories(win-client/core/DuiLib/Core)
+include_directories(win-client/core/DuiLib/Layout)
+include_directories(win-client/core/DuiLib/Utils)
+include_directories(win-client/core/network)
+include_directories(win-client/core/utility)
+include_directories(win-client/include)
+include_directories(win-client/include/DuilibEx)
+include_directories(win-client/include/GifSmiley)
+include_directories(win-client/include/Modules)
+include_directories(win-client/include/Modules/UI)
+include_directories(win-client/include/network)
+include_directories(win-client/include/ProtocolBuffer)
+include_directories(win-client/include/utility)
+include_directories(win-client/src/DuiLibEx)
+include_directories(win-client/src/GifSmiley)
+include_directories(win-client/src/Modules)
+include_directories(win-client/src/Modules/Database)
+include_directories(win-client/src/Modules/Emotion)
+include_directories(win-client/src/Modules/FileTransfer)
+include_directories(win-client/src/Modules/GroupList)
+include_directories(win-client/src/Modules/GroupList/UI)
+include_directories(win-client/src/Modules/HttpPool)
+include_directories(win-client/src/Modules/Login)
+include_directories(win-client/src/Modules/Message)
+include_directories(win-client/src/Modules/Misc)
+include_directories(win-client/src/Modules/P2PCmd)
+include_directories(win-client/src/Modules/ScreenCapture)
+include_directories(win-client/src/Modules/ScreenCapture/ScreenCapture)
+include_directories(win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode)
+include_directories(win-client/src/Modules/ScreenCapture/ScreenCapture/UI)
+include_directories(win-client/src/Modules/Session)
+include_directories(win-client/src/Modules/Session/Operation)
+include_directories(win-client/src/Modules/Session/UI)
+include_directories(win-client/src/Modules/SysConfig)
+include_directories(win-client/src/Modules/TcpClient)
+include_directories(win-client/src/Modules/UserList)
+include_directories(win-client/src/teamtalk)
+include_directories(win-client/src/teamtalk/UI)
+
+add_executable(my_teamtalk
+        android/app/src/main/jni/include/speex/speex.h
+        android/app/src/main/jni/include/speex/speex_bits.h
+        android/app/src/main/jni/include/speex/speex_buffer.h
+        android/app/src/main/jni/include/speex/speex_callbacks.h
+        android/app/src/main/jni/include/speex/speex_config_types.h
+        android/app/src/main/jni/include/speex/speex_echo.h
+        android/app/src/main/jni/include/speex/speex_header.h
+        android/app/src/main/jni/include/speex/speex_jitter.h
+        android/app/src/main/jni/include/speex/speex_preprocess.h
+        android/app/src/main/jni/include/speex/speex_resampler.h
+        android/app/src/main/jni/include/speex/speex_stereo.h
+        android/app/src/main/jni/include/speex/speex_types.h
+        android/app/src/main/jni/libspeex/_kiss_fft_guts.h
+        android/app/src/main/jni/libspeex/arch.h
+        android/app/src/main/jni/libspeex/bits.c
+        android/app/src/main/jni/libspeex/buffer.c
+        android/app/src/main/jni/libspeex/cb_search.c
+        android/app/src/main/jni/libspeex/cb_search.h
+        android/app/src/main/jni/libspeex/cb_search_arm4.h
+        android/app/src/main/jni/libspeex/cb_search_bfin.h
+        android/app/src/main/jni/libspeex/cb_search_sse.h
+        android/app/src/main/jni/libspeex/echo_diagnostic.m
+        android/app/src/main/jni/libspeex/exc_10_16_table.c
+        android/app/src/main/jni/libspeex/exc_10_32_table.c
+        android/app/src/main/jni/libspeex/exc_20_32_table.c
+        android/app/src/main/jni/libspeex/exc_5_256_table.c
+        android/app/src/main/jni/libspeex/exc_5_64_table.c
+        android/app/src/main/jni/libspeex/exc_8_128_table.c
+        android/app/src/main/jni/libspeex/fftwrap.c
+        android/app/src/main/jni/libspeex/fftwrap.h
+        android/app/src/main/jni/libspeex/filterbank.c
+        android/app/src/main/jni/libspeex/filterbank.h
+        android/app/src/main/jni/libspeex/filters.c
+        android/app/src/main/jni/libspeex/filters.h
+        android/app/src/main/jni/libspeex/filters_arm4.h
+        android/app/src/main/jni/libspeex/filters_bfin.h
+        android/app/src/main/jni/libspeex/filters_sse.h
+        android/app/src/main/jni/libspeex/fixed_arm4.h
+        android/app/src/main/jni/libspeex/fixed_arm5e.h
+        android/app/src/main/jni/libspeex/fixed_bfin.h
+        android/app/src/main/jni/libspeex/fixed_debug.h
+        android/app/src/main/jni/libspeex/fixed_generic.h
+        android/app/src/main/jni/libspeex/gain_table.c
+        android/app/src/main/jni/libspeex/gain_table_lbr.c
+        android/app/src/main/jni/libspeex/hexc_10_32_table.c
+        android/app/src/main/jni/libspeex/hexc_table.c
+        android/app/src/main/jni/libspeex/high_lsp_tables.c
+        android/app/src/main/jni/libspeex/jitter.c
+        android/app/src/main/jni/libspeex/kiss_fft.c
+        android/app/src/main/jni/libspeex/kiss_fft.h
+        android/app/src/main/jni/libspeex/kiss_fftr.c
+        android/app/src/main/jni/libspeex/kiss_fftr.h
+        android/app/src/main/jni/libspeex/lpc.c
+        android/app/src/main/jni/libspeex/lpc.h
+        android/app/src/main/jni/libspeex/lpc_bfin.h
+        android/app/src/main/jni/libspeex/lsp.c
+        android/app/src/main/jni/libspeex/lsp.h
+        android/app/src/main/jni/libspeex/lsp_bfin.h
+        android/app/src/main/jni/libspeex/lsp_tables_nb.c
+        android/app/src/main/jni/libspeex/ltp.c
+        android/app/src/main/jni/libspeex/ltp.h
+        android/app/src/main/jni/libspeex/ltp_arm4.h
+        android/app/src/main/jni/libspeex/ltp_bfin.h
+        android/app/src/main/jni/libspeex/ltp_sse.h
+        android/app/src/main/jni/libspeex/math_approx.h
+        android/app/src/main/jni/libspeex/mdf.c
+        android/app/src/main/jni/libspeex/misc_bfin.h
+        android/app/src/main/jni/libspeex/modes.c
+        android/app/src/main/jni/libspeex/modes.h
+        android/app/src/main/jni/libspeex/modes_wb.c
+        android/app/src/main/jni/libspeex/nb_celp.c
+        android/app/src/main/jni/libspeex/nb_celp.h
+        android/app/src/main/jni/libspeex/os_support.h
+        android/app/src/main/jni/libspeex/preprocess.c
+        android/app/src/main/jni/libspeex/pseudofloat.h
+        android/app/src/main/jni/libspeex/quant_lsp.c
+        android/app/src/main/jni/libspeex/quant_lsp.h
+        android/app/src/main/jni/libspeex/quant_lsp_bfin.h
+        android/app/src/main/jni/libspeex/resample.c
+        android/app/src/main/jni/libspeex/resample_sse.h
+        android/app/src/main/jni/libspeex/sb_celp.c
+        android/app/src/main/jni/libspeex/sb_celp.h
+        android/app/src/main/jni/libspeex/scal.c
+        android/app/src/main/jni/libspeex/smallft.c
+        android/app/src/main/jni/libspeex/smallft.h
+        android/app/src/main/jni/libspeex/speex.c
+        android/app/src/main/jni/libspeex/speex_callbacks.c
+        android/app/src/main/jni/libspeex/speex_header.c
+        android/app/src/main/jni/libspeex/stack_alloc.h
+        android/app/src/main/jni/libspeex/stereo.c
+        android/app/src/main/jni/libspeex/testdenoise.c
+        android/app/src/main/jni/libspeex/testecho.c
+        android/app/src/main/jni/libspeex/testenc.c
+        android/app/src/main/jni/libspeex/testenc_uwb.c
+        android/app/src/main/jni/libspeex/testenc_wb.c
+        android/app/src/main/jni/libspeex/testjitter.c
+        android/app/src/main/jni/libspeex/vbr.c
+        android/app/src/main/jni/libspeex/vbr.h
+        android/app/src/main/jni/libspeex/vorbis_psy.h
+        android/app/src/main/jni/libspeex/vq.c
+        android/app/src/main/jni/libspeex/vq.h
+        android/app/src/main/jni/libspeex/vq_arm4.h
+        android/app/src/main/jni/libspeex/vq_bfin.h
+        android/app/src/main/jni/libspeex/vq_sse.h
+        android/app/src/main/jni/libspeex/window.c
+        android/app/src/main/jni/speex_jni.cpp
+        ios/TeamTalk/Category/DDRuntimeSwizzle.h
+        ios/TeamTalk/Category/DDRuntimeSwizzle.m
+        ios/TeamTalk/Category/NSData+Conversion.h
+        ios/TeamTalk/Category/NSData+Conversion.m
+        ios/TeamTalk/Category/NSDate+DDAddition.h
+        ios/TeamTalk/Category/NSDate+DDAddition.m
+        ios/TeamTalk/Category/NSDictionary+JSON.h
+        ios/TeamTalk/Category/NSDictionary+JSON.m
+        ios/TeamTalk/Category/NSDictionary+Safe.h
+        ios/TeamTalk/Category/NSDictionary+Safe.m
+        ios/TeamTalk/Category/NSIndexSet+AQIndexesOutsideSet.h
+        ios/TeamTalk/Category/NSIndexSet+AQIndexesOutsideSet.m
+        ios/TeamTalk/Category/NSIndexSet+AQIsSetContiguous.h
+        ios/TeamTalk/Category/NSIndexSet+AQIsSetContiguous.m
+        ios/TeamTalk/Category/NSObject+Block.h
+        ios/TeamTalk/Category/NSObject+Block.m
+        ios/TeamTalk/Category/NSString+Additions.h
+        ios/TeamTalk/Category/NSString+Additions.m
+        ios/TeamTalk/Category/NSString+DDPath.h
+        ios/TeamTalk/Category/NSString+DDPath.m
+        ios/TeamTalk/Category/NSString+JSMessagesView.h
+        ios/TeamTalk/Category/NSString+JSMessagesView.m
+        ios/TeamTalk/Category/NSURL+SafeURL.h
+        ios/TeamTalk/Category/NSURL+SafeURL.m
+        ios/TeamTalk/Category/UIAlertView+Block.h
+        ios/TeamTalk/Category/UIAlertView+Block.m
+        ios/TeamTalk/Category/UIButton+JSMessagesView.h
+        ios/TeamTalk/Category/UIButton+JSMessagesView.m
+        ios/TeamTalk/Category/UIColor+AQGridView.h
+        ios/TeamTalk/Category/UIColor+AQGridView.m
+        ios/TeamTalk/Category/UIColor+JSMessagesView.h
+        ios/TeamTalk/Category/UIColor+JSMessagesView.m
+        ios/TeamTalk/Category/UIImage+JSMessagesView.h
+        ios/TeamTalk/Category/UIImage+JSMessagesView.m
+        ios/TeamTalk/Category/UIImage+Rotate_Flip.h
+        ios/TeamTalk/Category/UIImage+Rotate_Flip.m
+        ios/TeamTalk/Category/UIImage+UIImageAddition.h
+        ios/TeamTalk/Category/UIImage+UIImageAddition.m
+        ios/TeamTalk/Category/UILabel+VerticalAlign.h
+        ios/TeamTalk/Category/UILabel+VerticalAlign.m
+        ios/TeamTalk/Category/UIScrollView+PullToLoadMore.h
+        ios/TeamTalk/Category/UIScrollView+PullToLoadMore.m
+        ios/TeamTalk/Category/UITabBar+SubView.h
+        ios/TeamTalk/Category/UITabBar+SubView.m
+        ios/TeamTalk/Category/UIView+Addition.h
+        ios/TeamTalk/Category/UIView+Addition.m
+        ios/TeamTalk/Category/UIView+AnimationOptionsForCurve.h
+        ios/TeamTalk/Category/UIView+AnimationOptionsForCurve.m
+        ios/TeamTalk/Category/UIView+PointBadge.h
+        ios/TeamTalk/Category/UIView+PointBadge.m
+        ios/TeamTalk/Config/MTTConfig.h
+        ios/TeamTalk/Config/MTTConstant.h
+        ios/TeamTalk/Config/MTTConstant.m
+        ios/TeamTalk/Config/MTTPinyinConstant.h
+        ios/TeamTalk/Control/MTTAvatarImageView.h
+        ios/TeamTalk/Control/MTTAvatarImageView.m
+        ios/TeamTalk/Control/MTTAvatarManager.h
+        ios/TeamTalk/Control/MTTAvatarManager.m
+        ios/TeamTalk/Control/MTTLogoAnimateView.h
+        ios/TeamTalk/Control/MTTLogoAnimateView.m
+        ios/TeamTalk/Control/TouchDownGestureRecognizer.h
+        ios/TeamTalk/Control/TouchDownGestureRecognizer.m
+        ios/TeamTalk/Entity/MTTBaseEntity.h
+        ios/TeamTalk/Entity/MTTBaseEntity.m
+        ios/TeamTalk/Entity/MTTDepartment.h
+        ios/TeamTalk/Entity/MTTDepartment.m
+        ios/TeamTalk/Entity/MTTGroupEntity.h
+        ios/TeamTalk/Entity/MTTGroupEntity.m
+        ios/TeamTalk/Entity/MTTMessageEntity.h
+        ios/TeamTalk/Entity/MTTMessageEntity.mm
+        ios/TeamTalk/Entity/MTTSessionEntity.h
+        ios/TeamTalk/Entity/MTTSessionEntity.m
+        ios/TeamTalk/Entity/MTTUserEntity.h
+        ios/TeamTalk/Entity/MTTUserEntity.m
+        ios/TeamTalk/Exist/AQGridView/AQGridView+CellLayout.h
+        ios/TeamTalk/Exist/AQGridView/AQGridView+CellLocationDelegation.h
+        ios/TeamTalk/Exist/AQGridView/AQGridView.h
+        ios/TeamTalk/Exist/AQGridView/AQGridView.m
+        ios/TeamTalk/Exist/AQGridView/AQGridViewAnimatorItem.h
+        ios/TeamTalk/Exist/AQGridView/AQGridViewAnimatorItem.m
+        ios/TeamTalk/Exist/AQGridView/AQGridViewCell+AQGridViewCellPrivate.h
+        ios/TeamTalk/Exist/AQGridView/AQGridViewCell.h
+        ios/TeamTalk/Exist/AQGridView/AQGridViewCell.m
+        ios/TeamTalk/Exist/AQGridView/AQGridViewController.h
+        ios/TeamTalk/Exist/AQGridView/AQGridViewController.m
+        ios/TeamTalk/Exist/AQGridView/AQGridViewData.h
+        ios/TeamTalk/Exist/AQGridView/AQGridViewData.m
+        ios/TeamTalk/Exist/AQGridView/AQGridViewUpdateInfo.h
+        ios/TeamTalk/Exist/AQGridView/AQGridViewUpdateInfo.m
+        ios/TeamTalk/Exist/AQGridView/AQGridViewUpdateItem.h
+        ios/TeamTalk/Exist/AQGridView/AQGridViewUpdateItem.m
+        ios/TeamTalk/Exist/AvatarBrowser/SJAvatarBrowser.h
+        ios/TeamTalk/Exist/AvatarBrowser/SJAvatarBrowser.m
+        ios/TeamTalk/Exist/JSMessage/JSDismissiveTextView.h
+        ios/TeamTalk/Exist/JSMessage/JSDismissiveTextView.m
+        ios/TeamTalk/Exist/JSMessage/JSMessageInputView.h
+        ios/TeamTalk/Exist/JSMessage/JSMessageInputView.m
+        ios/TeamTalk/Exist/JSMessage/JSMessageTextView.h
+        ios/TeamTalk/Exist/JSMessage/JSMessageTextView.m
+        ios/TeamTalk/Exist/LCActionSheet/LCActionSheet.h
+        ios/TeamTalk/Exist/LCActionSheet/LCActionSheet.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMBaseDefine.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMBaseDefine.pb.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMBuddy.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMBuddy.pb.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMFile.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMFile.pb.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMGroup.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMGroup.pb.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMInternal.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMInternal.pb.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMLogin.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMLogin.pb.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMMessage.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMMessage.pb.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMOther.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMOther.pb.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMServer.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMServer.pb.m
+        ios/TeamTalk/Exist/ProtocolBuffers/IMSwitchService.pb.h
+        ios/TeamTalk/Exist/ProtocolBuffers/IMSwitchService.pb.m
+        ios/TeamTalk/Exist/Reachability/DDReachability.h
+        ios/TeamTalk/Exist/Reachability/DDReachability.m
+        ios/TeamTalk/Exist/Security/security.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libogg/ogg/ogg.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libogg/ogg/os_types.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libogg/bitwise.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libogg/framing.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_bits.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_buffer.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_callbacks.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_config_types.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_echo.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_header.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_jitter.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_preprocess.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_resampler.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_stereo.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex/speex_types.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/_kiss_fft_guts.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/arch.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/bits.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/buffer.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/cb_search.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/cb_search.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/cb_search_arm4.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/cb_search_bfin.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/cb_search_sse.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/exc_10_16_table.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/exc_10_32_table.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/exc_20_32_table.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/exc_5_256_table.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/exc_5_64_table.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/exc_8_128_table.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/fftwrap.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/fftwrap.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/filterbank.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/filterbank.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/filters.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/filters.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/filters_arm4.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/filters_bfin.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/filters_sse.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/fixed_arm4.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/fixed_arm5e.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/fixed_bfin.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/fixed_debug.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/fixed_generic.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/gain_table.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/gain_table_lbr.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/hexc_10_32_table.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/hexc_table.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/high_lsp_tables.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/jitter.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/kiss_fft.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/kiss_fft.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/kiss_fftr.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/kiss_fftr.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/lpc.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/lpc.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/lpc_bfin.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/lsp.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/lsp.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/lsp_bfin.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/lsp_tables_nb.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/ltp.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/ltp.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/ltp_arm4.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/ltp_bfin.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/ltp_sse.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/math_approx.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/mdf.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/misc_bfin.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/modes.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/modes.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/modes_wb.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/nb_celp.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/nb_celp.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/os_support.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/preprocess.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/pseudofloat.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/quant_lsp.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/quant_lsp.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/quant_lsp_bfin.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/resample.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/resample_sse.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/sb_celp.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/sb_celp.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/scal.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/smallft.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/smallft.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex_callbacks.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/speex_header.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/stack_alloc.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/stereo.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/vbr.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/vbr.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/vorbis_psy.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/vq.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/vq.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/vq_arm4.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/vq_bfin.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/vq_sse.h
+        ios/TeamTalk/Exist/Voice/Code/Libs/libspeex/window.c
+        ios/TeamTalk/Exist/Voice/Code/Libs/config.h
+        ios/TeamTalk/Exist/Voice/manager/Codec/SpeexAllHeaders.h
+        ios/TeamTalk/Exist/Voice/manager/Codec/SpeexCodec.h
+        ios/TeamTalk/Exist/Voice/manager/Codec/SpeexCodec.m
+        ios/TeamTalk/Exist/Voice/manager/PublicUtility/CADebugMacros.cpp
+        ios/TeamTalk/Exist/Voice/manager/PublicUtility/CADebugMacros.h
+        ios/TeamTalk/Exist/Voice/manager/PublicUtility/CAMath.h
+        ios/TeamTalk/Exist/Voice/manager/PublicUtility/CAStreamBasicDescription.cpp
+        ios/TeamTalk/Exist/Voice/manager/PublicUtility/CAStreamBasicDescription.h
+        ios/TeamTalk/Exist/Voice/manager/PublicUtility/CAXException.cpp
+        ios/TeamTalk/Exist/Voice/manager/PublicUtility/CAXException.h
+        ios/TeamTalk/Exist/Voice/manager/AQRecorder.h
+        ios/TeamTalk/Exist/Voice/manager/AQRecorder.mm
+        ios/TeamTalk/Exist/Voice/manager/Decapsulator.h
+        ios/TeamTalk/Exist/Voice/manager/Decapsulator.m
+        ios/TeamTalk/Exist/Voice/manager/Encapsulator.h
+        ios/TeamTalk/Exist/Voice/manager/Encapsulator.m
+        ios/TeamTalk/Exist/Voice/manager/PlayerManager.h
+        ios/TeamTalk/Exist/Voice/manager/PlayerManager.m
+        ios/TeamTalk/Exist/Voice/manager/RawAudioDataPlayer.h
+        ios/TeamTalk/Exist/Voice/manager/RawAudioDataPlayer.m
+        ios/TeamTalk/Exist/Voice/manager/RecorderManager.h
+        ios/TeamTalk/Exist/Voice/manager/RecorderManager.mm
+        ios/TeamTalk/Exist/Voice/SpeexAllHeaders.h
+        ios/TeamTalk/GlobalData/RuntimeStatus/RuntimeStatus.h
+        ios/TeamTalk/GlobalData/RuntimeStatus/RuntimeStatus.m
+        ios/TeamTalk/GlobalData/StateMaintance/DDClientState.h
+        ios/TeamTalk/GlobalData/StateMaintance/DDClientState.m
+        ios/TeamTalk/GlobalData/StateMaintance/DDClientStateMaintenanceManager.h
+        ios/TeamTalk/GlobalData/StateMaintance/DDClientStateMaintenanceManager.m
+        ios/TeamTalk/Module/Bubble/MTTBubbleModule.h
+        ios/TeamTalk/Module/Bubble/MTTBubbleModule.m
+        ios/TeamTalk/Module/Chatting/ChattingEditModule.h
+        ios/TeamTalk/Module/Chatting/ChattingEditModule.m
+        ios/TeamTalk/Module/Chatting/ChattingModule.h
+        ios/TeamTalk/Module/Chatting/ChattingModule.m
+        ios/TeamTalk/Module/Contacts/ContactsModule.h
+        ios/TeamTalk/Module/Contacts/ContactsModule.m
+        ios/TeamTalk/Module/Emotions/EmotionsModule.h
+        ios/TeamTalk/Module/Emotions/EmotionsModule.m
+        ios/TeamTalk/Module/Group/DDGroupModule.h
+        ios/TeamTalk/Module/Group/DDGroupModule.m
+        ios/TeamTalk/Module/Login/DDHttpServer.h
+        ios/TeamTalk/Module/Login/DDHttpServer.m
+        ios/TeamTalk/Module/Login/DDMsgServer.h
+        ios/TeamTalk/Module/Login/DDMsgServer.m
+        ios/TeamTalk/Module/Login/DDTcpServer.h
+        ios/TeamTalk/Module/Login/DDTcpServer.m
+        ios/TeamTalk/Module/Login/LoginModule.h
+        ios/TeamTalk/Module/Login/LoginModule.m
+        ios/TeamTalk/Module/Messages/DDMessageModule.h
+        ios/TeamTalk/Module/Messages/DDMessageModule.m
+        ios/TeamTalk/Module/Messages/DDMessageSendManager.h
+        ios/TeamTalk/Module/Messages/DDMessageSendManager.mm
+        ios/TeamTalk/Module/Messages/UnAckMessageManager.h
+        ios/TeamTalk/Module/Messages/UnAckMessageManager.m
+        ios/TeamTalk/Module/PhotosCache/MTTPhotosCache.h
+        ios/TeamTalk/Module/PhotosCache/MTTPhotosCache.m
+        ios/TeamTalk/Module/Search/DDSearch.h
+        ios/TeamTalk/Module/Search/DDSearch.m
+        ios/TeamTalk/Module/Search/SpellLibrary.h
+        ios/TeamTalk/Module/Search/SpellLibrary.m
+        ios/TeamTalk/Module/Session/SessionModule.h
+        ios/TeamTalk/Module/Session/SessionModule.m
+        ios/TeamTalk/Module/TCPAPI/ClientManager/DDTcpClientManager.h
+        ios/TeamTalk/Module/TCPAPI/ClientManager/DDTcpClientManager.m
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Login/HeartbeatAPI.h
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Login/HeartbeatAPI.m
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Login/LoginAPI.h
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Login/LoginAPI.mm
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Msg/DDSendPhotoMessageAPI.h
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Msg/DDSendPhotoMessageAPI.m
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Msg/GetMessageQueueAPI.h
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Msg/GetMessageQueueAPI.m
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Msg/GetUnreadMessagesAPI.h
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Msg/GetUnreadMessagesAPI.m
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Msg/SendMessageAPI.h
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Msg/SendMessageAPI.m
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Users/GetGroupInfoAPi.h
+        ios/TeamTalk/Module/TCPAPI/RequestAPI/Users/GetGroupInfoAPi.m
+        ios/TeamTalk/Module/TCPAPI/Stream/DataOutputStream+Addition.h
+        ios/TeamTalk/Module/TCPAPI/Stream/DataOutputStream+Addition.m
+        ios/TeamTalk/Module/TCPAPI/Stream/DDDataInputStream.h
+        ios/TeamTalk/Module/TCPAPI/Stream/DDDataInputStream.m
+        ios/TeamTalk/Module/TCPAPI/Stream/DDDataOutputStream.h
+        ios/TeamTalk/Module/TCPAPI/Stream/DDDataOutputStream.m
+        ios/TeamTalk/Module/TCPAPI/Stream/NSStream+NSStreamAddition.h
+        ios/TeamTalk/Module/TCPAPI/Stream/NSStream+NSStreamAddition.m
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Kickoff/ReceiveKickoffAPI.h
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Kickoff/ReceiveKickoffAPI.m
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Msg/DDReceiveMessageACKAPI.h
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Msg/DDReceiveMessageACKAPI.m
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Msg/DDReceiveMessageAPI.h
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Msg/DDReceiveMessageAPI.m
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Msg/MsgReadNotify.h
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Msg/MsgReadNotify.m
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/PcLogin/MTTPCLoginStatusNotifyAPI.h
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/PcLogin/MTTPCLoginStatusNotifyAPI.m
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Signature/MTTSignNotifyAPI.h
+        ios/TeamTalk/Module/TCPAPI/UnrequestAPI/Signature/MTTSignNotifyAPI.m
+        ios/TeamTalk/Module/TCPAPI/BigBrotherIsWatchingYouAPI.h
+        ios/TeamTalk/Module/TCPAPI/BigBrotherIsWatchingYouAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDAddMemberToGroupAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDAddMemberToGroupAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDAllUserAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDAllUserAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDAPISchedule.h
+        ios/TeamTalk/Module/TCPAPI/DDAPISchedule.m
+        ios/TeamTalk/Module/TCPAPI/DDAPIScheduleProtocol.h
+        ios/TeamTalk/Module/TCPAPI/DDAPIUnrequestScheduleProtocol.h
+        ios/TeamTalk/Module/TCPAPI/DDCreateGroupAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDCreateGroupAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDDeleteMemberFromGroupAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDDeleteMemberFromGroupAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDDepartmentAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDDepartmentAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDFixedGroupAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDFixedGroupAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDGroupMsgReceivedACKAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDGroupMsgReceivedACKAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDReceiveGroupAddMemberAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDReceiveGroupAddMemberAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDSendBuffer.h
+        ios/TeamTalk/Module/TCPAPI/DDSendBuffer.m
+        ios/TeamTalk/Module/TCPAPI/DDSuperAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDSuperAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDTcpProtocolHeader.h
+        ios/TeamTalk/Module/TCPAPI/DDTcpProtocolHeader.m
+        ios/TeamTalk/Module/TCPAPI/DDUnrequestSuperAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDUnrequestSuperAPI.m
+        ios/TeamTalk/Module/TCPAPI/DDUserDetailInfoAPI.h
+        ios/TeamTalk/Module/TCPAPI/DDUserDetailInfoAPI.m
+        ios/TeamTalk/Module/TCPAPI/GetLatestMsgId.h
+        ios/TeamTalk/Module/TCPAPI/GetLatestMsgId.m
+        ios/TeamTalk/Module/TCPAPI/GetMsgByMsgIDsAPI.h
+        ios/TeamTalk/Module/TCPAPI/GetMsgByMsgIDsAPI.m
+        ios/TeamTalk/Module/TCPAPI/GetRecentSession.h
+        ios/TeamTalk/Module/TCPAPI/GetRecentSession.mm
+        ios/TeamTalk/Module/TCPAPI/LogoutAPI.h
+        ios/TeamTalk/Module/TCPAPI/LogoutAPI.m
+        ios/TeamTalk/Module/TCPAPI/MsgReadACKAPI.h
+        ios/TeamTalk/Module/TCPAPI/MsgReadACKAPI.m
+        ios/TeamTalk/Module/TCPAPI/MTTChangeNightModeAPI.h
+        ios/TeamTalk/Module/TCPAPI/MTTChangeNightModeAPI.m
+        ios/TeamTalk/Module/TCPAPI/MTTKickPCClientAPI.h
+        ios/TeamTalk/Module/TCPAPI/MTTKickPCClientAPI.m
+        ios/TeamTalk/Module/TCPAPI/MTTNightModeAPI.h
+        ios/TeamTalk/Module/TCPAPI/MTTNightModeAPI.m
+        ios/TeamTalk/Module/TCPAPI/MTTShakeAPI.h
+        ios/TeamTalk/Module/TCPAPI/MTTShakeAPI.m
+        ios/TeamTalk/Module/TCPAPI/MTTSignatureAPI.h
+        ios/TeamTalk/Module/TCPAPI/MTTSignatureAPI.m
+        ios/TeamTalk/Module/TCPAPI/MTTUsersStatAPI.h
+        ios/TeamTalk/Module/TCPAPI/MTTUsersStatAPI.m
+        ios/TeamTalk/Module/TCPAPI/RemoveSessionAPI.h
+        ios/TeamTalk/Module/TCPAPI/RemoveSessionAPI.m
+        ios/TeamTalk/Module/TCPAPI/SendPushTokenAPI.h
+        ios/TeamTalk/Module/TCPAPI/SendPushTokenAPI.m
+        ios/TeamTalk/Module/TCPAPI/ShieldGroupMessageAPI.h
+        ios/TeamTalk/Module/TCPAPI/ShieldGroupMessageAPI.m
+        ios/TeamTalk/Module/Users/DDUserModule.h
+        ios/TeamTalk/Module/Users/DDUserModule.m
+        ios/TeamTalk/Util/Http/MTTAFNetworkingClient.h
+        ios/TeamTalk/Util/Http/MTTAFNetworkingClient.m
+        ios/TeamTalk/Util/Notification/MTTNotification.h
+        ios/TeamTalk/Util/Notification/MTTNotification.m
+        ios/TeamTalk/Util/SundriesCenter/MTTSundriesCenter.h
+        ios/TeamTalk/Util/SundriesCenter/MTTSundriesCenter.m
+        ios/TeamTalk/Util/URLProtocal/MTTURLProtocal.h
+        ios/TeamTalk/Util/URLProtocal/MTTURLProtocal.m
+        ios/TeamTalk/Util/MTTDatabaseUtil.h
+        ios/TeamTalk/Util/MTTDatabaseUtil.m
+        ios/TeamTalk/Util/MTTUtil.h
+        ios/TeamTalk/Util/MTTUtil.m
+        ios/TeamTalk/ViewController/Album/Cells/ImageGridViewCell.h
+        ios/TeamTalk/ViewController/Album/Cells/ImageGridViewCell.m
+        ios/TeamTalk/ViewController/Album/Control/AlbumDetailsBottomBar.h
+        ios/TeamTalk/ViewController/Album/Control/AlbumDetailsBottomBar.m
+        ios/TeamTalk/ViewController/Album/AlbumViewController.h
+        ios/TeamTalk/ViewController/Album/AlbumViewController.m
+        ios/TeamTalk/ViewController/Album/DDAlbumDetailsViewControll.h
+        ios/TeamTalk/ViewController/Album/DDAlbumDetailsViewControll.m
+        ios/TeamTalk/ViewController/Base/MTTBaseScrollViewController.h
+        ios/TeamTalk/ViewController/Base/MTTBaseScrollViewController.m
+        ios/TeamTalk/ViewController/Base/MTTBaseViewController.h
+        ios/TeamTalk/ViewController/Base/MTTBaseViewController.m
+        ios/TeamTalk/ViewController/Base/MTTPullScrollViewController.h
+        ios/TeamTalk/ViewController/Base/MTTPullScrollViewController.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDChatBaseCell.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDChatBaseCell.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDChatCellProtocol.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDChatImageCell.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDChatImageCell.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDChatTextCell.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDChatTextCell.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDChatVoiceCell.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDChatVoiceCell.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDEmotionCell.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDEmotionCell.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDPromptCell.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/Cells/DDPromptCell.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/Control/MenuImageView.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/Control/MenuImageView.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/Control/RecordingView.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/Control/RecordingView.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/ChattingMainViewController.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/ChattingMainViewController.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/ChatUtilityViewController.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/ChatUtilityViewController.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/DDChatImagePreviewViewController.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/DDChatImagePreviewViewController.m
+        ios/TeamTalk/ViewController/Chatting/Chatting/EmotionsViewController.h
+        ios/TeamTalk/ViewController/Chatting/Chatting/EmotionsViewController.m
+        ios/TeamTalk/ViewController/Chatting/ChattingEdit/Cell/DDPersonEditCollectionCell.h
+        ios/TeamTalk/ViewController/Chatting/ChattingEdit/Cell/DDPersonEditCollectionCell.m
+        ios/TeamTalk/ViewController/Chatting/ChattingEdit/Cell/MTTGroupInfoCell.h
+        ios/TeamTalk/ViewController/Chatting/ChattingEdit/Cell/MTTGroupInfoCell.m
+        ios/TeamTalk/ViewController/Chatting/ChattingEdit/DDChattingEditViewController.h
+        ios/TeamTalk/ViewController/Chatting/ChattingEdit/DDChattingEditViewController.m
+        ios/TeamTalk/ViewController/Chatting/Group/Cells/EditContactsCell.h
+        ios/TeamTalk/ViewController/Chatting/Group/Cells/EditContactsCell.m
+        ios/TeamTalk/ViewController/Chatting/Group/Cells/EditGroupViewCell.h
+        ios/TeamTalk/ViewController/Chatting/Group/Cells/EditGroupViewCell.m
+        ios/TeamTalk/ViewController/Chatting/Group/EditGroupViewController.h
+        ios/TeamTalk/ViewController/Chatting/Group/EditGroupViewController.m
+        ios/TeamTalk/ViewController/Contacts/Cells/DDContactsCell.h
+        ios/TeamTalk/ViewController/Contacts/Cells/DDContactsCell.m
+        ios/TeamTalk/ViewController/Contacts/Cells/MTTBaseCell.h
+        ios/TeamTalk/ViewController/Contacts/Cells/MTTBaseCell.m
+        ios/TeamTalk/ViewController/Contacts/Cells/MTTSearchResultCell.h
+        ios/TeamTalk/ViewController/Contacts/Cells/MTTSearchResultCell.m
+        ios/TeamTalk/ViewController/Contacts/Cells/MTTSearchShowMoreCell.h
+        ios/TeamTalk/ViewController/Contacts/Cells/MTTSearchShowMoreCell.m
+        ios/TeamTalk/ViewController/Contacts/Cells/MTTUserInfoCell.h
+        ios/TeamTalk/ViewController/Contacts/Cells/MTTUserInfoCell.m
+        ios/TeamTalk/ViewController/Contacts/Cells/PublicProfileCell.h
+        ios/TeamTalk/ViewController/Contacts/Cells/PublicProfileCell.m
+        ios/TeamTalk/ViewController/Contacts/Control/ContactAvatarTools.h
+        ios/TeamTalk/ViewController/Contacts/Control/ContactAvatarTools.m
+        ios/TeamTalk/ViewController/Contacts/ContactsViewController.h
+        ios/TeamTalk/ViewController/Contacts/ContactsViewController.m
+        ios/TeamTalk/ViewController/Contacts/MTTEditSignViewController.h
+        ios/TeamTalk/ViewController/Contacts/MTTEditSignViewController.m
+        ios/TeamTalk/ViewController/Contacts/PublicProfileViewControll.h
+        ios/TeamTalk/ViewController/Contacts/PublicProfileViewControll.m
+        ios/TeamTalk/ViewController/Contacts/SearchContentViewController.h
+        ios/TeamTalk/ViewController/Contacts/SearchContentViewController.m
+        ios/TeamTalk/ViewController/Find/FinderViewController.h
+        ios/TeamTalk/ViewController/Find/FinderViewController.m
+        ios/TeamTalk/ViewController/Login/MTTLoginViewController.h
+        ios/TeamTalk/ViewController/Login/MTTLoginViewController.m
+        ios/TeamTalk/ViewController/My/MTTBubbleCollectionViewCell.h
+        ios/TeamTalk/ViewController/My/MTTBubbleCollectionViewCell.m
+        ios/TeamTalk/ViewController/My/MTTBubbleShowViewControll.h
+        ios/TeamTalk/ViewController/My/MTTBubbleShowViewControll.m
+        ios/TeamTalk/ViewController/My/MTTMyViewController.h
+        ios/TeamTalk/ViewController/My/MTTMyViewController.m
+        ios/TeamTalk/ViewController/RecentContacts/Cells/MTTPCStatusCell.h
+        ios/TeamTalk/ViewController/RecentContacts/Cells/MTTPCStatusCell.m
+        ios/TeamTalk/ViewController/RecentContacts/Cells/RecentUserCell.h
+        ios/TeamTalk/ViewController/RecentContacts/Cells/RecentUserCell.m
+        ios/TeamTalk/ViewController/RecentContacts/MTTPCLoginViewController.h
+        ios/TeamTalk/ViewController/RecentContacts/MTTPCLoginViewController.m
+        ios/TeamTalk/ViewController/RecentContacts/RecentUsersViewController.h
+        ios/TeamTalk/ViewController/RecentContacts/RecentUsersViewController.m
+        ios/TeamTalk/ViewController/Root/MTTRootViewController.h
+        ios/TeamTalk/ViewController/Root/MTTRootViewController.m
+        ios/TeamTalk/ViewController/ScanQR/ScanQRCodePage.h
+        ios/TeamTalk/ViewController/ScanQR/ScanQRCodePage.m
+        ios/TeamTalk/ViewController/Search/MTTDetailSearchViewControll.h
+        ios/TeamTalk/ViewController/Search/MTTDetailSearchViewControll.m
+        ios/TeamTalk/ViewController/Search/MTTSearchDetailViewControll.h
+        ios/TeamTalk/ViewController/Search/MTTSearchDetailViewControll.m
+        ios/TeamTalk/ViewController/Web/MTTWebViewController.h
+        ios/TeamTalk/ViewController/Web/MTTWebViewController.m
+        ios/TeamTalk/AppDelegate.h
+        ios/TeamTalk/AppDelegate.m
+        ios/TeamTalk/main.m
+        ios/TeamTalk/TeamTalk-Prefix.pch
+        ios/TeamTalkTests/TeamTalkTests.m
+        mac/CrashReporter.framework/Versions/A/Headers/CrashReporter.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashFeatureConfig.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashNamespace.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReport.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportApplicationInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportBinaryImageInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReporter.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReporterConfig.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportExceptionInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportFormatter.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportMachExceptionInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportMachineInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportProcessInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportProcessorInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportRegisterInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportSignalInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportStackFrameInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportSymbolInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportSystemInfo.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportTextFormatter.h
+        mac/CrashReporter.framework/Versions/A/Headers/PLCrashReportThreadInfo.h
+        mac/Sparkle.framework/Versions/A/Headers/Sparkle.h
+        mac/Sparkle.framework/Versions/A/Headers/SUAppcast.h
+        mac/Sparkle.framework/Versions/A/Headers/SUAppcastItem.h
+        mac/Sparkle.framework/Versions/A/Headers/SUUpdater.h
+        mac/Sparkle.framework/Versions/A/Headers/SUVersionComparisonProtocol.h
+        mac/TeamTalk/API/APIGroup/DDAllUserAPI.h
+        mac/TeamTalk/API/APIGroup/DDAllUserAPI.m
+        mac/TeamTalk/API/APIGroup/DDCreateGroupAPI.h
+        mac/TeamTalk/API/APIGroup/DDCreateGroupAPI.m
+        mac/TeamTalk/API/APIGroup/DDDepartmentInfoAPI.h
+        mac/TeamTalk/API/APIGroup/DDDepartmentInfoAPI.m
+        mac/TeamTalk/API/APIGroup/DDFileLoginAPI.h
+        mac/TeamTalk/API/APIGroup/DDFileLoginAPI.m
+        mac/TeamTalk/API/APIGroup/DDFileSendAPI.h
+        mac/TeamTalk/API/APIGroup/DDFileSendAPI.m
+        mac/TeamTalk/API/APIGroup/DDFileSendResponseAPI.h
+        mac/TeamTalk/API/APIGroup/DDFileSendResponseAPI.m
+        mac/TeamTalk/API/APIGroup/DDFixedGroupAPI.h
+        mac/TeamTalk/API/APIGroup/DDFixedGroupAPI.m
+        mac/TeamTalk/API/APIGroup/DDGetLastMessageIDAPI.h
+        mac/TeamTalk/API/APIGroup/DDGetLastMessageIDAPI.m
+        mac/TeamTalk/API/APIGroup/DDGetOfflineFileAPI.h
+        mac/TeamTalk/API/APIGroup/DDGetOfflineFileAPI.m
+        mac/TeamTalk/API/APIGroup/DDGroupInfoAPI.h
+        mac/TeamTalk/API/APIGroup/DDGroupInfoAPI.m
+        mac/TeamTalk/API/APIGroup/DDGroupMsgReadACKAPI.h
+        mac/TeamTalk/API/APIGroup/DDGroupMsgReadACKAPI.m
+        mac/TeamTalk/API/APIGroup/DDGroupMsgReceivedACKAPI.h
+        mac/TeamTalk/API/APIGroup/DDGroupMsgReceivedACKAPI.m
+        mac/TeamTalk/API/APIGroup/DDHeartBeatAPI.h
+        mac/TeamTalk/API/APIGroup/DDHeartBeatAPI.m
+        mac/TeamTalk/API/APIGroup/DDHistoryMessageApi.h
+        mac/TeamTalk/API/APIGroup/DDHistoryMessageApi.m
+        mac/TeamTalk/API/APIGroup/DDLoginAPI.h
+        mac/TeamTalk/API/APIGroup/DDLoginAPI.mm
+        mac/TeamTalk/API/APIGroup/DDModifyUserAvatarAPI.h
+        mac/TeamTalk/API/APIGroup/DDModifyUserAvatarAPI.m
+        mac/TeamTalk/API/APIGroup/DDMsgReadACKAPI.h
+        mac/TeamTalk/API/APIGroup/DDMsgReadACKAPI.m
+        mac/TeamTalk/API/APIGroup/DDOfflineFileUploadFinishedAPI.h
+        mac/TeamTalk/API/APIGroup/DDOfflineFileUploadFinishedAPI.m
+        mac/TeamTalk/API/APIGroup/DDReadyReceiveFileAPI.h
+        mac/TeamTalk/API/APIGroup/DDReadyReceiveFileAPI.m
+        mac/TeamTalk/API/APIGroup/DDRemoveSessionAPI.h
+        mac/TeamTalk/API/APIGroup/DDRemoveSessionAPI.m
+        mac/TeamTalk/API/APIGroup/DDSendMessageAPI.h
+        mac/TeamTalk/API/APIGroup/DDSendMessageAPI.mm
+        mac/TeamTalk/API/APIGroup/DDSendOffLineFileAPI.h
+        mac/TeamTalk/API/APIGroup/DDSendOffLineFileAPI.m
+        mac/TeamTalk/API/APIGroup/DDSendP2PCmdAPI.h
+        mac/TeamTalk/API/APIGroup/DDSendP2PCmdAPI.m
+        mac/TeamTalk/API/APIGroup/DDUnreadMessageAPI.h
+        mac/TeamTalk/API/APIGroup/DDUnreadMessageAPI.m
+        mac/TeamTalk/API/APIGroup/DDUserDetailInfoAPI.h
+        mac/TeamTalk/API/APIGroup/DDUserDetailInfoAPI.m
+        mac/TeamTalk/API/APIGroup/DDUserMsgReceivedACKAPI.h
+        mac/TeamTalk/API/APIGroup/DDUserMsgReceivedACKAPI.m
+        mac/TeamTalk/API/APIGroup/DDUserOnlineStateAPI.h
+        mac/TeamTalk/API/APIGroup/DDUserOnlineStateAPI.m
+        mac/TeamTalk/API/APIGroup/MTGroupChangeMemberAPI.h
+        mac/TeamTalk/API/APIGroup/MTGroupChangeMemberAPI.m
+        mac/TeamTalk/API/UnrequestAPI/Message/DDReceiveMsgDataReadNotifyAPI.h
+        mac/TeamTalk/API/UnrequestAPI/Message/DDReceiveMsgDataReadNotifyAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDAbortFileSendAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDAbortFileSendAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDAddOfflineFileAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDAddOfflineFileAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDDeleteOfflineFileAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDDeleteOfflineFileAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDOnlineUserListAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDOnlineUserListAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDOtherFileResponseAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDOtherFileResponseAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDOtherLinkFileServerAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDOtherLinkFileServerAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDOtherSendOfflineFileAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDOtherSendOfflineFileAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveAbortFileSendAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveAbortFileSendAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveGroupMemberChangedAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveGroupMemberChangedAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveKickAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveKickAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveMessageAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveMessageAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveOtherOfflineFileUploadFinishedAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveOtherOfflineFileUploadFinishedAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveOtherReadyAcceptFileAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveOtherReadyAcceptFileAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveOtherResponseAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveOtherResponseAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveOtherSendFileAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveOtherSendFileAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveP2PMessageAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveP2PMessageAPI.m
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveStateChangedAPI.h
+        mac/TeamTalk/API/UnrequestAPI/DDReceiveStateChangedAPI.m
+        mac/TeamTalk/API/DataOutputStream+Addition.h
+        mac/TeamTalk/API/DataOutputStream+Addition.m
+        mac/TeamTalk/API/DDAPISchedule.h
+        mac/TeamTalk/API/DDAPISchedule.m
+        mac/TeamTalk/API/DDAPIScheduleProtocol.h
+        mac/TeamTalk/API/DDAPIUnrequestScheduleProtocol.h
+        mac/TeamTalk/API/DDRecentConactsAPI.h
+        mac/TeamTalk/API/DDRecentConactsAPI.m
+        mac/TeamTalk/API/DDSeqNoManager.h
+        mac/TeamTalk/API/DDSeqNoManager.m
+        mac/TeamTalk/API/DDSuperAPI.h
+        mac/TeamTalk/API/DDSuperAPI.m
+        mac/TeamTalk/API/DDUnrequestSuperAPI.h
+        mac/TeamTalk/API/DDUnrequestSuperAPI.m
+        mac/TeamTalk/Category/NSDictionary+Safe.h
+        mac/TeamTalk/Category/NSDictionary+Safe.m
+        mac/TeamTalk/Category/NSImage+Addition.h
+        mac/TeamTalk/Category/NSImage+Addition.m
+        mac/TeamTalk/Category/NSImageView+MTAddition.h
+        mac/TeamTalk/Category/NSImageView+MTAddition.m
+        mac/TeamTalk/Category/NSString+Additions.h
+        mac/TeamTalk/Category/NSString+Additions.m
+        mac/TeamTalk/Category/NSView+LayerAddition.h
+        mac/TeamTalk/Category/NSView+LayerAddition.m
+        mac/TeamTalk/Category/NSWindow+Addition.h
+        mac/TeamTalk/Category/NSWindow+Addition.m
+        mac/TeamTalk/Category/NSWindow+Animation.h
+        mac/TeamTalk/Category/NSWindow+Animation.m
+        mac/TeamTalk/ColorfulView/DDAppBackgroundColorView.h
+        mac/TeamTalk/ColorfulView/DDAppBackgroundColorView.m
+        mac/TeamTalk/ColorfulView/DDCornerRadiusTextField.h
+        mac/TeamTalk/ColorfulView/DDCornerRadiusTextField.m
+        mac/TeamTalk/ColorfulView/DDCustomWindow.h
+        mac/TeamTalk/ColorfulView/DDCustomWindow.m
+        mac/TeamTalk/ColorfulView/DDGridBackgroundView.h
+        mac/TeamTalk/ColorfulView/DDGridBackgroundView.m
+        mac/TeamTalk/contacts&chats/DDListGroup.h
+        mac/TeamTalk/contacts&chats/DDListGroup.m
+        mac/TeamTalk/contacts&chats/DDListObject.h
+        mac/TeamTalk/contacts&chats/DDListObject.m
+        mac/TeamTalk/contacts&chats/DDProxyListObject.h
+        mac/TeamTalk/contacts&chats/DDProxyListObject.m
+        mac/TeamTalk/contacts&chats/ESObjectWithProperties.h
+        mac/TeamTalk/contacts&chats/ESObjectWithProperties.m
+        mac/TeamTalk/CrashReport/CrashReportManager.h
+        mac/TeamTalk/CrashReport/CrashReportManager.m
+        mac/TeamTalk/DDLogic/module/DDModuleDataManager.h
+        mac/TeamTalk/DDLogic/module/DDModuleDataManager.m
+        mac/TeamTalk/DDLogic/module/DDModuleID.h
+        mac/TeamTalk/DDLogic/module/DDModuleManager.h
+        mac/TeamTalk/DDLogic/module/DDModuleManager.m
+        mac/TeamTalk/DDLogic/module/DDWatch.h
+        mac/TeamTalk/DDLogic/module/DDWatch.m
+        mac/TeamTalk/DDLogic/task/DDTask.h
+        mac/TeamTalk/DDLogic/task/DDTaskManager.h
+        mac/TeamTalk/DDLogic/task/DDTaskManager.m
+        mac/TeamTalk/DDLogic/task/DDTaskOperation.h
+        mac/TeamTalk/DDLogic/task/DDTaskOperation.m
+        mac/TeamTalk/DDLogic/DDLogic.h
+        mac/TeamTalk/DDLogic/DDLogic.m
+        mac/TeamTalk/DDLogic/DDLogicProtocol.h
+        mac/TeamTalk/EGOImageLoader/EGOCache.h
+        mac/TeamTalk/EGOImageLoader/EGOCache.m
+        mac/TeamTalk/EGOImageLoader/EGOImageLoadConnection.h
+        mac/TeamTalk/EGOImageLoader/EGOImageLoadConnection.m
+        mac/TeamTalk/EGOImageLoader/EGOImageLoader.h
+        mac/TeamTalk/EGOImageLoader/EGOImageLoader.m
+        mac/TeamTalk/EGOImageLoader/EGOImageView.h
+        mac/TeamTalk/EGOImageLoader/EGOImageView.m
+        mac/TeamTalk/FileTransfer/GCDAsyncSocket.h
+        mac/TeamTalk/FileTransfer/GCDAsyncSocket.m
+        mac/TeamTalk/Frameworks/ShortcutRecorder.framework/Versions/A/Headers/ShortcutRecorder.h
+        mac/TeamTalk/Frameworks/ShortcutRecorder.framework/Versions/A/Headers/SRCommon.h
+        mac/TeamTalk/Frameworks/ShortcutRecorder.framework/Versions/A/Headers/SRKeyCodeTransformer.h
+        mac/TeamTalk/Frameworks/ShortcutRecorder.framework/Versions/A/Headers/SRRecorderCell.h
+        mac/TeamTalk/Frameworks/ShortcutRecorder.framework/Versions/A/Headers/SRRecorderControl.h
+        mac/TeamTalk/Frameworks/ShortcutRecorder.framework/Versions/A/Headers/SRValidator.h
+        mac/TeamTalk/HelpLib/ImageCache/MTImageCache.h
+        mac/TeamTalk/HelpLib/ImageCache/MTImageCache.m
+        mac/TeamTalk/HelpLib/ImageCache/MTImageDownload.h
+        mac/TeamTalk/HelpLib/ImageCache/MTImageDownload.m
+        mac/TeamTalk/HelpLib/DDPathHelp.h
+        mac/TeamTalk/HelpLib/DDPathHelp.m
+        mac/TeamTalk/HelpLib/DDSundriesCenter.h
+        mac/TeamTalk/HelpLib/DDSundriesCenter.m
+        mac/TeamTalk/http/DDHttpUtil.h
+        mac/TeamTalk/http/DDHttpUtil.m
+        mac/TeamTalk/interface/altertWindow/DDAlertWindowController.h
+        mac/TeamTalk/interface/altertWindow/DDAlertWindowController.m
+        mac/TeamTalk/interface/cells/DDListCell.h
+        mac/TeamTalk/interface/cells/DDListCell.m
+        "mac/TeamTalk/interface/chat/addChatGroup/tree support/BaseNode.h"
+        "mac/TeamTalk/interface/chat/addChatGroup/tree support/BaseNode.m"
+        "mac/TeamTalk/interface/chat/addChatGroup/tree support/ChildNode.h"
+        "mac/TeamTalk/interface/chat/addChatGroup/tree support/ChildNode.m"
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddChatGroup.h
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddChatGroup.m
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddChatGroupCell.h
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddChatGroupCell.m
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddChatGroupModel.h
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddChatGroupModel.m
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddChatGroupWindowController.h
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddChatGroupWindowController.m
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddGroupSelectedCell.h
+        mac/TeamTalk/interface/chat/addChatGroup/DDAddGroupSelectedCell.m
+        mac/TeamTalk/interface/chat/addChatGroup/DDClickCell.h
+        mac/TeamTalk/interface/chat/addChatGroup/DDClickCell.m
+        mac/TeamTalk/interface/chat/DDChattingHeadViewController.h
+        mac/TeamTalk/interface/chat/DDChattingHeadViewController.m
+        mac/TeamTalk/interface/chat/DDChattingInputView.h
+        mac/TeamTalk/interface/chat/DDChattingInputView.m
+        mac/TeamTalk/interface/chat/DDChattingViewController.h
+        mac/TeamTalk/interface/chat/DDChattingViewController.m
+        mac/TeamTalk/interface/chat/DDEmotionAttachment.h
+        mac/TeamTalk/interface/chat/DDEmotionAttachment.m
+        mac/TeamTalk/interface/chat/DDImageMessage.h
+        mac/TeamTalk/interface/chat/DDImageMessage.m
+        mac/TeamTalk/interface/chat/DDSendingTextView.h
+        mac/TeamTalk/interface/chat/DDSendingTextView.m
+        mac/TeamTalk/interface/chat/DDTableView.h
+        mac/TeamTalk/interface/chat/DDTableView.m
+        mac/TeamTalk/interface/chat/ImageAndTextCell.h
+        mac/TeamTalk/interface/chat/ImageAndTextCell.m
+        mac/TeamTalk/interface/contactList/contactList/DDAbstractListController.h
+        mac/TeamTalk/interface/contactList/contactList/DDAbstractListController.m
+        mac/TeamTalk/interface/contactList/contactList/DDAnimatingListOutlineView.h
+        mac/TeamTalk/interface/contactList/contactList/DDAnimatingListOutlineView.m
+        mac/TeamTalk/interface/contactList/contactList/DDContactListWindowController.h
+        mac/TeamTalk/interface/contactList/contactList/DDContactListWindowController.m
+        mac/TeamTalk/interface/contactList/contactList/DDListController.h
+        mac/TeamTalk/interface/contactList/contactList/DDListController.m
+        mac/TeamTalk/interface/contactList/contactList/DDListOutlineView.h
+        mac/TeamTalk/interface/contactList/contactList/DDListOutlineView.m
+        mac/TeamTalk/interface/contactList/contactList/DDListWindowController.h
+        mac/TeamTalk/interface/contactList/contactList/DDListWindowController.m
+        mac/TeamTalk/interface/contactList/contactList/MainWindowSegmentedControl.h
+        mac/TeamTalk/interface/contactList/contactList/MainWindowSegmentedControl.m
+        mac/TeamTalk/interface/contactList/standardWindow/DDContactListNameButton.h
+        mac/TeamTalk/interface/contactList/standardWindow/DDContactListNameButton.m
+        mac/TeamTalk/interface/contactList/standardWindow/DDHoveringPopUpButton.h
+        mac/TeamTalk/interface/contactList/standardWindow/DDHoveringPopUpButton.m
+        mac/TeamTalk/interface/contactList/standardWindow/DDHoveringPopUpButtonCell.h
+        mac/TeamTalk/interface/contactList/standardWindow/DDHoveringPopUpButtonCell.m
+        mac/TeamTalk/interface/contactList/standardWindow/DDStandardListWindowController.h
+        mac/TeamTalk/interface/contactList/standardWindow/DDStandardListWindowController.m
+        mac/TeamTalk/interface/contactList/userIconChanging/DDContactListImagePicker.h
+        mac/TeamTalk/interface/contactList/userIconChanging/DDContactListImagePicker.m
+        mac/TeamTalk/interface/contactList/userIconChanging/DDContactListUserPictureMenuController.h
+        mac/TeamTalk/interface/contactList/userIconChanging/DDContactListUserPictureMenuController.m
+        mac/TeamTalk/interface/contactList/userIconChanging/IKRecentPicture.h
+        mac/TeamTalk/interface/emotion/EmotionCellView.h
+        mac/TeamTalk/interface/emotion/EmotionCellView.m
+        mac/TeamTalk/interface/emotion/EmotionListXmlParser.h
+        mac/TeamTalk/interface/emotion/EmotionListXmlParser.m
+        mac/TeamTalk/interface/emotion/EmotionViewController.h
+        mac/TeamTalk/interface/emotion/EmotionViewController.m
+        "mac/TeamTalk/interface/login window/DDLoginWindow.h"
+        "mac/TeamTalk/interface/login window/DDLoginWindow.m"
+        "mac/TeamTalk/interface/login window/DDLoginWindowController.h"
+        "mac/TeamTalk/interface/login window/DDLoginWindowController.m"
+        mac/TeamTalk/interface/mainWindow/searchField/DDMainSearchField.h
+        mac/TeamTalk/interface/mainWindow/searchField/DDMainSearchField.m
+        mac/TeamTalk/interface/mainWindow/searchField/DDNinePartImage.h
+        mac/TeamTalk/interface/mainWindow/searchField/DDNinePartImage.m
+        mac/TeamTalk/interface/mainWindow/searchField/DDSearchFieldCell.h
+        mac/TeamTalk/interface/mainWindow/searchField/DDSearchFieldCell.m
+        mac/TeamTalk/interface/mainWindow/searchField/DDSearchFieldController.h
+        mac/TeamTalk/interface/mainWindow/searchField/DDSearchFieldController.m
+        mac/TeamTalk/interface/mainWindow/searchField/DDSearchFieldEditorDelegate.h
+        mac/TeamTalk/interface/mainWindow/searchField/DDSearchFieldEditorDelegate.m
+        mac/TeamTalk/interface/mainWindow/searchField/DDSearchFieldResultCell.h
+        mac/TeamTalk/interface/mainWindow/searchField/DDSearchFieldResultCell.m
+        mac/TeamTalk/interface/mainWindow/searchField/FMSearchTokenAttachmentCell.h
+        mac/TeamTalk/interface/mainWindow/searchField/FMSearchTokenAttachmentCell.m
+        mac/TeamTalk/interface/mainWindow/searchField/FMSearchTokenFieldCell.h
+        mac/TeamTalk/interface/mainWindow/searchField/FMSearchTokenFieldCell.m
+        mac/TeamTalk/interface/mainWindow/searchField/SpellLibrary.h
+        mac/TeamTalk/interface/mainWindow/searchField/SpellLibrary.m
+        mac/TeamTalk/interface/mainWindow/DDImageSpreadView.h
+        mac/TeamTalk/interface/mainWindow/DDImageSpreadView.m
+        mac/TeamTalk/interface/mainWindow/DDImageView.h
+        mac/TeamTalk/interface/mainWindow/DDImageView.m
+        mac/TeamTalk/interface/mainWindow/DDMainUIController.h
+        mac/TeamTalk/interface/mainWindow/DDMainUIController.m
+        mac/TeamTalk/interface/mainWindow/DDMainWindowController.h
+        mac/TeamTalk/interface/mainWindow/DDMainWindowController.m
+        mac/TeamTalk/interface/mainWindow/DDSplitView.h
+        mac/TeamTalk/interface/mainWindow/DDSplitView.m
+        mac/TeamTalk/interface/mainWindow/DDTabItemView.h
+        mac/TeamTalk/interface/mainWindow/DDTabItemView.m
+        mac/TeamTalk/interface/mainWindow/FMSearchTokenField.h
+        mac/TeamTalk/interface/mainWindow/FMSearchTokenField.m
+        mac/TeamTalk/interface/UserData/DDGroupDataModule.h
+        mac/TeamTalk/interface/UserData/DDGroupDataModule.m
+        mac/TeamTalk/interface/UserData/DDGroupDataWindow.h
+        mac/TeamTalk/interface/UserData/DDGroupDataWindow.m
+        mac/TeamTalk/interface/UserData/DDGroupInfoCell.h
+        mac/TeamTalk/interface/UserData/DDGroupInfoCell.m
+        mac/TeamTalk/interface/UserData/DDGroupInfoManager.h
+        mac/TeamTalk/interface/UserData/DDGroupInfoManager.m
+        mac/TeamTalk/interface/UserData/DDUserDataModel.h
+        mac/TeamTalk/interface/UserData/DDUserDataModel.m
+        mac/TeamTalk/interface/UserData/DDUserDataWindowController.h
+        mac/TeamTalk/interface/UserData/DDUserDataWindowController.m
+        mac/TeamTalk/interface/UserData/DDUserInfoManager.h
+        mac/TeamTalk/interface/UserData/DDUserInfoManager.m
+        mac/TeamTalk/interface/UserData/DDUserInfoPanel.h
+        mac/TeamTalk/interface/UserData/DDUserInfoPanel.m
+        mac/TeamTalk/interface/DDInterfaceController.h
+        mac/TeamTalk/interface/DDInterfaceController.m
+        mac/TeamTalk/interface/DDMainWindow.h
+        mac/TeamTalk/interface/DDMainWindow.m
+        mac/TeamTalk/interface/DDWindowController.h
+        mac/TeamTalk/interface/DDWindowController.m
+        mac/TeamTalk/Libraries/libsecurity/security.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4AppenderAttachable.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4AppenderAttachable.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4AppenderProtocols.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4AppenderSkeleton.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4AppenderSkeleton.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4BasicConfigurator.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4BasicConfigurator.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4ConsoleAppender.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4ConsoleAppender.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4DailyRollingFileAppender.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4DailyRollingFileAppender.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4DenyAllFilter.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4DenyAllFilter.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4FileAppender.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4FileAppender.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Filter.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Filter.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4JSONLayout.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4JSONLayout.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Layout.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Layout.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Level.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Level.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LevelMatchFilter.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LevelMatchFilter.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LevelRangeFilter.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LevelRangeFilter.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LogEvent.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LogEvent.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Logger.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Logger.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LoggerNameMatchFilter.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LoggerNameMatchFilter.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LoggerProtocols.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LoggerStore.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LoggerStore.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Logging.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Logging.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LogLog.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4LogLog.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4PatternLayout.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4PatternLayout.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Properties.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4Properties.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4PropertyConfigurator.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4PropertyConfigurator.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4RollingFileAppender.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4RollingFileAppender.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4RootLogger.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4RootLogger.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4SimpleLayout.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4SimpleLayout.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4StringMatchFilter.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4StringMatchFilter.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4WriterAppender.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4WriterAppender.m
+        mac/TeamTalk/Libraries/Log4Cocoa/L4XMLLayout.h
+        mac/TeamTalk/Libraries/Log4Cocoa/L4XMLLayout.m
+        mac/TeamTalk/Libraries/Log4Cocoa/Log4Cocoa-Prefix.pch
+        mac/TeamTalk/Libraries/Log4Cocoa/Log4Cocoa.h
+        mac/TeamTalk/Libraries/Log4Cocoa/Log4CocoaDefines.h
+        mac/TeamTalk/Libraries/Log4Cocoa/NSObject+Log4Cocoa.h
+        mac/TeamTalk/Libraries/Log4Cocoa/NSObject+Log4Cocoa.m
+        mac/TeamTalk/Libraries/Reachability/Reachability.h
+        mac/TeamTalk/Libraries/Reachability/Reachability.m
+        mac/TeamTalk/MessageReview/DDMessageReviewContactsCellView.h
+        mac/TeamTalk/MessageReview/DDMessageReviewContactsCellView.m
+        mac/TeamTalk/MessageReview/DDMessageReviewContactsViewController.h
+        mac/TeamTalk/MessageReview/DDMessageReviewContactsViewController.m
+        mac/TeamTalk/MessageReview/DDMessageReviewModule.h
+        mac/TeamTalk/MessageReview/DDMessageReviewModule.m
+        mac/TeamTalk/MessageReview/DDMessageReviewTextView.h
+        mac/TeamTalk/MessageReview/DDMessageReviewTextView.m
+        mac/TeamTalk/MessageReview/DDMessageReviewWindowController.h
+        mac/TeamTalk/MessageReview/DDMessageReviewWindowController.m
+        mac/TeamTalk/MessageReview/DDMessagesReviewContentModule.h
+        mac/TeamTalk/MessageReview/DDMessagesReviewContentModule.m
+        mac/TeamTalk/MessageReview/DDMessagesReviewContentViewController.h
+        mac/TeamTalk/MessageReview/DDMessagesReviewContentViewController.m
+        mac/TeamTalk/MessageReview/DDMessagesReviewWindow.h
+        mac/TeamTalk/MessageReview/DDMessagesReviewWindow.m
+        mac/TeamTalk/modules/Chatting/DDAtUserListViewController.h
+        mac/TeamTalk/modules/Chatting/DDAtUserListViewController.m
+        mac/TeamTalk/modules/Chatting/DDChangableAttactment.h
+        mac/TeamTalk/modules/Chatting/DDChangableAttactment.m
+        mac/TeamTalk/modules/Chatting/DDImageUploader.h
+        mac/TeamTalk/modules/Chatting/DDImageUploader.m
+        mac/TeamTalk/modules/Chatting/DDMessageSendManager.h
+        mac/TeamTalk/modules/Chatting/DDMessageSendManager.m
+        mac/TeamTalk/modules/Chatting/DDMessageTextView.h
+        mac/TeamTalk/modules/Chatting/DDMessageTextView.m
+        mac/TeamTalk/modules/Chatting/DrawView.h
+        mac/TeamTalk/modules/Chatting/DrawView.m
+        mac/TeamTalk/modules/Chatting/EmotionManager.h
+        mac/TeamTalk/modules/Chatting/EmotionManager.m
+        mac/TeamTalk/modules/Chatting/MessageShowView.h
+        mac/TeamTalk/modules/Chatting/MessageShowView.m
+        mac/TeamTalk/modules/Chatting/MessageViewFactory.h
+        mac/TeamTalk/modules/Chatting/MessageViewFactory.m
+        mac/TeamTalk/modules/Chatting/NSAttributedString+Message.h
+        mac/TeamTalk/modules/Chatting/NSAttributedString+Message.m
+        mac/TeamTalk/modules/Chatting/NSImage+Scale.h
+        mac/TeamTalk/modules/Chatting/NSImage+Scale.m
+        mac/TeamTalk/modules/Chatting/NSTextView+Rect.h
+        mac/TeamTalk/modules/Chatting/NSTextView+Rect.m
+        mac/TeamTalk/modules/Chatting/WhiteBackgroundView.h
+        mac/TeamTalk/modules/Chatting/WhiteBackgroundView.m
+        mac/TeamTalk/modules/common/DDCommonModule.h
+        mac/TeamTalk/modules/common/DDCommonModule.m
+        mac/TeamTalk/modules/DB/MTDatabaseUtil.h
+        mac/TeamTalk/modules/DB/MTDatabaseUtil.m
+        mac/TeamTalk/modules/dbmanager/DDDatabaseUtil.h
+        mac/TeamTalk/modules/dbmanager/DDDatabaseUtil.m
+        mac/TeamTalk/modules/Http/DDHttpEntity.h
+        mac/TeamTalk/modules/Http/DDHttpEntity.m
+        mac/TeamTalk/modules/Http/DDHttpModule.h
+        mac/TeamTalk/modules/Http/DDHttpModule.m
+        mac/TeamTalk/modules/login/DDHttpServer.h
+        mac/TeamTalk/modules/login/DDHttpServer.m
+        mac/TeamTalk/modules/login/DDLoginManager.h
+        mac/TeamTalk/modules/login/DDLoginManager.m
+        mac/TeamTalk/modules/login/DDLoginServer.h
+        mac/TeamTalk/modules/login/DDLoginServer.m
+        mac/TeamTalk/modules/login/DDLoginWindowControllerModule.h
+        mac/TeamTalk/modules/login/DDLoginWindowControllerModule.m
+        mac/TeamTalk/modules/login/DDMsgServer.h
+        mac/TeamTalk/modules/login/DDMsgServer.m
+        mac/TeamTalk/modules/login/DDTcpServer.h
+        mac/TeamTalk/modules/login/DDTcpServer.m
+        mac/TeamTalk/modules/Main/AvatorImageView.h
+        mac/TeamTalk/modules/Main/AvatorImageView.m
+        mac/TeamTalk/modules/Main/DDChattingWindowManager.h
+        mac/TeamTalk/modules/Main/DDChattingWindowManager.m
+        mac/TeamTalk/modules/Main/DDContactsRowView.h
+        mac/TeamTalk/modules/Main/DDContactsRowView.m
+        mac/TeamTalk/modules/Main/DDGroupCell.h
+        mac/TeamTalk/modules/Main/DDGroupCell.m
+        mac/TeamTalk/modules/Main/DDGroupVCModule.h
+        mac/TeamTalk/modules/Main/DDGroupVCModule.m
+        mac/TeamTalk/modules/Main/DDGroupViewController.h
+        mac/TeamTalk/modules/Main/DDGroupViewController.m
+        mac/TeamTalk/modules/Main/DDLeftBarItem.h
+        mac/TeamTalk/modules/Main/DDLeftBarItem.m
+        mac/TeamTalk/modules/Main/DDLeftBarViewController.h
+        mac/TeamTalk/modules/Main/DDLeftBarViewController.m
+        mac/TeamTalk/modules/Main/DDMainModule.h
+        mac/TeamTalk/modules/Main/DDMainModule.m
+        mac/TeamTalk/modules/Main/DDMainWindowControllerModule.h
+        mac/TeamTalk/modules/Main/DDMainWindowControllerModule.m
+        mac/TeamTalk/modules/Main/DDRecentContactsCell.h
+        mac/TeamTalk/modules/Main/DDRecentContactsCell.m
+        mac/TeamTalk/modules/Main/DDRecentContactsModule.h
+        mac/TeamTalk/modules/Main/DDRecentContactsModule.m
+        mac/TeamTalk/modules/Main/DDRecentContactsViewController.h
+        mac/TeamTalk/modules/Main/DDRecentContactsViewController.m
+        mac/TeamTalk/modules/Main/DDSearchResultCell.h
+        mac/TeamTalk/modules/Main/DDSearchResultCell.m
+        mac/TeamTalk/modules/Main/DDSearchViewController.h
+        mac/TeamTalk/modules/Main/DDSearchViewController.m
+        mac/TeamTalk/modules/Main/HoverTableRowView.h
+        mac/TeamTalk/modules/Main/HoverTableRowView.m
+        mac/TeamTalk/modules/message/MTLastMessageManager.h
+        mac/TeamTalk/modules/message/MTLastMessageManager.m
+        mac/TeamTalk/modules/message/MTMessageEntity.h
+        mac/TeamTalk/modules/message/MTMessageEntity.mm
+        mac/TeamTalk/modules/message/MTMessageModule.h
+        mac/TeamTalk/modules/message/MTMessageModule.m
+        mac/TeamTalk/modules/OriginEntity/Grouyp/MTGroupEntity.h
+        mac/TeamTalk/modules/OriginEntity/Grouyp/MTGroupEntity.m
+        mac/TeamTalk/modules/OriginEntity/User/MTDepartmentEntity.h
+        mac/TeamTalk/modules/OriginEntity/User/MTDepartmentEntity.m
+        mac/TeamTalk/modules/OriginEntity/User/MTUserEntity.h
+        mac/TeamTalk/modules/OriginEntity/User/MTUserEntity.m
+        mac/TeamTalk/modules/OriginEntity/DDOriginEntity.h
+        mac/TeamTalk/modules/OriginEntity/DDOriginEntity.m
+        mac/TeamTalk/modules/OriginModule/GroupModule/MTGroupModule.h
+        mac/TeamTalk/modules/OriginModule/GroupModule/MTGroupModule.m
+        mac/TeamTalk/modules/OriginModule/UserModule/MTDepartmentManager.h
+        mac/TeamTalk/modules/OriginModule/UserModule/MTDepartmentManager.m
+        mac/TeamTalk/modules/OriginModule/UserModule/MTUserModule.h
+        mac/TeamTalk/modules/OriginModule/UserModule/MTUserModule.m
+        mac/TeamTalk/modules/OriginModule/DDOriginModuleProtocol.h
+        mac/TeamTalk/modules/pb/IMBaseDefine.pb.h
+        mac/TeamTalk/modules/pb/IMBaseDefine.pb.m
+        mac/TeamTalk/modules/pb/IMBuddy.pb.h
+        mac/TeamTalk/modules/pb/IMBuddy.pb.m
+        mac/TeamTalk/modules/pb/IMFile.pb.h
+        mac/TeamTalk/modules/pb/IMFile.pb.m
+        mac/TeamTalk/modules/pb/IMGroup.pb.h
+        mac/TeamTalk/modules/pb/IMGroup.pb.m
+        mac/TeamTalk/modules/pb/IMInternal.pb.h
+        mac/TeamTalk/modules/pb/IMInternal.pb.m
+        mac/TeamTalk/modules/pb/IMLogin.pb.h
+        mac/TeamTalk/modules/pb/IMLogin.pb.m
+        mac/TeamTalk/modules/pb/IMMessage.pb.h
+        mac/TeamTalk/modules/pb/IMMessage.pb.m
+        mac/TeamTalk/modules/pb/IMOther.pb.h
+        mac/TeamTalk/modules/pb/IMOther.pb.m
+        mac/TeamTalk/modules/pb/IMServer.pb.h
+        mac/TeamTalk/modules/pb/IMServer.pb.m
+        mac/TeamTalk/modules/pb/IMSwitchService.pb.h
+        mac/TeamTalk/modules/pb/IMSwitchService.pb.m
+        mac/TeamTalk/modules/pb/IMXIAOT.pb.h
+        mac/TeamTalk/modules/pb/IMXIAOT.pb.m
+        mac/TeamTalk/modules/session/_SessionEntity.h
+        mac/TeamTalk/modules/session/_SessionEntity.m
+        mac/TeamTalk/modules/session/DDAddGroupMemberDepartmentCell.h
+        mac/TeamTalk/modules/session/DDAddGroupMemberDepartmentCell.m
+        mac/TeamTalk/modules/session/DDAddGroupMemberDepartmentRowView.h
+        mac/TeamTalk/modules/session/DDAddGroupMemberDepartmentRowView.m
+        mac/TeamTalk/modules/session/DDMultiSelectedOutlineView.h
+        mac/TeamTalk/modules/session/DDMultiSelectedOutlineView.m
+        mac/TeamTalk/modules/session/MTChattingInputView.h
+        mac/TeamTalk/modules/session/MTChattingInputView.m
+        mac/TeamTalk/modules/Session1/Entity/MTSessionEntity.h
+        mac/TeamTalk/modules/Session1/Entity/MTSessionEntity.m
+        mac/TeamTalk/modules/Session1/Module/MTSessionModule.h
+        mac/TeamTalk/modules/Session1/Module/MTSessionModule.m
+        mac/TeamTalk/modules/SysConfig/Entity/MTSysConfigEntity.h
+        mac/TeamTalk/modules/SysConfig/Entity/MTSysConfigEntity.m
+        mac/TeamTalk/modules/SysConfig/Module/MTSysConfigModule.h
+        mac/TeamTalk/modules/SysConfig/Module/MTSysConfigModule.m
+        mac/TeamTalk/modules/DDRootModule.h
+        mac/TeamTalk/modules/DDRootModule.m
+        mac/TeamTalk/net/mtalk/data/_GroupEntity.h
+        mac/TeamTalk/net/mtalk/data/_GroupEntity.m
+        mac/TeamTalk/net/mtalk/data/_UserEntity.h
+        mac/TeamTalk/net/mtalk/data/_UserEntity.m
+        mac/TeamTalk/net/mtalk/data/DDBaseEntity.h
+        mac/TeamTalk/net/mtalk/data/DDBaseEntity.m
+        mac/TeamTalk/net/mtalk/data/DDepartment.h
+        mac/TeamTalk/net/mtalk/data/DDepartment.m
+        mac/TeamTalk/net/mtalk/data/DDIntranetMessageEntity.h
+        mac/TeamTalk/net/mtalk/data/DDIntranetMessageEntity.m
+        mac/TeamTalk/net/mtalk/data/FileTransferEntity.h
+        mac/TeamTalk/net/mtalk/data/FileTransferEntity.m
+        mac/TeamTalk/net/mtalk/data/LoginEntity.h
+        mac/TeamTalk/net/mtalk/data/LoginEntity.m
+        mac/TeamTalk/net/mtalk/data/MessageDate.h
+        mac/TeamTalk/net/mtalk/data/MessageDate.m
+        mac/TeamTalk/net/mtalk/data/MessageEntity.h
+        mac/TeamTalk/net/mtalk/data/MessageEntity.m
+        mac/TeamTalk/net/mtalk/data/MGJEntity.h
+        mac/TeamTalk/net/mtalk/data/MGJEntity.m
+        mac/TeamTalk/net/mtalk/handlers/MGJMTalkIMessageHanlder.h
+        mac/TeamTalk/net/mtalk/handlers/TcpProtocolHeader.h
+        mac/TeamTalk/net/mtalk/handlers/TcpProtocolHeader.m
+        mac/TeamTalk/net/mtalk/mac/NSStream+NSStreamAddition.h
+        mac/TeamTalk/net/mtalk/mac/NSStream+NSStreamAddition.m
+        mac/TeamTalk/net/mtalk/util/SendBuffer.h
+        mac/TeamTalk/net/mtalk/util/SendBuffer.m
+        mac/TeamTalk/net/mtalk/DataInputStream.h
+        mac/TeamTalk/net/mtalk/DataInputStream.m
+        mac/TeamTalk/net/mtalk/DataOutputStream.h
+        mac/TeamTalk/net/mtalk/DataOutputStream.m
+        mac/TeamTalk/perference/DDPreferenceWinController.h
+        mac/TeamTalk/perference/DDPreferenceWinController.m
+        mac/TeamTalk/preference/DDOptionsBase.h
+        mac/TeamTalk/preference/DDOptionsBase.m
+        mac/TeamTalk/preference/DDPreferenceWinController.h
+        mac/TeamTalk/preference/DDPreferenceWinController.m
+        mac/TeamTalk/preference/DDUserPreferences.h
+        mac/TeamTalk/preference/DDUserPreferences.m
+        mac/TeamTalk/protocol/DDContactObserverManager.h
+        mac/TeamTalk/protocol/DDMainWindowControllerProtocol.h
+        mac/TeamTalk/SBJson/NSObject+SBJson.h
+        mac/TeamTalk/SBJson/NSObject+SBJson.m
+        mac/TeamTalk/SBJson/SBJson.h
+        mac/TeamTalk/SBJson/SBJsonParser.h
+        mac/TeamTalk/SBJson/SBJsonParser.m
+        mac/TeamTalk/SBJson/SBJsonStreamParser.h
+        mac/TeamTalk/SBJson/SBJsonStreamParser.m
+        mac/TeamTalk/SBJson/SBJsonStreamParserAccumulator.h
+        mac/TeamTalk/SBJson/SBJsonStreamParserAccumulator.m
+        mac/TeamTalk/SBJson/SBJsonStreamParserAdapter.h
+        mac/TeamTalk/SBJson/SBJsonStreamParserAdapter.m
+        mac/TeamTalk/SBJson/SBJsonStreamParserState.h
+        mac/TeamTalk/SBJson/SBJsonStreamParserState.m
+        mac/TeamTalk/SBJson/SBJsonStreamWriter.h
+        mac/TeamTalk/SBJson/SBJsonStreamWriter.m
+        mac/TeamTalk/SBJson/SBJsonStreamWriterAccumulator.h
+        mac/TeamTalk/SBJson/SBJsonStreamWriterAccumulator.m
+        mac/TeamTalk/SBJson/SBJsonStreamWriterState.h
+        mac/TeamTalk/SBJson/SBJsonStreamWriterState.m
+        mac/TeamTalk/SBJson/SBJsonTokeniser.h
+        mac/TeamTalk/SBJson/SBJsonTokeniser.m
+        mac/TeamTalk/SBJson/SBJsonUTF8Stream.h
+        mac/TeamTalk/SBJson/SBJsonUTF8Stream.m
+        mac/TeamTalk/SBJson/SBJsonWriter.h
+        mac/TeamTalk/SBJson/SBJsonWriter.m
+        mac/TeamTalk/ScreenCapture/BackgroudView.h
+        mac/TeamTalk/ScreenCapture/BackgroudView.m
+        mac/TeamTalk/ScreenCapture/CaptureView.h
+        mac/TeamTalk/ScreenCapture/CaptureView.m
+        mac/TeamTalk/ScreenCapture/CaptureWindow.h
+        mac/TeamTalk/ScreenCapture/CaptureWindow.m
+        mac/TeamTalk/ScreenCapture/MTScreenCaptureModule.h
+        mac/TeamTalk/ScreenCapture/MTScreenCaptureModule.m
+        mac/TeamTalk/ServiceAccount/DDServiceAccountModule.h
+        mac/TeamTalk/ServiceAccount/DDServiceAccountModule.m
+        mac/TeamTalk/Services/DDApplicationUpdate.h
+        mac/TeamTalk/Services/DDApplicationUpdate.m
+        mac/TeamTalk/Services/DDSearch.h
+        mac/TeamTalk/Services/DDSearch.m
+        mac/TeamTalk/shortcut/MASShortcut+Monitoring.h
+        mac/TeamTalk/shortcut/MASShortcut+Monitoring.m
+        mac/TeamTalk/shortcut/MASShortcut+UserDefaults.h
+        mac/TeamTalk/shortcut/MASShortcut+UserDefaults.m
+        mac/TeamTalk/shortcut/MASShortcut.h
+        mac/TeamTalk/shortcut/MASShortcut.m
+        mac/TeamTalk/shortcut/MASShortcutView+UserDefaults.h
+        mac/TeamTalk/shortcut/MASShortcutView+UserDefaults.m
+        mac/TeamTalk/shortcut/MASShortcutView.h
+        mac/TeamTalk/shortcut/MASShortcutView.m
+        mac/TeamTalk/ShortcutRecorder.framework/Versions/A/Headers/ShortcutRecorder.h
+        mac/TeamTalk/ShortcutRecorder.framework/Versions/A/Headers/SRCommon.h
+        mac/TeamTalk/ShortcutRecorder.framework/Versions/A/Headers/SRKeyCodeTransformer.h
+        mac/TeamTalk/ShortcutRecorder.framework/Versions/A/Headers/SRRecorderCell.h
+        mac/TeamTalk/ShortcutRecorder.framework/Versions/A/Headers/SRRecorderControl.h
+        mac/TeamTalk/ShortcutRecorder.framework/Versions/A/Headers/SRValidator.h
+        mac/TeamTalk/StateMaintenance/DDClientState.h
+        mac/TeamTalk/StateMaintenance/DDClientState.m
+        mac/TeamTalk/StateMaintenance/DDClientStateMaintenanceManager.h
+        mac/TeamTalk/StateMaintenance/DDClientStateMaintenanceManager.m
+        mac/TeamTalk/StateMaintenance/DDCurrentUserState.h
+        mac/TeamTalk/StateMaintenance/DDCurrentUserState.m
+        mac/TeamTalk/StateMaintenance/StateMaintenanceManager.h
+        mac/TeamTalk/StateMaintenance/StateMaintenanceManager.m
+        mac/TeamTalk/utilities/additions/AIAttributedStringAdditions.h
+        mac/TeamTalk/utilities/additions/AIAttributedStringAdditions.m
+        mac/TeamTalk/utilities/additions/AIBezierPathAdditions.h
+        mac/TeamTalk/utilities/additions/AIBezierPathAdditions.m
+        mac/TeamTalk/utilities/additions/AIColorAdditions.h
+        mac/TeamTalk/utilities/additions/AIColorAdditions.m
+        mac/TeamTalk/utilities/additions/AIFileManagerAdditions.h
+        mac/TeamTalk/utilities/additions/AIFileManagerAdditions.m
+        mac/TeamTalk/utilities/additions/AIFontManagerAdditions.h
+        mac/TeamTalk/utilities/additions/AIFontManagerAdditions.m
+        mac/TeamTalk/utilities/additions/AIImageAdditions.h
+        mac/TeamTalk/utilities/additions/AIImageAdditions.m
+        mac/TeamTalk/utilities/additions/AIImageDrawingAdditions.h
+        mac/TeamTalk/utilities/additions/AIImageDrawingAdditions.m
+        mac/TeamTalk/utilities/additions/AIMathCompatibility.h
+        mac/TeamTalk/utilities/additions/AIParagraphStyleAdditions.h
+        mac/TeamTalk/utilities/additions/AIParagraphStyleAdditions.m
+        mac/TeamTalk/utilities/additions/AIPasteboardAdditions.h
+        mac/TeamTalk/utilities/additions/AIPasteboardAdditions.m
+        mac/TeamTalk/utilities/additions/AIStringUtilities.h
+        mac/TeamTalk/utilities/additions/AITextAttachmentAdditions.h
+        mac/TeamTalk/utilities/additions/AITextAttachmentAdditions.m
+        mac/TeamTalk/utilities/additions/AITextAttachmentExtension.h
+        mac/TeamTalk/utilities/additions/AITextAttachmentExtension.m
+        mac/TeamTalk/utilities/additions/AITextAttributes.h
+        mac/TeamTalk/utilities/additions/AITextAttributes.m
+        mac/TeamTalk/utilities/additions/AIWindowControllerAdditions.h
+        mac/TeamTalk/utilities/additions/AIWindowControllerAdditions.m
+        mac/TeamTalk/utilities/additions/DDDictionaryAdditions.h
+        mac/TeamTalk/utilities/additions/DDDictionaryAdditions.m
+        mac/TeamTalk/utilities/additions/DDSharedWriterQueue.h
+        mac/TeamTalk/utilities/additions/DDSharedWriterQueue.m
+        mac/TeamTalk/utilities/additions/DDWindowAdditions.h
+        mac/TeamTalk/utilities/additions/DDWindowAdditions.m
+        mac/TeamTalk/utilities/additions/NSEvent+DDEventAdditions.h
+        mac/TeamTalk/utilities/additions/NSEvent+DDEventAdditions.m
+        mac/TeamTalk/utilities/additions/NSFileManager+DDFileManagerAdditions.h
+        mac/TeamTalk/utilities/additions/NSFileManager+DDFileManagerAdditions.m
+        mac/TeamTalk/utilities/additions/NSString+DDStringAdditions.h
+        mac/TeamTalk/utilities/additions/NSString+DDStringAdditions.m
+        mac/TeamTalk/utilities/Constant/CONSTANT.h
+        mac/TeamTalk/utilities/Extensions/NSData+NSJSONSerialization.h
+        mac/TeamTalk/utilities/Extensions/NSData+NSJSONSerialization.m
+        mac/TeamTalk/utilities/Extensions/NSDictionary+MGJ.h
+        mac/TeamTalk/utilities/Extensions/NSDictionary+MGJ.m
+        mac/TeamTalk/utilities/Extensions/NSNotification+DDLogic.h
+        mac/TeamTalk/utilities/Extensions/NSNotification+DDLogic.m
+        mac/TeamTalk/utilities/funNewClasses/DDMutableOwnerArray.h
+        mac/TeamTalk/utilities/funNewClasses/DDMutableOwnerArray.m
+        mac/TeamTalk/utilities/funNewControls/gridIphotoStyleView/DDImageCollectionView.h
+        mac/TeamTalk/utilities/funNewControls/gridIphotoStyleView/DDImageCollectionView.m
+        mac/TeamTalk/utilities/keychainAccess/DDKeychain.h
+        mac/TeamTalk/utilities/keychainAccess/DDKeychain.m
+        mac/TeamTalk/utilities/scrollbarAutoHidding/DDAutoScrollView.h
+        mac/TeamTalk/utilities/scrollbarAutoHidding/DDAutoScrollView.m
+        mac/TeamTalk/utilities/ScrollToRefresh/PullToRefreshClipView.h
+        mac/TeamTalk/utilities/ScrollToRefresh/PullToRefreshClipView.m
+        mac/TeamTalk/utilities/ScrollToRefresh/PullToRefreshDelegate.h
+        mac/TeamTalk/utilities/ScrollToRefresh/PullToRefreshScrollView.h
+        mac/TeamTalk/utilities/ScrollToRefresh/PullToRefreshScrollView.m
+        mac/TeamTalk/utilities/DDCommonApi.h
+        mac/TeamTalk/utilities/DDCommonApi.m
+        mac/TeamTalk/utilities/DDSound.h
+        mac/TeamTalk/utilities/DDSound.m
+        mac/TeamTalk/utilities/NSImage+Stretchable.h
+        mac/TeamTalk/utilities/NSImage+Stretchable.m
+        mac/TeamTalk/utilities/NSView+Addition.h
+        mac/TeamTalk/utilities/NSView+Addition.m
+        mac/TeamTalk/DDAppDelegate.h
+        mac/TeamTalk/DDAppDelegate.m
+        mac/TeamTalk/DDApplication.h
+        mac/TeamTalk/DDApplication.m
+        mac/TeamTalk/DDChattingContactListCell.h
+        mac/TeamTalk/DDChattingContactListCell.m
+        mac/TeamTalk/DDChattingContactListModule.h
+        mac/TeamTalk/DDChattingContactListModule.m
+        mac/TeamTalk/DDChattingContactListViewController.h
+        mac/TeamTalk/DDChattingContactListViewController.m
+        mac/TeamTalk/DDChattingMyLine.h
+        mac/TeamTalk/DDChattingMyLine.m
+        mac/TeamTalk/DDChattingViewModule.h
+        mac/TeamTalk/DDChattingViewModule.m
+        mac/TeamTalk/DDCornerView.h
+        mac/TeamTalk/DDCornerView.m
+        mac/TeamTalk/DDDuoduoProtocol.h
+        mac/TeamTalk/DDIntranetCell.h
+        mac/TeamTalk/DDIntranetCell.m
+        mac/TeamTalk/DDIntranetContentViewController.h
+        mac/TeamTalk/DDIntranetContentViewController.m
+        mac/TeamTalk/DDIntranetEntity.h
+        mac/TeamTalk/DDIntranetEntity.m
+        mac/TeamTalk/DDIntranetModule.h
+        mac/TeamTalk/DDIntranetModule.m
+        mac/TeamTalk/DDIntranetViewController.h
+        mac/TeamTalk/DDIntranetViewController.m
+        mac/TeamTalk/DDRecentContactRowView.h
+        mac/TeamTalk/DDRecentContactRowView.m
+        mac/TeamTalk/DDSetting+OffLineReadMsgManager.h
+        mac/TeamTalk/DDSetting+OffLineReadMsgManager.m
+        mac/TeamTalk/DDSetting.h
+        mac/TeamTalk/DDSetting.m
+        mac/TeamTalk/DDSharedDuoduo.h
+        mac/TeamTalk/DDSharedDuoduo.m
+        mac/TeamTalk/DDTcpClientManager.h
+        mac/TeamTalk/DDTcpClientManager.m
+        mac/TeamTalk/main.m
+        mac/TeamTalk/MD5.h
+        mac/TeamTalk/MD5.m
+        mac/TeamTalk/MTDraftManager.h
+        mac/TeamTalk/MTDraftManager.m
+        mac/TeamTalk/MTInputHistoryManager.h
+        mac/TeamTalk/MTInputHistoryManager.m
+        mac/TeamTalk/MTPreviewItem.h
+        mac/TeamTalk/MTPreviewItem.m
+        mac/TeamTalk/MTUnreadMessageManager.h
+        mac/TeamTalk/MTUnreadMessageManager.m
+        mac/TeamTalk/NotificationHelp.h
+        mac/TeamTalk/NotificationHelp.m
+        mac/TeamTalk/PFMoveApplication.h
+        mac/TeamTalk/PFMoveApplication.m
+        mac/TeamTalk/TeamTalk-Prefix.pch
+        mac/TeamTalkTests/TeamTalkTests.m
+        server/src/base/jsoncpp/json/assertions.h
+        server/src/base/jsoncpp/json/autolink.h
+        server/src/base/jsoncpp/json/config.h
+        server/src/base/jsoncpp/json/features.h
+        server/src/base/jsoncpp/json/forwards.h
+        server/src/base/jsoncpp/json/json.h
+        server/src/base/jsoncpp/json/reader.h
+        server/src/base/jsoncpp/json/value.h
+        server/src/base/jsoncpp/json/writer.h
+        server/src/base/jsoncpp/json_batchallocator.h
+        server/src/base/jsoncpp/json_internalarray.inl
+        server/src/base/jsoncpp/json_internalmap.inl
+        server/src/base/jsoncpp/json_reader.cpp
+        server/src/base/jsoncpp/json_tool.h
+        server/src/base/jsoncpp/json_value.cpp
+        server/src/base/jsoncpp/json_valueiterator.inl
+        server/src/base/jsoncpp/json_writer.cpp
+        server/src/base/pb/google/protobuf/compiler/cpp/cpp_generator.h
+        server/src/base/pb/google/protobuf/compiler/java/java_generator.h
+        server/src/base/pb/google/protobuf/compiler/python/python_generator.h
+        server/src/base/pb/google/protobuf/compiler/code_generator.h
+        server/src/base/pb/google/protobuf/compiler/command_line_interface.h
+        server/src/base/pb/google/protobuf/compiler/importer.h
+        server/src/base/pb/google/protobuf/compiler/parser.h
+        server/src/base/pb/google/protobuf/compiler/plugin.h
+        server/src/base/pb/google/protobuf/compiler/plugin.pb.h
+        server/src/base/pb/google/protobuf/io/coded_stream.h
+        server/src/base/pb/google/protobuf/io/gzip_stream.h
+        server/src/base/pb/google/protobuf/io/printer.h
+        server/src/base/pb/google/protobuf/io/strtod.h
+        server/src/base/pb/google/protobuf/io/tokenizer.h
+        server/src/base/pb/google/protobuf/io/zero_copy_stream.h
+        server/src/base/pb/google/protobuf/io/zero_copy_stream_impl.h
+        server/src/base/pb/google/protobuf/io/zero_copy_stream_impl_lite.h
+        server/src/base/pb/google/protobuf/stubs/atomicops.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_arm64_gcc.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_arm_gcc.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_arm_qnx.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_atomicword_compat.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_generic_gcc.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_macosx.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_mips_gcc.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_pnacl.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_solaris.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_tsan.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_x86_gcc.h
+        server/src/base/pb/google/protobuf/stubs/atomicops_internals_x86_msvc.h
+        server/src/base/pb/google/protobuf/stubs/common.h
+        server/src/base/pb/google/protobuf/stubs/once.h
+        server/src/base/pb/google/protobuf/stubs/platform_macros.h
+        server/src/base/pb/google/protobuf/stubs/stl_util.h
+        server/src/base/pb/google/protobuf/stubs/template_util.h
+        server/src/base/pb/google/protobuf/stubs/type_traits.h
+        server/src/base/pb/google/protobuf/descriptor.h
+        server/src/base/pb/google/protobuf/descriptor.pb.h
+        server/src/base/pb/google/protobuf/descriptor_database.h
+        server/src/base/pb/google/protobuf/dynamic_message.h
+        server/src/base/pb/google/protobuf/extension_set.h
+        server/src/base/pb/google/protobuf/generated_enum_reflection.h
+        server/src/base/pb/google/protobuf/generated_message_reflection.h
+        server/src/base/pb/google/protobuf/generated_message_util.h
+        server/src/base/pb/google/protobuf/message.h
+        server/src/base/pb/google/protobuf/message_lite.h
+        server/src/base/pb/google/protobuf/reflection_ops.h
+        server/src/base/pb/google/protobuf/repeated_field.h
+        server/src/base/pb/google/protobuf/service.h
+        server/src/base/pb/google/protobuf/text_format.h
+        server/src/base/pb/google/protobuf/unknown_field_set.h
+        server/src/base/pb/google/protobuf/wire_format.h
+        server/src/base/pb/google/protobuf/wire_format_lite.h
+        server/src/base/pb/google/protobuf/wire_format_lite_inl.h
+        server/src/base/pb/protocol/IM.BaseDefine.pb.cc
+        server/src/base/pb/protocol/IM.BaseDefine.pb.h
+        server/src/base/pb/protocol/IM.Buddy.pb.cc
+        server/src/base/pb/protocol/IM.Buddy.pb.h
+        server/src/base/pb/protocol/IM.File.pb.cc
+        server/src/base/pb/protocol/IM.File.pb.h
+        server/src/base/pb/protocol/IM.Group.pb.cc
+        server/src/base/pb/protocol/IM.Group.pb.h
+        server/src/base/pb/protocol/IM.Login.pb.cc
+        server/src/base/pb/protocol/IM.Login.pb.h
+        server/src/base/pb/protocol/IM.Message.pb.cc
+        server/src/base/pb/protocol/IM.Message.pb.h
+        server/src/base/pb/protocol/IM.Other.pb.cc
+        server/src/base/pb/protocol/IM.Other.pb.h
+        server/src/base/pb/protocol/IM.Server.pb.cc
+        server/src/base/pb/protocol/IM.Server.pb.h
+        server/src/base/pb/protocol/IM.SwitchService.pb.cc
+        server/src/base/pb/protocol/IM.SwitchService.pb.h
+        server/src/base/security/security.h
+        server/src/base/slog/slog_api.h
+        server/src/base/atomic.h
+        server/src/base/Base64.cpp
+        server/src/base/Base64.h
+        server/src/base/BaseSocket.cpp
+        server/src/base/BaseSocket.h
+        server/src/base/Condition.cpp
+        server/src/base/Condition.h
+        server/src/base/ConfigFileReader.cpp
+        server/src/base/ConfigFileReader.h
+        server/src/base/EncDec.cpp
+        server/src/base/EncDec.h
+        server/src/base/EventDispatch.cpp
+        server/src/base/EventDispatch.h
+        server/src/base/http_parser.cpp
+        server/src/base/http_parser.h
+        server/src/base/HttpClient.cpp
+        server/src/base/HttpClient.h
+        server/src/base/HttpParserWrapper.cpp
+        server/src/base/HttpParserWrapper.h
+        server/src/base/im_conn_util.cpp
+        server/src/base/im_conn_util.h
+        server/src/base/imconn.cpp
+        server/src/base/imconn.h
+        server/src/base/impdu.h
+        server/src/base/ImPduBase.cpp
+        server/src/base/ImPduBase.h
+        server/src/base/Lock.cpp
+        server/src/base/Lock.h
+        server/src/base/log4z.cpp
+        server/src/base/log4z.h
+        server/src/base/netlib.cpp
+        server/src/base/netlib.h
+        server/src/base/ostype.h
+        server/src/base/public_define.h
+        server/src/base/ServInfo.cpp
+        server/src/base/ServInfo.h
+        server/src/base/singleton.h
+        server/src/base/Task.h
+        server/src/base/Thread.cpp
+        server/src/base/Thread.h
+        server/src/base/ThreadPool.cpp
+        server/src/base/ThreadPool.h
+        server/src/base/TokenValidator.cpp
+        server/src/base/TokenValidator.h
+        server/src/base/util.cpp
+        server/src/base/util.h
+        server/src/base/UtilPdu.cpp
+        server/src/base/UtilPdu.h
+        server/src/base/version.h
+        server/src/db_proxy_server/business/AudioModel.cpp
+        server/src/db_proxy_server/business/AudioModel.h
+        server/src/db_proxy_server/business/Common.h
+        server/src/db_proxy_server/business/DepartAction.cpp
+        server/src/db_proxy_server/business/DepartAction.h
+        server/src/db_proxy_server/business/DepartModel.cpp
+        server/src/db_proxy_server/business/DepartModel.h
+        server/src/db_proxy_server/business/ExterLogin.cpp
+        server/src/db_proxy_server/business/ExterLogin.h
+        server/src/db_proxy_server/business/FileAction.cpp
+        server/src/db_proxy_server/business/FileAction.h
+        server/src/db_proxy_server/business/FileModel.cpp
+        server/src/db_proxy_server/business/FileModel.h
+        server/src/db_proxy_server/business/GroupAction.cpp
+        server/src/db_proxy_server/business/GroupAction.h
+        server/src/db_proxy_server/business/GroupMessageModel.cpp
+        server/src/db_proxy_server/business/GroupMessageModel.h
+        server/src/db_proxy_server/business/GroupModel.cpp
+        server/src/db_proxy_server/business/GroupModel.h
+        server/src/db_proxy_server/business/InterLogin.cpp
+        server/src/db_proxy_server/business/InterLogin.h
+        server/src/db_proxy_server/business/Login.cpp
+        server/src/db_proxy_server/business/Login.h
+        server/src/db_proxy_server/business/LoginStrategy.h
+        server/src/db_proxy_server/business/MessageContent.cpp
+        server/src/db_proxy_server/business/MessageContent.h
+        server/src/db_proxy_server/business/MessageCounter.cpp
+        server/src/db_proxy_server/business/MessageCounter.h
+        server/src/db_proxy_server/business/MessageModel.cpp
+        server/src/db_proxy_server/business/MessageModel.h
+        server/src/db_proxy_server/business/RecentSession.cpp
+        server/src/db_proxy_server/business/RecentSession.h
+        server/src/db_proxy_server/business/RelationModel.cpp
+        server/src/db_proxy_server/business/RelationModel.h
+        server/src/db_proxy_server/business/SessionModel.cpp
+        server/src/db_proxy_server/business/SessionModel.h
+        server/src/db_proxy_server/business/UserAction.cpp
+        server/src/db_proxy_server/business/UserAction.h
+        server/src/db_proxy_server/business/UserModel.cpp
+        server/src/db_proxy_server/business/UserModel.h
+        server/src/db_proxy_server/async.h
+        server/src/db_proxy_server/AutoPool.cpp
+        server/src/db_proxy_server/AutoPool.h
+        server/src/db_proxy_server/CachePool.cpp
+        server/src/db_proxy_server/CachePool.h
+        server/src/db_proxy_server/db_proxy_server.cpp
+        server/src/db_proxy_server/DBPool.cpp
+        server/src/db_proxy_server/DBPool.h
+        server/src/db_proxy_server/HandlerMap.cpp
+        server/src/db_proxy_server/HandlerMap.h
+        server/src/db_proxy_server/hiredis.h
+        server/src/db_proxy_server/ProxyConn.cpp
+        server/src/db_proxy_server/ProxyConn.h
+        server/src/db_proxy_server/ProxyTask.cpp
+        server/src/db_proxy_server/ProxyTask.h
+        server/src/db_proxy_server/read.h
+        server/src/db_proxy_server/sds.h
+        server/src/db_proxy_server/SyncCenter.cpp
+        server/src/db_proxy_server/SyncCenter.h
+        server/src/file_server/config_util.cpp
+        server/src/file_server/config_util.h
+        server/src/file_server/file_client_conn.cpp
+        server/src/file_server/file_client_conn.h
+        server/src/file_server/file_msg_server_conn.cpp
+        server/src/file_server/file_msg_server_conn.h
+        server/src/file_server/file_server.cpp
+        server/src/file_server/file_server_util.h
+        server/src/file_server/offline_file_util.h
+        server/src/file_server/transfer_task.cpp
+        server/src/file_server/transfer_task.h
+        server/src/file_server/transfer_task_manager.cpp
+        server/src/file_server/transfer_task_manager.h
+        server/src/http_msg_server/AttachData.cpp
+        server/src/http_msg_server/AttachData.h
+        server/src/http_msg_server/DBServConn.cpp
+        server/src/http_msg_server/DBServConn.h
+        server/src/http_msg_server/http_msg_server.cpp
+        server/src/http_msg_server/HttpConn.cpp
+        server/src/http_msg_server/HttpConn.h
+        server/src/http_msg_server/HttpPdu.cpp
+        server/src/http_msg_server/HttpPdu.h
+        server/src/http_msg_server/HttpQuery.cpp
+        server/src/http_msg_server/HttpQuery.h
+        server/src/http_msg_server/RouteServConn.cpp
+        server/src/http_msg_server/RouteServConn.h
+        server/src/libsecurity/android/jni/aes.h
+        server/src/libsecurity/android/jni/aes_core.cpp
+        server/src/libsecurity/android/jni/aes_locl.h
+        server/src/libsecurity/android/jni/base64.cpp
+        server/src/libsecurity/android/jni/base64.h
+        server/src/libsecurity/android/jni/md5.cpp
+        server/src/libsecurity/android/jni/md5.h
+        server/src/libsecurity/android/jni/security.cpp
+        server/src/libsecurity/include/security.h
+        server/src/libsecurity/src/aes.h
+        server/src/libsecurity/src/aes_core.cpp
+        server/src/libsecurity/src/aes_locl.h
+        server/src/libsecurity/src/base64.cpp
+        server/src/libsecurity/src/base64.h
+        server/src/libsecurity/src/md5.cpp
+        server/src/libsecurity/src/md5.h
+        server/src/libsecurity/src/security.cpp
+        server/src/log4cxx/console.cpp
+        server/src/log4cxx/inputstreamreader.cpp
+        server/src/log4cxx/socketoutputstream.cpp
+        server/src/login_server/HttpConn.cpp
+        server/src/login_server/HttpConn.h
+        server/src/login_server/ipparser.cpp
+        server/src/login_server/ipparser.h
+        server/src/login_server/login_server.cpp
+        server/src/login_server/LoginConn.cpp
+        server/src/login_server/LoginConn.h
+        server/src/msfs/CriticalSection.h
+        server/src/msfs/FileLin.cpp
+        server/src/msfs/FileLin.h
+        server/src/msfs/FileManager.cpp
+        server/src/msfs/FileManager.h
+        server/src/msfs/HttpConn.cpp
+        server/src/msfs/HttpConn.h
+        server/src/msfs/main.cpp
+        server/src/msfs/Portable.h
+        server/src/msfs/StringUtils.cpp
+        server/src/msfs/StringUtils.h
+        server/src/msg_server/AttachData.cpp
+        server/src/msg_server/AttachData.h
+        server/src/msg_server/DBServConn.cpp
+        server/src/msg_server/DBServConn.h
+        server/src/msg_server/FileHandler.cpp
+        server/src/msg_server/FileHandler.h
+        server/src/msg_server/FileServConn.cpp
+        server/src/msg_server/FileServConn.h
+        server/src/msg_server/GroupChat.cpp
+        server/src/msg_server/GroupChat.h
+        server/src/msg_server/ImUser.cpp
+        server/src/msg_server/ImUser.h
+        server/src/msg_server/jsonxx.cpp
+        server/src/msg_server/jsonxx.h
+        server/src/msg_server/LoginServConn.cpp
+        server/src/msg_server/LoginServConn.h
+        server/src/msg_server/msg_server.cpp
+        server/src/msg_server/MsgConn.cpp
+        server/src/msg_server/MsgConn.h
+        server/src/msg_server/PushServConn.cpp
+        server/src/msg_server/PushServConn.h
+        server/src/msg_server/RouteServConn.cpp
+        server/src/msg_server/RouteServConn.h
+        server/src/protobuf/include/google/protobuf/compiler/cpp/cpp_generator.h
+        server/src/protobuf/include/google/protobuf/compiler/java/java_generator.h
+        server/src/protobuf/include/google/protobuf/compiler/python/python_generator.h
+        server/src/protobuf/include/google/protobuf/compiler/code_generator.h
+        server/src/protobuf/include/google/protobuf/compiler/command_line_interface.h
+        server/src/protobuf/include/google/protobuf/compiler/importer.h
+        server/src/protobuf/include/google/protobuf/compiler/parser.h
+        server/src/protobuf/include/google/protobuf/compiler/plugin.h
+        server/src/protobuf/include/google/protobuf/compiler/plugin.pb.h
+        server/src/protobuf/include/google/protobuf/io/coded_stream.h
+        server/src/protobuf/include/google/protobuf/io/gzip_stream.h
+        server/src/protobuf/include/google/protobuf/io/printer.h
+        server/src/protobuf/include/google/protobuf/io/strtod.h
+        server/src/protobuf/include/google/protobuf/io/tokenizer.h
+        server/src/protobuf/include/google/protobuf/io/zero_copy_stream.h
+        server/src/protobuf/include/google/protobuf/io/zero_copy_stream_impl.h
+        server/src/protobuf/include/google/protobuf/io/zero_copy_stream_impl_lite.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_arm64_gcc.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_arm_gcc.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_arm_qnx.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_atomicword_compat.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_generic_gcc.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_macosx.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_mips_gcc.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_pnacl.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_solaris.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_tsan.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_x86_gcc.h
+        server/src/protobuf/include/google/protobuf/stubs/atomicops_internals_x86_msvc.h
+        server/src/protobuf/include/google/protobuf/stubs/common.h
+        server/src/protobuf/include/google/protobuf/stubs/once.h
+        server/src/protobuf/include/google/protobuf/stubs/platform_macros.h
+        server/src/protobuf/include/google/protobuf/stubs/stl_util.h
+        server/src/protobuf/include/google/protobuf/stubs/template_util.h
+        server/src/protobuf/include/google/protobuf/stubs/type_traits.h
+        server/src/protobuf/include/google/protobuf/descriptor.h
+        server/src/protobuf/include/google/protobuf/descriptor.pb.h
+        server/src/protobuf/include/google/protobuf/descriptor_database.h
+        server/src/protobuf/include/google/protobuf/dynamic_message.h
+        server/src/protobuf/include/google/protobuf/extension_set.h
+        server/src/protobuf/include/google/protobuf/generated_enum_reflection.h
+        server/src/protobuf/include/google/protobuf/generated_message_reflection.h
+        server/src/protobuf/include/google/protobuf/generated_message_util.h
+        server/src/protobuf/include/google/protobuf/message.h
+        server/src/protobuf/include/google/protobuf/message_lite.h
+        server/src/protobuf/include/google/protobuf/reflection_ops.h
+        server/src/protobuf/include/google/protobuf/repeated_field.h
+        server/src/protobuf/include/google/protobuf/service.h
+        server/src/protobuf/include/google/protobuf/text_format.h
+        server/src/protobuf/include/google/protobuf/unknown_field_set.h
+        server/src/protobuf/include/google/protobuf/wire_format.h
+        server/src/protobuf/include/google/protobuf/wire_format_lite.h
+        server/src/protobuf/include/google/protobuf/wire_format_lite_inl.h
+        server/src/push_server/bufferloop/buffer_loop.hpp
+        server/src/push_server/sigslot/sigslot.h
+        server/src/push_server/socket/base_handler.hpp
+        server/src/push_server/socket/base_io_stream.cpp
+        server/src/push_server/socket/base_io_stream.h
+        server/src/push_server/socket/base_msg.h
+        server/src/push_server/socket/base_socket.hpp
+        server/src/push_server/socket/base_thread.hpp
+        server/src/push_server/socket/epoll_io_loop.cpp
+        server/src/push_server/socket/epoll_io_loop.h
+        server/src/push_server/socket/io_loop.cpp
+        server/src/push_server/socket/io_loop.h
+        server/src/push_server/socket/socket_io.h
+        server/src/push_server/socket/socket_io_define.h
+        server/src/push_server/socket/ssl_client_async.cpp
+        server/src/push_server/socket/ssl_client_async.h
+        server/src/push_server/socket/tcp_client_async.cpp
+        server/src/push_server/socket/tcp_client_async.h
+        server/src/push_server/socket/tcp_server.cpp
+        server/src/push_server/socket/tcp_server.h
+        server/src/push_server/socket/tcp_session_async.cpp
+        server/src/push_server/socket/tcp_session_async.h
+        server/src/push_server/thread/base_thread.hpp
+        server/src/push_server/timer/Timer.hpp
+        server/src/push_server/type/base_type.h
+        server/src/push_server/apns_client.cpp
+        server/src/push_server/apns_client.h
+        server/src/push_server/apns_client_handler.cpp
+        server/src/push_server/apns_client_handler.h
+        server/src/push_server/apns_feedback_handler.cpp
+        server/src/push_server/apns_feedback_handler.h
+        server/src/push_server/apns_msg.cpp
+        server/src/push_server/apns_msg.h
+        server/src/push_server/byte_stream.cpp
+        server/src/push_server/byte_stream.h
+        server/src/push_server/ConfigFileReader.cpp
+        server/src/push_server/ConfigFileReader.h
+        server/src/push_server/jsonxx.cpp
+        server/src/push_server/jsonxx.h
+        server/src/push_server/main.cpp
+        server/src/push_server/pdu_msg.cpp
+        server/src/push_server/pdu_msg.h
+        server/src/push_server/push_app.cpp
+        server/src/push_server/push_app.h
+        server/src/push_server/push_app_define.h
+        server/src/push_server/push_define.h
+        server/src/push_server/push_server.cpp
+        server/src/push_server/push_server.h
+        server/src/push_server/push_server_handler.cpp
+        server/src/push_server/push_server_handler.h
+        server/src/push_server/push_session.cpp
+        server/src/push_server/push_session.h
+        server/src/push_server/push_session_handler.cpp
+        server/src/push_server/push_session_handler.h
+        server/src/push_server/session_manager.cpp
+        server/src/push_server/session_manager.h
+        server/src/route_server/route_server.cpp
+        server/src/route_server/RouteConn.cpp
+        server/src/route_server/RouteConn.h
+        server/src/route_server/UserInfo.cpp
+        server/src/route_server/UserInfo.h
+        server/src/slog/slog_api.cpp
+        server/src/slog/slog_api.h
+        server/src/test/Client.cpp
+        server/src/test/Client.h
+        server/src/test/ClientConn.cpp
+        server/src/test/ClientConn.h
+        server/src/test/Common.h
+        server/src/test/IPacketCallback.h
+        server/src/test/playsound.h
+        server/src/test/playsound.mm
+        server/src/test/SeqAlloctor.cpp
+        server/src/test/SeqAlloctor.h
+        server/src/test/test_client.cpp
+        server/src/tools/daeml.cpp
+        win-client/3rdParty/include/google/protobuf/compiler/cpp/cpp_generator.h
+        win-client/3rdParty/include/google/protobuf/compiler/java/java_generator.h
+        win-client/3rdParty/include/google/protobuf/compiler/python/python_generator.h
+        win-client/3rdParty/include/google/protobuf/compiler/code_generator.h
+        win-client/3rdParty/include/google/protobuf/compiler/command_line_interface.h
+        win-client/3rdParty/include/google/protobuf/compiler/importer.h
+        win-client/3rdParty/include/google/protobuf/compiler/parser.h
+        win-client/3rdParty/include/google/protobuf/compiler/plugin.h
+        win-client/3rdParty/include/google/protobuf/io/coded_stream.h
+        win-client/3rdParty/include/google/protobuf/io/gzip_stream.h
+        win-client/3rdParty/include/google/protobuf/io/printer.h
+        win-client/3rdParty/include/google/protobuf/io/strtod.h
+        win-client/3rdParty/include/google/protobuf/io/tokenizer.h
+        win-client/3rdParty/include/google/protobuf/io/zero_copy_stream.h
+        win-client/3rdParty/include/google/protobuf/io/zero_copy_stream_impl.h
+        win-client/3rdParty/include/google/protobuf/io/zero_copy_stream_impl_lite.h
+        win-client/3rdParty/include/google/protobuf/stubs/atomicops.h
+        win-client/3rdParty/include/google/protobuf/stubs/atomicops_internals_x86_msvc.h
+        win-client/3rdParty/include/google/protobuf/stubs/common.h
+        win-client/3rdParty/include/google/protobuf/stubs/once.h
+        win-client/3rdParty/include/google/protobuf/stubs/platform_macros.h
+        win-client/3rdParty/include/google/protobuf/stubs/stl_util.h
+        win-client/3rdParty/include/google/protobuf/stubs/template_util.h
+        win-client/3rdParty/include/google/protobuf/stubs/type_traits.h
+        win-client/3rdParty/include/google/protobuf/descriptor.h
+        win-client/3rdParty/include/google/protobuf/descriptor.pb.h
+        win-client/3rdParty/include/google/protobuf/descriptor_database.h
+        win-client/3rdParty/include/google/protobuf/dynamic_message.h
+        win-client/3rdParty/include/google/protobuf/extension_set.h
+        win-client/3rdParty/include/google/protobuf/generated_enum_reflection.h
+        win-client/3rdParty/include/google/protobuf/generated_message_reflection.h
+        win-client/3rdParty/include/google/protobuf/generated_message_util.h
+        win-client/3rdParty/include/google/protobuf/message.h
+        win-client/3rdParty/include/google/protobuf/message_lite.h
+        win-client/3rdParty/include/google/protobuf/reflection_ops.h
+        win-client/3rdParty/include/google/protobuf/repeated_field.h
+        win-client/3rdParty/include/google/protobuf/service.h
+        win-client/3rdParty/include/google/protobuf/text_format.h
+        win-client/3rdParty/include/google/protobuf/unknown_field_set.h
+        win-client/3rdParty/include/google/protobuf/wire_format.h
+        win-client/3rdParty/include/google/protobuf/wire_format_lite.h
+        win-client/3rdParty/include/google/protobuf/wire_format_lite_inl.h
+        win-client/3rdParty/include/sqlite3/sqlite3.h
+        win-client/3rdParty/include/security.h
+        win-client/3rdParty/src/cxImage/cxImage/xfile.h
+        win-client/3rdParty/src/cxImage/cxImage/ximabmp.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximabmp.h
+        win-client/3rdParty/src/cxImage/cxImage/ximacfg.h
+        win-client/3rdParty/src/cxImage/cxImage/ximadef.h
+        win-client/3rdParty/src/cxImage/cxImage/ximaenc.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximaexif.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximage.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximage.h
+        win-client/3rdParty/src/cxImage/cxImage/ximagif.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximagif.h
+        win-client/3rdParty/src/cxImage/cxImage/ximainfo.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximaiter.h
+        win-client/3rdParty/src/cxImage/cxImage/ximajpg.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximajpg.h
+        win-client/3rdParty/src/cxImage/cxImage/ximalpha.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximalyr.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximapal.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximapng.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximapng.h
+        win-client/3rdParty/src/cxImage/cxImage/ximath.h
+        win-client/3rdParty/src/cxImage/cxImage/ximatran.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximawbmp.cpp
+        win-client/3rdParty/src/cxImage/cxImage/ximawbmp.h
+        win-client/3rdParty/src/cxImage/cxImage/ximawnd.cpp
+        win-client/3rdParty/src/cxImage/cxImage/xiofile.h
+        win-client/3rdParty/src/cxImage/cxImage/xmemfile.cpp
+        win-client/3rdParty/src/cxImage/cxImage/xmemfile.h
+        win-client/3rdParty/src/cxImage/jpeg/jcapimin.c
+        win-client/3rdParty/src/cxImage/jpeg/jcapistd.c
+        win-client/3rdParty/src/cxImage/jpeg/jccoefct.c
+        win-client/3rdParty/src/cxImage/jpeg/jccolor.c
+        win-client/3rdParty/src/cxImage/jpeg/jcdctmgr.c
+        win-client/3rdParty/src/cxImage/jpeg/jchuff.c
+        win-client/3rdParty/src/cxImage/jpeg/jchuff.h
+        win-client/3rdParty/src/cxImage/jpeg/jcinit.c
+        win-client/3rdParty/src/cxImage/jpeg/jcmainct.c
+        win-client/3rdParty/src/cxImage/jpeg/jcmarker.c
+        win-client/3rdParty/src/cxImage/jpeg/jcmaster.c
+        win-client/3rdParty/src/cxImage/jpeg/jcomapi.c
+        win-client/3rdParty/src/cxImage/jpeg/jconfig.h
+        win-client/3rdParty/src/cxImage/jpeg/jcparam.c
+        win-client/3rdParty/src/cxImage/jpeg/jcphuff.c
+        win-client/3rdParty/src/cxImage/jpeg/jcprepct.c
+        win-client/3rdParty/src/cxImage/jpeg/jcsample.c
+        win-client/3rdParty/src/cxImage/jpeg/jctrans.c
+        win-client/3rdParty/src/cxImage/jpeg/jdapimin.c
+        win-client/3rdParty/src/cxImage/jpeg/jdapistd.c
+        win-client/3rdParty/src/cxImage/jpeg/jdatadst.c
+        win-client/3rdParty/src/cxImage/jpeg/jdatasrc.c
+        win-client/3rdParty/src/cxImage/jpeg/jdcoefct.c
+        win-client/3rdParty/src/cxImage/jpeg/jdcolor.c
+        win-client/3rdParty/src/cxImage/jpeg/jdct.h
+        win-client/3rdParty/src/cxImage/jpeg/jddctmgr.c
+        win-client/3rdParty/src/cxImage/jpeg/jdhuff.c
+        win-client/3rdParty/src/cxImage/jpeg/jdhuff.h
+        win-client/3rdParty/src/cxImage/jpeg/jdinput.c
+        win-client/3rdParty/src/cxImage/jpeg/jdmainct.c
+        win-client/3rdParty/src/cxImage/jpeg/jdmarker.c
+        win-client/3rdParty/src/cxImage/jpeg/jdmaster.c
+        win-client/3rdParty/src/cxImage/jpeg/jdmerge.c
+        win-client/3rdParty/src/cxImage/jpeg/jdphuff.c
+        win-client/3rdParty/src/cxImage/jpeg/jdpostct.c
+        win-client/3rdParty/src/cxImage/jpeg/jdsample.c
+        win-client/3rdParty/src/cxImage/jpeg/jdtrans.c
+        win-client/3rdParty/src/cxImage/jpeg/jerror.c
+        win-client/3rdParty/src/cxImage/jpeg/jerror.h
+        win-client/3rdParty/src/cxImage/jpeg/jfdctflt.c
+        win-client/3rdParty/src/cxImage/jpeg/jfdctfst.c
+        win-client/3rdParty/src/cxImage/jpeg/jfdctint.c
+        win-client/3rdParty/src/cxImage/jpeg/jidctflt.c
+        win-client/3rdParty/src/cxImage/jpeg/jidctfst.c
+        win-client/3rdParty/src/cxImage/jpeg/jidctint.c
+        win-client/3rdParty/src/cxImage/jpeg/jidctred.c
+        win-client/3rdParty/src/cxImage/jpeg/jinclude.h
+        win-client/3rdParty/src/cxImage/jpeg/jmemmgr.c
+        win-client/3rdParty/src/cxImage/jpeg/jmemnobs.c
+        win-client/3rdParty/src/cxImage/jpeg/jmemsys.h
+        win-client/3rdParty/src/cxImage/jpeg/jmorecfg.h
+        win-client/3rdParty/src/cxImage/jpeg/jpegint.h
+        win-client/3rdParty/src/cxImage/jpeg/jpeglib.h
+        win-client/3rdParty/src/cxImage/jpeg/jquant1.c
+        win-client/3rdParty/src/cxImage/jpeg/jquant2.c
+        win-client/3rdParty/src/cxImage/jpeg/jutils.c
+        win-client/3rdParty/src/cxImage/jpeg/jversion.h
+        win-client/3rdParty/src/cxImage/png/png.c
+        win-client/3rdParty/src/cxImage/png/png.h
+        win-client/3rdParty/src/cxImage/png/pngconf.h
+        win-client/3rdParty/src/cxImage/png/pngerror.c
+        win-client/3rdParty/src/cxImage/png/pnggccrd.c
+        win-client/3rdParty/src/cxImage/png/pngget.c
+        win-client/3rdParty/src/cxImage/png/pngmem.c
+        win-client/3rdParty/src/cxImage/png/pngpread.c
+        win-client/3rdParty/src/cxImage/png/pngread.c
+        win-client/3rdParty/src/cxImage/png/pngrio.c
+        win-client/3rdParty/src/cxImage/png/pngrtran.c
+        win-client/3rdParty/src/cxImage/png/pngrutil.c
+        win-client/3rdParty/src/cxImage/png/pngset.c
+        win-client/3rdParty/src/cxImage/png/pngtrans.c
+        win-client/3rdParty/src/cxImage/png/pngvcrd.c
+        win-client/3rdParty/src/cxImage/png/pngwio.c
+        win-client/3rdParty/src/cxImage/png/pngwrite.c
+        win-client/3rdParty/src/cxImage/png/pngwtran.c
+        win-client/3rdParty/src/cxImage/png/pngwutil.c
+        win-client/3rdParty/src/cxImage/zlib/adler32.c
+        win-client/3rdParty/src/cxImage/zlib/compress.c
+        win-client/3rdParty/src/cxImage/zlib/crc32.c
+        win-client/3rdParty/src/cxImage/zlib/crc32.h
+        win-client/3rdParty/src/cxImage/zlib/deflate.c
+        win-client/3rdParty/src/cxImage/zlib/deflate.h
+        win-client/3rdParty/src/cxImage/zlib/gzio.c
+        win-client/3rdParty/src/cxImage/zlib/infback.c
+        win-client/3rdParty/src/cxImage/zlib/inffast.c
+        win-client/3rdParty/src/cxImage/zlib/inffast.h
+        win-client/3rdParty/src/cxImage/zlib/inffixed.h
+        win-client/3rdParty/src/cxImage/zlib/inflate.c
+        win-client/3rdParty/src/cxImage/zlib/inflate.h
+        win-client/3rdParty/src/cxImage/zlib/inftrees.c
+        win-client/3rdParty/src/cxImage/zlib/inftrees.h
+        win-client/3rdParty/src/cxImage/zlib/trees.c
+        win-client/3rdParty/src/cxImage/zlib/trees.h
+        win-client/3rdParty/src/cxImage/zlib/uncompr.c
+        win-client/3rdParty/src/cxImage/zlib/zconf.h
+        win-client/3rdParty/src/cxImage/zlib/zconf.in.h
+        win-client/3rdParty/src/cxImage/zlib/zlib.h
+        win-client/3rdParty/src/cxImage/zlib/zutil.c
+        win-client/3rdParty/src/cxImage/zlib/zutil.h
+        win-client/3rdParty/src/http/httpclient/base64.cpp
+        win-client/3rdParty/src/http/httpclient/base64.h
+        win-client/3rdParty/src/http/httpclient/dll_init.cpp
+        win-client/3rdParty/src/http/httpclient/file_reader.cpp
+        win-client/3rdParty/src/http/httpclient/file_reader.h
+        win-client/3rdParty/src/http/httpclient/file_writer.cpp
+        win-client/3rdParty/src/http/httpclient/file_writer.h
+        win-client/3rdParty/src/http/httpclient/global_defs.h
+        win-client/3rdParty/src/http/httpclient/http.h
+        win-client/3rdParty/src/http/httpclient/http_client.cpp
+        win-client/3rdParty/src/http/httpclient/http_client.h
+        win-client/3rdParty/src/http/httpclient/http_delegate.h
+        win-client/3rdParty/src/http/httpclient/http_global.h
+        win-client/3rdParty/src/http/httpclient/http_header_parser.cpp
+        win-client/3rdParty/src/http/httpclient/http_header_parser.h
+        win-client/3rdParty/src/http/httpclient/http_pool.cpp
+        win-client/3rdParty/src/http/httpclient/http_pool.h
+        win-client/3rdParty/src/http/httpclient/http_post_file.cpp
+        win-client/3rdParty/src/http/httpclient/http_post_file.h
+        win-client/3rdParty/src/http/httpclient/http_request.cpp
+        win-client/3rdParty/src/http/httpclient/http_request.h
+        win-client/3rdParty/src/http/httpclient/http_response.cpp
+        win-client/3rdParty/src/http/httpclient/http_response.h
+        win-client/3rdParty/src/http/httpclient/http_response_receiver.cpp
+        win-client/3rdParty/src/http/httpclient/http_response_receiver.h
+        win-client/3rdParty/src/http/httpclient/http_thread.cpp
+        win-client/3rdParty/src/http/httpclient/http_thread.h
+        win-client/3rdParty/src/http/httpclient/lock.h
+        win-client/3rdParty/src/http/httpclient/proxy_config.h
+        "win-client/3rdParty/src/http/httpclient/proxy_socket .cpp"
+        win-client/3rdParty/src/http/httpclient/proxy_socket.h
+        win-client/3rdParty/src/http/httpclient/socket_helper.cpp
+        win-client/3rdParty/src/http/httpclient/socket_helper.h
+        win-client/3rdParty/src/http/httpclient/standard_header.h
+        win-client/3rdParty/src/http/httpclient/streaming_socket.cpp
+        win-client/3rdParty/src/http/httpclient/streaming_socket.h
+        win-client/3rdParty/src/http/httpclient/thread.cpp
+        win-client/3rdParty/src/http/httpclient/thread.h
+        win-client/3rdParty/src/http/httpclient/url_parser.cpp
+        win-client/3rdParty/src/http/httpclient/url_parser.h
+        win-client/3rdParty/src/http/httpclient/util.cpp
+        win-client/3rdParty/src/http/httpclient/util.h
+        win-client/3rdParty/src/http/test/main.cpp
+        win-client/3rdParty/src/json/include/json/assertions.h
+        win-client/3rdParty/src/json/include/json/autolink.h
+        win-client/3rdParty/src/json/include/json/config.h
+        win-client/3rdParty/src/json/include/json/features.h
+        win-client/3rdParty/src/json/include/json/forwards.h
+        win-client/3rdParty/src/json/include/json/json.h
+        win-client/3rdParty/src/json/include/json/reader.h
+        win-client/3rdParty/src/json/include/json/value.h
+        win-client/3rdParty/src/json/include/json/writer.h
+        win-client/3rdParty/src/json/src/jsontestrunner/main.cpp
+        win-client/3rdParty/src/json/src/lib_json/json_batchallocator.h
+        win-client/3rdParty/src/json/src/lib_json/json_internalarray.inl
+        win-client/3rdParty/src/json/src/lib_json/json_internalmap.inl
+        win-client/3rdParty/src/json/src/lib_json/json_reader.cpp
+        win-client/3rdParty/src/json/src/lib_json/json_tool.h
+        win-client/3rdParty/src/json/src/lib_json/json_value.cpp
+        win-client/3rdParty/src/json/src/lib_json/json_valueiterator.inl
+        win-client/3rdParty/src/json/src/lib_json/json_writer.cpp
+        win-client/3rdParty/src/json/src/test_lib_json/jsontest.cpp
+        win-client/3rdParty/src/json/src/test_lib_json/jsontest.h
+        win-client/3rdParty/src/json/src/test_lib_json/main.cpp
+        win-client/3rdParty/src/libogg/include/ogg/ogg.h
+        win-client/3rdParty/src/libogg/include/ogg/os_types.h
+        win-client/3rdParty/src/libogg/src/bitwise.c
+        win-client/3rdParty/src/libogg/src/framing.c
+        win-client/3rdParty/src/libspeex/include/speex/speex.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_bits.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_buffer.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_callbacks.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_echo.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_header.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_jitter.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_preprocess.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_resampler.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_stereo.h
+        win-client/3rdParty/src/libspeex/include/speex/speex_types.h
+        win-client/3rdParty/src/libspeex/libspeex/_kiss_fft_guts.h
+        win-client/3rdParty/src/libspeex/libspeex/arch.h
+        win-client/3rdParty/src/libspeex/libspeex/bits.c
+        win-client/3rdParty/src/libspeex/libspeex/buffer.c
+        win-client/3rdParty/src/libspeex/libspeex/cb_search.c
+        win-client/3rdParty/src/libspeex/libspeex/cb_search.h
+        win-client/3rdParty/src/libspeex/libspeex/cb_search_arm4.h
+        win-client/3rdParty/src/libspeex/libspeex/cb_search_bfin.h
+        win-client/3rdParty/src/libspeex/libspeex/cb_search_sse.h
+        win-client/3rdParty/src/libspeex/libspeex/echo_diagnostic.m
+        win-client/3rdParty/src/libspeex/libspeex/exc_10_16_table.c
+        win-client/3rdParty/src/libspeex/libspeex/exc_10_32_table.c
+        win-client/3rdParty/src/libspeex/libspeex/exc_20_32_table.c
+        win-client/3rdParty/src/libspeex/libspeex/exc_5_256_table.c
+        win-client/3rdParty/src/libspeex/libspeex/exc_5_64_table.c
+        win-client/3rdParty/src/libspeex/libspeex/exc_8_128_table.c
+        win-client/3rdParty/src/libspeex/libspeex/fftwrap.c
+        win-client/3rdParty/src/libspeex/libspeex/fftwrap.h
+        win-client/3rdParty/src/libspeex/libspeex/filterbank.c
+        win-client/3rdParty/src/libspeex/libspeex/filterbank.h
+        win-client/3rdParty/src/libspeex/libspeex/filters.c
+        win-client/3rdParty/src/libspeex/libspeex/filters.h
+        win-client/3rdParty/src/libspeex/libspeex/filters_arm4.h
+        win-client/3rdParty/src/libspeex/libspeex/filters_bfin.h
+        win-client/3rdParty/src/libspeex/libspeex/filters_sse.h
+        win-client/3rdParty/src/libspeex/libspeex/fixed_arm4.h
+        win-client/3rdParty/src/libspeex/libspeex/fixed_arm5e.h
+        win-client/3rdParty/src/libspeex/libspeex/fixed_bfin.h
+        win-client/3rdParty/src/libspeex/libspeex/fixed_debug.h
+        win-client/3rdParty/src/libspeex/libspeex/fixed_generic.h
+        win-client/3rdParty/src/libspeex/libspeex/gain_table.c
+        win-client/3rdParty/src/libspeex/libspeex/gain_table_lbr.c
+        win-client/3rdParty/src/libspeex/libspeex/hexc_10_32_table.c
+        win-client/3rdParty/src/libspeex/libspeex/hexc_table.c
+        win-client/3rdParty/src/libspeex/libspeex/high_lsp_tables.c
+        win-client/3rdParty/src/libspeex/libspeex/jitter.c
+        win-client/3rdParty/src/libspeex/libspeex/kiss_fft.c
+        win-client/3rdParty/src/libspeex/libspeex/kiss_fft.h
+        win-client/3rdParty/src/libspeex/libspeex/kiss_fftr.c
+        win-client/3rdParty/src/libspeex/libspeex/kiss_fftr.h
+        win-client/3rdParty/src/libspeex/libspeex/lpc.c
+        win-client/3rdParty/src/libspeex/libspeex/lpc.h
+        win-client/3rdParty/src/libspeex/libspeex/lpc_bfin.h
+        win-client/3rdParty/src/libspeex/libspeex/lsp.c
+        win-client/3rdParty/src/libspeex/libspeex/lsp.h
+        win-client/3rdParty/src/libspeex/libspeex/lsp_bfin.h
+        win-client/3rdParty/src/libspeex/libspeex/lsp_tables_nb.c
+        win-client/3rdParty/src/libspeex/libspeex/ltp.c
+        win-client/3rdParty/src/libspeex/libspeex/ltp.h
+        win-client/3rdParty/src/libspeex/libspeex/ltp_arm4.h
+        win-client/3rdParty/src/libspeex/libspeex/ltp_bfin.h
+        win-client/3rdParty/src/libspeex/libspeex/ltp_sse.h
+        win-client/3rdParty/src/libspeex/libspeex/math_approx.h
+        win-client/3rdParty/src/libspeex/libspeex/mdf.c
+        win-client/3rdParty/src/libspeex/libspeex/misc_bfin.h
+        win-client/3rdParty/src/libspeex/libspeex/modes.c
+        win-client/3rdParty/src/libspeex/libspeex/modes.h
+        win-client/3rdParty/src/libspeex/libspeex/modes_wb.c
+        win-client/3rdParty/src/libspeex/libspeex/nb_celp.c
+        win-client/3rdParty/src/libspeex/libspeex/nb_celp.h
+        win-client/3rdParty/src/libspeex/libspeex/os_support.h
+        win-client/3rdParty/src/libspeex/libspeex/preprocess.c
+        win-client/3rdParty/src/libspeex/libspeex/pseudofloat.h
+        win-client/3rdParty/src/libspeex/libspeex/quant_lsp.c
+        win-client/3rdParty/src/libspeex/libspeex/quant_lsp.h
+        win-client/3rdParty/src/libspeex/libspeex/quant_lsp_bfin.h
+        win-client/3rdParty/src/libspeex/libspeex/resample.c
+        win-client/3rdParty/src/libspeex/libspeex/resample_sse.h
+        win-client/3rdParty/src/libspeex/libspeex/sb_celp.c
+        win-client/3rdParty/src/libspeex/libspeex/sb_celp.h
+        win-client/3rdParty/src/libspeex/libspeex/scal.c
+        win-client/3rdParty/src/libspeex/libspeex/smallft.c
+        win-client/3rdParty/src/libspeex/libspeex/smallft.h
+        win-client/3rdParty/src/libspeex/libspeex/speex.c
+        win-client/3rdParty/src/libspeex/libspeex/speex_callbacks.c
+        win-client/3rdParty/src/libspeex/libspeex/speex_header.c
+        win-client/3rdParty/src/libspeex/libspeex/stack_alloc.h
+        win-client/3rdParty/src/libspeex/libspeex/stereo.c
+        win-client/3rdParty/src/libspeex/libspeex/testdenoise.c
+        win-client/3rdParty/src/libspeex/libspeex/testecho.c
+        win-client/3rdParty/src/libspeex/libspeex/testenc.c
+        win-client/3rdParty/src/libspeex/libspeex/testenc_uwb.c
+        win-client/3rdParty/src/libspeex/libspeex/testenc_wb.c
+        win-client/3rdParty/src/libspeex/libspeex/testjitter.c
+        win-client/3rdParty/src/libspeex/libspeex/vbr.c
+        win-client/3rdParty/src/libspeex/libspeex/vbr.h
+        win-client/3rdParty/src/libspeex/libspeex/vorbis_psy.h
+        win-client/3rdParty/src/libspeex/libspeex/vq.c
+        win-client/3rdParty/src/libspeex/libspeex/vq.h
+        win-client/3rdParty/src/libspeex/libspeex/vq_arm4.h
+        win-client/3rdParty/src/libspeex/libspeex/vq_bfin.h
+        win-client/3rdParty/src/libspeex/libspeex/vq_sse.h
+        win-client/3rdParty/src/libspeex/libspeex/window.c
+        win-client/3rdParty/src/libspeex/src/getopt.c
+        win-client/3rdParty/src/libspeex/src/getopt1.c
+        win-client/3rdParty/src/libspeex/src/getopt_win.h
+        win-client/3rdParty/src/libspeex/src/skeleton.c
+        win-client/3rdParty/src/libspeex/src/skeleton.h
+        win-client/3rdParty/src/libspeex/src/speexdec.c
+        win-client/3rdParty/src/libspeex/src/speexdec_multiThread.c
+        win-client/3rdParty/src/libspeex/src/speexenc.c
+        win-client/3rdParty/src/libspeex/src/wav_io.c
+        win-client/3rdParty/src/libspeex/src/wav_io.h
+        win-client/3rdParty/src/libspeex/src/wave_out.c
+        win-client/3rdParty/src/libspeex/src/wave_out.h
+        win-client/3rdParty/src/libspeex/src/wave_out_multiThread.c
+        win-client/3rdParty/src/libspeex/config.h
+        win-client/3rdParty/src/libspeex/DDlog.h
+        win-client/3rdParty/src/yaolog/yaolog.cpp
+        win-client/3rdParty/src/yaolog/yaolog.h
+        win-client/3rdParty/src/security.cpp
+        win-client/core/DuiLib/Control/observer_impl_base.hpp
+        win-client/core/DuiLib/Control/UIActiveX.cpp
+        win-client/core/DuiLib/Control/UIActiveX.h
+        win-client/core/DuiLib/Control/UIButton.cpp
+        win-client/core/DuiLib/Control/UIButton.h
+        win-client/core/DuiLib/Control/UICheckBox.cpp
+        win-client/core/DuiLib/Control/UICheckBox.h
+        win-client/core/DuiLib/Control/UICombo.cpp
+        win-client/core/DuiLib/Control/UICombo.h
+        win-client/core/DuiLib/Control/UIComboBox.cpp
+        win-client/core/DuiLib/Control/UIComboBox.h
+        win-client/core/DuiLib/Control/UIDateTime.cpp
+        win-client/core/DuiLib/Control/UIDateTime.h
+        win-client/core/DuiLib/Control/UIEdit.cpp
+        win-client/core/DuiLib/Control/UIEdit.h
+        win-client/core/DuiLib/Control/UIFlash.cpp
+        win-client/core/DuiLib/Control/UIFlash.h
+        win-client/core/DuiLib/Control/UIGifAnim.cpp
+        win-client/core/DuiLib/Control/UIGifAnim.h
+        "win-client/core/DuiLib/Control/UILabel bak.cpp"
+        "win-client/core/DuiLib/Control/UILabel bak.h"
+        win-client/core/DuiLib/Control/UILabel.cpp
+        win-client/core/DuiLib/Control/UILabel.h
+        win-client/core/DuiLib/Control/UIList.cpp
+        win-client/core/DuiLib/Control/UIList.h
+        win-client/core/DuiLib/Control/UIMenu.cpp
+        win-client/core/DuiLib/Control/UIMenu.h
+        win-client/core/DuiLib/Control/UIOption.cpp
+        win-client/core/DuiLib/Control/UIOption.h
+        win-client/core/DuiLib/Control/UIProgress.cpp
+        win-client/core/DuiLib/Control/UIProgress.h
+        win-client/core/DuiLib/Control/UIRichEdit.cpp
+        win-client/core/DuiLib/Control/UIRichEdit.h
+        win-client/core/DuiLib/Control/UIScrollBar.cpp
+        win-client/core/DuiLib/Control/UIScrollBar.h
+        win-client/core/DuiLib/Control/UISlider.cpp
+        win-client/core/DuiLib/Control/UISlider.h
+        win-client/core/DuiLib/Control/UIText.cpp
+        win-client/core/DuiLib/Control/UIText.h
+        win-client/core/DuiLib/Control/UITreeView.cpp
+        win-client/core/DuiLib/Control/UITreeView.h
+        win-client/core/DuiLib/Control/UIWebBrowser.cpp
+        win-client/core/DuiLib/Control/UIWebBrowser.h
+        win-client/core/DuiLib/Core/UIBase.cpp
+        win-client/core/DuiLib/Core/UIBase.h
+        win-client/core/DuiLib/Core/UIContainer.cpp
+        win-client/core/DuiLib/Core/UIContainer.h
+        win-client/core/DuiLib/Core/UIControl.cpp
+        win-client/core/DuiLib/Core/UIControl.h
+        win-client/core/DuiLib/Core/UIDefine.h
+        win-client/core/DuiLib/Core/UIDlgBuilder.cpp
+        win-client/core/DuiLib/Core/UIDlgBuilder.h
+        win-client/core/DuiLib/Core/UIManager.cpp
+        win-client/core/DuiLib/Core/UIManager.h
+        win-client/core/DuiLib/Core/UIMarkup.cpp
+        win-client/core/DuiLib/Core/UIMarkup.h
+        win-client/core/DuiLib/Core/UIRender.cpp
+        win-client/core/DuiLib/Core/UIRender.h
+        win-client/core/DuiLib/Layout/UIChildLayout.cpp
+        win-client/core/DuiLib/Layout/UIChildLayout.h
+        win-client/core/DuiLib/Layout/UIHorizontalLayout.cpp
+        win-client/core/DuiLib/Layout/UIHorizontalLayout.h
+        win-client/core/DuiLib/Layout/UITabLayout.cpp
+        win-client/core/DuiLib/Layout/UITabLayout.h
+        win-client/core/DuiLib/Layout/UITileLayout.cpp
+        win-client/core/DuiLib/Layout/UITileLayout.h
+        win-client/core/DuiLib/Layout/UIVerticalLayout.cpp
+        win-client/core/DuiLib/Layout/UIVerticalLayout.h
+        win-client/core/DuiLib/Utils/DialogManager.cpp
+        win-client/core/DuiLib/Utils/DialogManager.h
+        win-client/core/DuiLib/Utils/downloadmgr.h
+        win-client/core/DuiLib/Utils/FlashEventHandler.h
+        win-client/core/DuiLib/Utils/stb_image.c
+        win-client/core/DuiLib/Utils/UIDelegate.cpp
+        win-client/core/DuiLib/Utils/UIDelegate.h
+        win-client/core/DuiLib/Utils/UIShadow.cpp
+        win-client/core/DuiLib/Utils/UIShadow.h
+        win-client/core/DuiLib/Utils/Utils.cpp
+        win-client/core/DuiLib/Utils/Utils.h
+        win-client/core/DuiLib/Utils/WebBrowserEventHandler.h
+        win-client/core/DuiLib/Utils/WinImplBase.cpp
+        win-client/core/DuiLib/Utils/WinImplBase.h
+        win-client/core/DuiLib/Utils/WndShadow.cpp
+        win-client/core/DuiLib/Utils/WndShadow.h
+        win-client/core/DuiLib/Utils/XUnzip.cpp
+        win-client/core/DuiLib/StdAfx.cpp
+        win-client/core/DuiLib/StdAfx.h
+        win-client/core/DuiLib/UIlib.cpp
+        win-client/core/DuiLib/UIlib.h
+        win-client/core/network/BaseSocket.cpp
+        win-client/core/network/BaseSocket.h
+        win-client/core/network/dllmain.cpp
+        win-client/core/network/EventDispatch.cpp
+        win-client/core/network/EventDispatch.h
+        win-client/core/network/imconn.cpp
+        win-client/core/network/ImCore.cpp
+        win-client/core/network/Lock.cpp
+        win-client/core/network/netlib.cpp
+        win-client/core/network/network.cpp
+        win-client/core/network/Operation.cpp
+        win-client/core/network/OperationManager.cpp
+        win-client/core/network/OperationManager.h
+        win-client/core/network/stdafx.cpp
+        win-client/core/network/stdafx.h
+        win-client/core/network/targetver.h
+        win-client/core/network/TcpSocketsManager.cpp
+        win-client/core/network/TcpSocketsManager.h
+        win-client/core/network/TTPBHeader.cpp
+        win-client/core/network/util.cpp
+        win-client/core/network/UtilPdu.cpp
+        win-client/core/utility/CppSQLite3.cpp
+        win-client/core/utility/IniOperation.cpp
+        win-client/core/utility/md5.cpp
+        win-client/core/utility/md5.h
+        win-client/core/utility/Multilingual.cpp
+        win-client/core/utility/Resource.h
+        win-client/core/utility/stdafx.cpp
+        win-client/core/utility/stdafx.h
+        win-client/core/utility/targetver.h
+        win-client/core/utility/TTThread.cpp
+        win-client/core/utility/utilCommonAPI.cpp
+        win-client/core/utility/utility.cpp
+        win-client/core/utility/utility.h
+        win-client/core/utility/utilStrCodingAPI.cpp
+        win-client/core/utility/XZip.cpp
+        win-client/include/DuilibEx/DuilibExDll.h
+        win-client/include/GifSmiley/GifSmiley.h
+        win-client/include/Modules/UI/MainListLayout.h
+        win-client/include/Modules/UI/SearchLayout.h
+        win-client/include/Modules/UI/SessionDialog.h
+        win-client/include/Modules/UI/SessionLayout.h
+        win-client/include/Modules/UI/UIEAUserTreelist.h
+        win-client/include/Modules/UI/UIGroupsTreelist.h
+        win-client/include/Modules/UI/UIIMList.h
+        win-client/include/Modules/UI/UIIMListCommonDefine.h
+        win-client/include/Modules/UI/UIRecentSessionList.h
+        win-client/include/Modules/UI/UserDetailInfoDialog.h
+        win-client/include/Modules/IDatabaseModule.h
+        win-client/include/Modules/IEmotionModule.h
+        win-client/include/Modules/IEvent.h
+        win-client/include/Modules/IFileTransferModule.h
+        win-client/include/Modules/IGroupListModule.h
+        win-client/include/Modules/IHttpPoolModule.h
+        win-client/include/Modules/ILoginModule.h
+        win-client/include/Modules/IMessageModule.h
+        win-client/include/Modules/IMiscModule.h
+        win-client/include/Modules/IModuleInterface.h
+        win-client/include/Modules/IP2PCmdModule.h
+        win-client/include/Modules/IScreenCaptureModule.h
+        win-client/include/Modules/ISessionModule.h
+        win-client/include/Modules/ISysConfigModule.h
+        win-client/include/Modules/ITcpClientModule.h
+        win-client/include/Modules/IUserListModule.h
+        win-client/include/Modules/MessageEntity.h
+        win-client/include/Modules/ModuleBase.h
+        win-client/include/Modules/ModuleDll.h
+        win-client/include/Modules/ModuleObserver.h
+        win-client/include/Modules/ModuleSubject.h
+        win-client/include/Modules/UIEventManager.h
+        win-client/include/network/ErrorCode.h
+        win-client/include/network/Exception.h
+        win-client/include/network/imconn.h
+        win-client/include/network/ImCore.h
+        win-client/include/network/IOperation.h
+        win-client/include/network/Lock.h
+        win-client/include/network/netlib.h
+        win-client/include/network/networkdll.h
+        win-client/include/network/Operation.h
+        win-client/include/network/ostype.h
+        win-client/include/network/TTPBHeader.h
+        win-client/include/network/util.h
+        win-client/include/network/UtilPdu.h
+        win-client/include/ProtocolBuffer/IM.BaseDefine.pb.cc
+        win-client/include/ProtocolBuffer/IM.BaseDefine.pb.h
+        win-client/include/ProtocolBuffer/IM.Buddy.pb.cc
+        win-client/include/ProtocolBuffer/IM.Buddy.pb.h
+        win-client/include/ProtocolBuffer/IM.File.pb.cc
+        win-client/include/ProtocolBuffer/IM.File.pb.h
+        win-client/include/ProtocolBuffer/IM.Group.pb.cc
+        win-client/include/ProtocolBuffer/IM.Group.pb.h
+        win-client/include/ProtocolBuffer/IM.Login.pb.cc
+        win-client/include/ProtocolBuffer/IM.Login.pb.h
+        win-client/include/ProtocolBuffer/IM.Message.pb.cc
+        win-client/include/ProtocolBuffer/IM.Message.pb.h
+        win-client/include/ProtocolBuffer/IM.Other.pb.cc
+        win-client/include/ProtocolBuffer/IM.Other.pb.h
+        win-client/include/ProtocolBuffer/IM.Server.pb.cc
+        win-client/include/ProtocolBuffer/IM.Server.pb.h
+        win-client/include/ProtocolBuffer/IM.SwitchService.pb.cc
+        win-client/include/ProtocolBuffer/IM.SwitchService.pb.h
+        win-client/include/utility/CppSQLite3.h
+        win-client/include/utility/IniOperation.h
+        win-client/include/utility/Multilingual.h
+        win-client/include/utility/TTThread.h
+        win-client/include/utility/utilCommonAPI.h
+        win-client/include/utility/utilityDll.h
+        win-client/include/utility/utilStrCodingAPI.h
+        win-client/include/utility/XZip.h
+        win-client/include/GlobalConfig.h
+        win-client/include/GlobalDefine.h
+        win-client/include/versioninfo.h
+        win-client/src/DuiLibEx/DuiLibEx.cpp
+        win-client/src/DuiLibEx/DuiLibEx.h
+        win-client/src/DuiLibEx/Resource.h
+        win-client/src/DuiLibEx/stdafx.cpp
+        win-client/src/DuiLibEx/stdafx.h
+        win-client/src/DuiLibEx/targetver.h
+        win-client/src/GifSmiley/dlldata.c
+        win-client/src/GifSmiley/GifSmiley.cpp
+        win-client/src/GifSmiley/GifSmileyCtrl.cpp
+        win-client/src/GifSmiley/GifSmileyCtrl.h
+        win-client/src/GifSmiley/m_anismiley.h
+        win-client/src/GifSmiley/mAniImage.cpp
+        win-client/src/GifSmiley/Resource.h
+        win-client/src/GifSmiley/stdafx.cpp
+        win-client/src/GifSmiley/stdafx.h
+        win-client/src/GifSmiley/vc120.h
+        win-client/src/GifSmiley/vc120_i.c
+        win-client/src/GifSmiley/vc120_p.c
+        win-client/src/Modules/Base/ModuleBase.cpp
+        win-client/src/Modules/Base/ModuleObserver.cpp
+        win-client/src/Modules/Base/ModuleSubject.cpp
+        win-client/src/Modules/Base/Observer.cpp
+        win-client/src/Modules/Base/UIEventManager.cpp
+        win-client/src/Modules/Database/DatabaseModule_DepartmentInfoDB_Impl.cpp
+        win-client/src/Modules/Database/DatabaseModule_FileTransferHistory_Impl.cpp
+        win-client/src/Modules/Database/DatabaseModule_GroupInfoDB_Impl.cpp
+        win-client/src/Modules/Database/DatabaseModule_ImageDB_Impl.cpp
+        win-client/src/Modules/Database/DatabaseModule_Impl.cpp
+        win-client/src/Modules/Database/DatabaseModule_Impl.h
+        win-client/src/Modules/Database/DatabaseModule_MessageDB_Impl.cpp
+        win-client/src/Modules/Database/DatabaseModule_RecentSessionDB_Impl.cpp
+        win-client/src/Modules/Database/DatabaseModule_UserInfoDB_Impl.cpp
+        win-client/src/Modules/Emotion/EmoCfgParseTool.cpp
+        win-client/src/Modules/Emotion/EmoCfgParseTool.h
+        win-client/src/Modules/Emotion/EmotionButton.cpp
+        win-client/src/Modules/Emotion/EmotionButton.h
+        win-client/src/Modules/Emotion/EmotionDialog.cpp
+        win-client/src/Modules/Emotion/EmotionDialog.h
+        win-client/src/Modules/Emotion/EmotionModule_Impl.cpp
+        win-client/src/Modules/Emotion/EmotionModule_Impl.h
+        win-client/src/Modules/FileTransfer/FileTransferDialog.cpp
+        win-client/src/Modules/FileTransfer/FileTransferDialog.h
+        win-client/src/Modules/FileTransfer/FileTransferModule_Impl.cpp
+        win-client/src/Modules/FileTransfer/FileTransferModule_Impl.h
+        win-client/src/Modules/FileTransfer/FileTransferSocket.cpp
+        win-client/src/Modules/FileTransfer/FileTransferSocket.h
+        win-client/src/Modules/FileTransfer/FileTransferUIThread.cpp
+        win-client/src/Modules/FileTransfer/FileTransferUIThread.h
+        win-client/src/Modules/FileTransfer/TransferFile.cpp
+        win-client/src/Modules/FileTransfer/TransferFile.h
+        win-client/src/Modules/FileTransfer/TransferManager.cpp
+        win-client/src/Modules/FileTransfer/TransferManager.h
+        win-client/src/Modules/GroupList/UI/ChangeDiscussionGrpMemberDialog.cpp
+        win-client/src/Modules/GroupList/UI/ChangeDiscussionGrpMemberDialog.h
+        win-client/src/Modules/GroupList/UI/CreateDiscussionGrpDialog.cpp
+        win-client/src/Modules/GroupList/UI/CreateDiscussionGrpDialog.h
+        win-client/src/Modules/GroupList/UI/ListCreatFrom.cpp
+        win-client/src/Modules/GroupList/UI/ListCreatFrom.h
+        win-client/src/Modules/GroupList/UI/ListGroupMembers.cpp
+        win-client/src/Modules/GroupList/UI/ListGroupMembers.h
+        win-client/src/Modules/GroupList/CreateDiscussionGrpDialog.cpp
+        win-client/src/Modules/GroupList/CreateDiscussionGrpDialog.h
+        win-client/src/Modules/GroupList/GroupListModule_Impl.cpp
+        win-client/src/Modules/GroupList/GroupListModule_Impl.h
+        win-client/src/Modules/HttpPool/HttpPoolModule_Impl.cpp
+        win-client/src/Modules/HttpPool/HttpPoolModule_Impl.h
+        win-client/src/Modules/Login/DoLoginServerHttpOperation.cpp
+        win-client/src/Modules/Login/DoLoginServerHttpOperation.h
+        win-client/src/Modules/Login/GetServConfigHttpOperation.cpp
+        win-client/src/Modules/Login/GetServConfigHttpOperation.h
+        win-client/src/Modules/Login/LoginDialog.cpp
+        win-client/src/Modules/Login/LoginDialog.h
+        win-client/src/Modules/Login/LoginModule_Impl.cpp
+        win-client/src/Modules/Login/LoginModule_Impl.h
+        win-client/src/Modules/Login/LoginOperation.cpp
+        win-client/src/Modules/Login/LoginOperation.h
+        win-client/src/Modules/Login/ReloginManager.cpp
+        win-client/src/Modules/Login/ReloginManager.h
+        win-client/src/Modules/Message/MessageEntity.cpp
+        win-client/src/Modules/Message/MessageModule_Impl.cpp
+        win-client/src/Modules/Message/MessageModule_Impl.h
+        win-client/src/Modules/Message/ReceiveMsgManage.cpp
+        win-client/src/Modules/Message/ReceiveMsgManage.h
+        win-client/src/Modules/Message/SendMsgManage.cpp
+        win-client/src/Modules/Message/SendMsgManage.h
+        win-client/src/Modules/Misc/MiscModule_Impl.cpp
+        win-client/src/Modules/Misc/MiscModule_Impl.h
+        win-client/src/Modules/P2PCmd/P2PCmdModule_Impl.cpp
+        win-client/src/Modules/P2PCmd/P2PCmdModule_Impl.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode/AutoSelectMode.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode/AutoSelectMode.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode/CaptureMode.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode/CaptureMode.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode/ManalEditMode.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode/ManalEditMode.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode/ManalSelectMode.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode/ManalSelectMode.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/CaptureMode/ModeComm.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/UI/BkgroundUI.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/UI/BkgroundUI.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/UI/DlgBase.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/UI/Dlgbase.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/UI/EditToolbar.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/UI/EditToolbarUI.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/UI/UIMgr.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/UI/UIMgr.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/Common.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/ScreenCapture.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/ScreenCapture.h
+        win-client/src/Modules/ScreenCapture/ScreenCapture/ScreenSnapshot.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCapture/ScreenSnapshot.h
+        win-client/src/Modules/ScreenCapture/ScreenCaptureModule_Impl.cpp
+        win-client/src/Modules/ScreenCapture/ScreenCaptureModule_Impl.h
+        win-client/src/Modules/Session/Operation/DownloadAvatarHttpOperation.cpp
+        win-client/src/Modules/Session/Operation/DownloadAvatarHttpOperation.h
+        win-client/src/Modules/Session/Operation/SendImgHttpOperation.cpp
+        win-client/src/Modules/Session/Operation/SendImgHttpOperation.h
+        win-client/src/Modules/Session/Operation/SyncTimerTimer.cpp
+        win-client/src/Modules/Session/Operation/SyncTimerTimer.h
+        win-client/src/Modules/Session/UI/MainListLayout.cpp
+        win-client/src/Modules/Session/UI/MainListLayout_Event.cpp
+        win-client/src/Modules/Session/UI/SearchLayout.cpp
+        win-client/src/Modules/Session/UI/SessionDialog.cpp
+        win-client/src/Modules/Session/UI/SessionLayout.cpp
+        win-client/src/Modules/Session/UI/SessionLayout_Event.cpp
+        win-client/src/Modules/Session/UI/SessionLayout_Function.cpp
+        win-client/src/Modules/Session/UI/UIEAUserTreelist.cpp
+        win-client/src/Modules/Session/UI/UIGroupsTreelist.cpp
+        win-client/src/Modules/Session/UI/UIIMEdit.cpp
+        win-client/src/Modules/Session/UI/UIIMEdit.h
+        win-client/src/Modules/Session/UI/UIIMList.cpp
+        win-client/src/Modules/Session/UI/UIIMListCommonDefine.cpp
+        win-client/src/Modules/Session/UI/UIRecentSessionList.cpp
+        win-client/src/Modules/Session/UI/UserDetailInfoDialog.cpp
+        win-client/src/Modules/Session/ISessionModule.cpp
+        win-client/src/Modules/Session/SessionManager.cpp
+        win-client/src/Modules/Session/SessionManager.h
+        win-client/src/Modules/Session/SessionModule_Impl.cpp
+        win-client/src/Modules/Session/SessionModule_Impl.h
+        win-client/src/Modules/SysConfig/ServerConfigDialog.cpp
+        win-client/src/Modules/SysConfig/ServerConfigDialog.h
+        win-client/src/Modules/SysConfig/SysConfigDialog.cpp
+        win-client/src/Modules/SysConfig/SysConfigDialog.h
+        win-client/src/Modules/SysConfig/SysConfigModule_Impl.cpp
+        win-client/src/Modules/SysConfig/SysConfigModule_Impl.h
+        win-client/src/Modules/TcpClient/TcpClientModule_Impl.cpp
+        win-client/src/Modules/TcpClient/TcpClientModule_Impl.h
+        win-client/src/Modules/UserList/IUserListModule.cpp
+        win-client/src/Modules/UserList/UserListModule_Impl.cpp
+        win-client/src/Modules/UserList/UserListModule_Impl.h
+        win-client/src/Modules/Modules.cpp
+        win-client/src/Modules/Modules.h
+        win-client/src/Modules/Resource.h
+        win-client/src/Modules/stdafx.cpp
+        win-client/src/Modules/stdafx.h
+        win-client/src/Modules/targetver.h
+        win-client/src/teamtalk/UI/main.cpp
+        win-client/src/teamtalk/UI/main_frame.cpp
+        win-client/src/teamtalk/UI/main_frame.hpp
+        win-client/src/teamtalk/UI/main_frame_event.cpp
+        win-client/src/teamtalk/UI/MainDialog.cpp
+        win-client/src/teamtalk/UI/MainDialog.h
+        win-client/src/teamtalk/UI/MainDialog_Event.cpp
+        win-client/src/teamtalk/UI/MainDialog_TrayIcon.cpp
+        win-client/src/teamtalk/Resource.h
+        win-client/src/teamtalk/stdafx.cpp
+        win-client/src/teamtalk/stdafx.h
+        win-client/src/teamtalk/targetver.h
+        win-client/src/teamtalk/teamtalk.cpp
+        win-client/src/teamtalk/teamtalk.h)

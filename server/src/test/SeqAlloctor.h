@@ -29,7 +29,7 @@ private:
     virtual ~CSeqAlloctor();
 private:
     static CSeqAlloctor* m_pInstance;
-    hash_map<uint32_t, uint32_t> m_hmAlloctor;
+    unordered_map<uint32_t, uint32_t> m_hmAlloctor;
 };
 
 #endif /*defined(__SEQALLOCTOR_H__) */

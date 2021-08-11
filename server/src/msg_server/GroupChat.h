@@ -11,7 +11,7 @@
 #include "ImPduBase.h" 
 
 typedef set<uint32_t> group_member_t;
-typedef hash_map<uint32_t, group_member_t*> group_map_t;
+typedef unordered_map<uint32_t, group_member_t*> group_map_t;
 
 class CMsgConn;
 

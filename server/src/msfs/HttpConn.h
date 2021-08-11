@@ -160,7 +160,7 @@ protected:
     static list<Response_t*> s_response_pdu_list;    // 主线程发送回复消息
 };
 
-typedef hash_map<uint32_t, CHttpConn*> HttpConnMap_t;
+typedef unordered_map<uint32_t, CHttpConn*> HttpConnMap_t;
 
 CHttpConn* FindHttpConnByHandle(uint32_t handle);
 void init_http_conn();

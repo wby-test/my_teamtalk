@@ -160,7 +160,7 @@ typedef struct DBUserInfo_t
     
 } DBUserInfo_t;
 
-typedef hash_map<uint32_t, DBUserInfo_t*> DBUserMap_t;
+typedef unordered_map<uint32_t, DBUserInfo_t*> DBUserMap_t;
 
 typedef struct DBDeptInfo_t
 {
@@ -181,7 +181,7 @@ typedef struct DBDeptInfo_t
     
 } DBDeptInfo_t;
 
-typedef hash_map<uint32_t, DBDeptInfo_t*> DBDeptMap_t;
+typedef unordered_map<uint32_t, DBDeptInfo_t*> DBDeptMap_t;
 
 
 typedef struct {

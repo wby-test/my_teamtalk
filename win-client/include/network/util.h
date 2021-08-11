@@ -29,7 +29,7 @@
 #endif
 
 #ifdef __GNUC__
-#include <ext/hash_map>
+#include <ext/unordered_map>
 using namespace __gnu_cxx;
 namespace __gnu_cxx {
 template<> struct hash<std::string> {
@@ -39,7 +39,7 @@ template<> struct hash<std::string> {
 };
 }
 #else
-#include <hash_map>
+#include <unordered_map>
 using namespace stdext;
 #endif
 #ifdef ANDROID

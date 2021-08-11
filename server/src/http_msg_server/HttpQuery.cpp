@@ -23,7 +23,7 @@ static uint32_t g_last_mday = 0;
 
 CHttpQuery* CHttpQuery::m_query_instance = NULL;
 
-hash_map<string, auth_struct*> g_hm_http_auth;
+unordered_map<string, auth_struct*> g_hm_http_auth;
 
 void http_query_timer_callback(void* callback_data, uint8_t msg, uint32_t handle, void* pParam)
 {

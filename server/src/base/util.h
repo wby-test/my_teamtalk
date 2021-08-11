@@ -29,8 +29,8 @@
 
 #define NOTUSED_ARG(v) ((void)v)		// used this to remove warning C4100, unreferenced parameter
 
-/// yunfan modify end 
-////RAII
+//// yunfan modify end
+//// RAII
 class CRefObject
 {
 public:

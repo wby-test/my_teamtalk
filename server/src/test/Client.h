@@ -17,8 +17,8 @@
 #include "IPacketCallback.h"
 using namespace std;
 
-typedef hash_map<uint32_t, IM::BaseDefine::UserInfo*> CMapId2User_t;
-typedef hash_map<string, IM::BaseDefine::UserInfo*> CMapNick2User_t;
+typedef unordered_map<uint32_t, IM::BaseDefine::UserInfo*> CMapId2User_t;
+typedef unordered_map<string, IM::BaseDefine::UserInfo*> CMapNick2User_t;
 class CClient:public IPacketCallback
 {
 public:

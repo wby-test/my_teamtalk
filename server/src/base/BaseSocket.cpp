@@ -1,7 +1,7 @@
 #include "BaseSocket.h"
 #include "EventDispatch.h"
 
-typedef hash_map<net_handle_t, CBaseSocket*> SocketMap;
+typedef unordered_map<net_handle_t, CBaseSocket*> SocketMap;
 SocketMap	g_socket_map;
 
 void AddBaseSocket(CBaseSocket* pSocket)
@@ -80,6 +80,7 @@ int CBaseSocket::Listen(const char* server_ip, uint16_t port, callback_t callbac
 
 	log("CBaseSocket::Listen on %s:%d", server_ip, port);
 
+	// 此处使用上个栈帧创建出来的CBaseSocket对象，所以在netlib_listen函数中针对正常new对象未进行delete操作
 	AddBaseSocket(this);
 	CEventDispatch::Instance()->AddEvent(m_socket, SOCKET_READ | SOCKET_EXCEP);
 	return NETLIB_OK;

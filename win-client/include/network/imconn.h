@@ -1,6 +1,6 @@
 /*******************************************************************************
  *  @file      imconn.h 2013\6\5 18:51:30 $
- *  @author    вслз<ziteng@mogujie.com>
+ *  @author    О©╫О©╫О©╫О©╫<ziteng@mogujie.com>
  *  @brief     
  ******************************************************************************/
 
@@ -22,7 +22,7 @@
 #define READ_BUF_SIZE	1024 * 128
 
 class CImConn;
-typedef hash_map<net_handle_t, CImConn*>		ConnMap_t;
+typedef unordered_map<net_handle_t, CImConn*>		ConnMap_t;
 
 struct ITcpSocketCallback
 {

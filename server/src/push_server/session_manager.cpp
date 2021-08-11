@@ -64,7 +64,7 @@ push_session_ptr CSessionManager::GetPushSessionBySockID(uint32_t nsockid)
 {
     m_MapIOPushSessionBySockIDMutex.Lock();
     push_session_ptr pSession;
-    hash_map<uint32_t, push_session_ptr>::iterator it = m_MapPushSessionBySockID.find(nsockid);
+    unordered_map<uint32_t, push_session_ptr>::iterator it = m_MapPushSessionBySockID.find(nsockid);
     if (it != m_MapPushSessionBySockID.end())
     {
         pSession = it->second;
@@ -81,7 +81,7 @@ void CSessionManager::ClearPushSession()
 void CSessionManager::StopAllPushSession()
 {
     push_session_ptr pSession;
-    hash_map<uint32_t, push_session_ptr>::iterator it, it_old;
+    unordered_map<uint32_t, push_session_ptr>::iterator it, it_old;
     for (it = m_MapPushSessionBySockID.begin(); it != m_MapPushSessionBySockID.end();)
     {
         it_old = it;
@@ -128,10 +128,10 @@ void CSessionManager::StopCheckPushSession()
 void CSessionManager::CheckPushSessionTimeOut()
 {
     m_MapIOPushSessionBySockIDMutex.Lock();
-    hash_map<uint32_t /* sockid */, push_session_ptr> tmp = m_MapPushSessionBySockID;
+    unordered_map<uint32_t /* sockid */, push_session_ptr> tmp = m_MapPushSessionBySockID;
     m_MapIOPushSessionBySockIDMutex.Unlock();
 
-    hash_map<uint32_t /* sockid */, push_session_ptr>::iterator it = tmp.begin();
+    unordered_map<uint32_t /* sockid */, push_session_ptr>::iterator it = tmp.begin();
     uint64_t cur_time = S_GetTickCount();
     for (; it != tmp.end(); it++)
     {

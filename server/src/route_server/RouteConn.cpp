@@ -17,9 +17,9 @@
 #include "public_define.h"
 using namespace IM::BaseDefine;
 
-//typedef hash_map<uint32_t /* user_id */, UserStat_t> UserStatMap_t;
+//typedef unordered_map<uint32_t /* user_id */, UserStat_t> UserStatMap_t;
 static ConnMap_t g_route_conn_map;
-typedef hash_map<uint32_t, CUserInfo*> UserInfoMap_t;
+typedef unordered_map<uint32_t, CUserInfo*> UserInfoMap_t;
 static UserInfoMap_t g_user_map;
 
 CUserInfo* GetUserInfo(uint32_t user_id)

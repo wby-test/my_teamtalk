@@ -1,7 +1,8 @@
 #include "BaseSocket.h"
 #include "EventDispatch.h"
+#include <unordered_map>
 
-typedef hash_map<net_handle_t, CBaseSocket*> SocketMap;
+typedef unordered_map<net_handle_t, CBaseSocket*> SocketMap;
 SocketMap	g_socket_map;
 
 void AddBaseSocket(CBaseSocket* pSocket)
