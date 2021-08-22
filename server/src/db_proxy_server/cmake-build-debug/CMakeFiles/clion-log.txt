@@ -1,4 +1,4 @@
-/snap/clion/151/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/wby/project/my_teamtalk/server/src/db_proxy_server
+/snap/clion/162/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/user/bin/cmake -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/wby/project/im/my_teamtalk/server/src/db_proxy_server
 CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 2.8.12 will be removed from a future version of
   CMake.
@@ -7,142 +7,36 @@ CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   CMake that the project does not need compatibility with older versions.
 
 
-CMake Warning (dev) at CMakeLists.txt:24 (LINK_DIRECTORIES):
-  This command specifies the relative path
+-- The C compiler identification is GNU 10.3.0
+-- The CXX compiler identification is GNU 10.3.0
+-- Detecting C compiler ABI info
+CMake Error: Generator: execution of make failed. Make command was: /user/bin/cmake -f Makefile cmTC_bb465/fast && 
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: /usr/bin/cc
+CMake Error: Generator: execution of make failed. Make command was: /user/bin/cmake -f Makefile cmTC_b863f/fast && 
+-- Check for working C compiler: /usr/bin/cc - broken
+CMake Error at /snap/clion/162/bin/cmake/linux/share/cmake-3.20/Modules/CMakeTestCCompiler.cmake:66 (message):
+  The C compiler
 
-    .
+    "/usr/bin/cc"
 
-  as a link directory.
+  is not able to compile a simple test program.
 
-  Policy CMP0015 is not set: link_directories() treats paths relative to the
-  source dir.  Run "cmake --help-policy CMP0015" for policy details.  Use the
-  cmake_policy command to set the policy and suppress this warning.
-This warning is for project developers.  Use -Wno-dev to suppress it.
+  It fails with the following output:
 
-CMake Warning (dev) at CMakeLists.txt:24 (LINK_DIRECTORIES):
-  This command specifies the relative path
+    Change Dir: /home/wby/project/im/my_teamtalk/server/src/db_proxy_server/cmake-build-debug/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):/user/bin/cmake -f Makefile cmTC_b863f/fast && No such file or directory
+    Generator: execution of make failed. Make command was: /user/bin/cmake -f Makefile cmTC_b863f/fast && 
+    
 
-    ../bin
+  
 
-  as a link directory.
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (PROJECT)
 
-  Policy CMP0015 is not set: link_directories() treats paths relative to the
-  source dir.  Run "cmake --help-policy CMP0015" for policy details.  Use the
-  cmake_policy command to set the policy and suppress this warning.
-This warning is for project developers.  Use -Wno-dev to suppress it.
 
-CMake Warning (dev) at CMakeLists.txt:24 (LINK_DIRECTORIES):
-  This command specifies the relative path
-
-    ../base/pb/lib/linux
-
-  as a link directory.
-
-  Policy CMP0015 is not set: link_directories() treats paths relative to the
-  source dir.  Run "cmake --help-policy CMP0015" for policy details.  Use the
-  cmake_policy command to set the policy and suppress this warning.
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
-CMake Warning (dev) at CMakeLists.txt:24 (LINK_DIRECTORIES):
-  This command specifies the relative path
-
-    ../base/slog/lib
-
-  as a link directory.
-
-  Policy CMP0015 is not set: link_directories() treats paths relative to the
-  source dir.  Run "cmake --help-policy CMP0015" for policy details.  Use the
-  cmake_policy command to set the policy and suppress this warning.
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
--- Configuring done
-CMake Warning (dev) in CMakeLists.txt:
-  Policy CMP0081 is not set: Relative paths not allowed in LINK_DIRECTORIES
-  target property.  Run "cmake --help-policy CMP0081" for policy details.
-  Use the cmake_policy command to set the policy and suppress this warning.
-
-  Found relative path while evaluating link directories of "db_proxy_server":
-
-    "."
-
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
-CMake Warning (dev) in CMakeLists.txt:
-  Policy CMP0081 is not set: Relative paths not allowed in LINK_DIRECTORIES
-  target property.  Run "cmake --help-policy CMP0081" for policy details.
-  Use the cmake_policy command to set the policy and suppress this warning.
-
-  Found relative path while evaluating link directories of "db_proxy_server":
-
-    "../bin"
-
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
-CMake Warning (dev) in CMakeLists.txt:
-  Policy CMP0081 is not set: Relative paths not allowed in LINK_DIRECTORIES
-  target property.  Run "cmake --help-policy CMP0081" for policy details.
-  Use the cmake_policy command to set the policy and suppress this warning.
-
-  Found relative path while evaluating link directories of "db_proxy_server":
-
-    "../base/pb/lib/linux"
-
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
-CMake Warning (dev) in CMakeLists.txt:
-  Policy CMP0081 is not set: Relative paths not allowed in LINK_DIRECTORIES
-  target property.  Run "cmake --help-policy CMP0081" for policy details.
-  Use the cmake_policy command to set the policy and suppress this warning.
-
-  Found relative path while evaluating link directories of "db_proxy_server":
-
-    "../base/slog/lib"
-
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
-CMake Warning (dev) in CMakeLists.txt:
-  Policy CMP0081 is not set: Relative paths not allowed in LINK_DIRECTORIES
-  target property.  Run "cmake --help-policy CMP0081" for policy details.
-  Use the cmake_policy command to set the policy and suppress this warning.
-
-  Found relative path while evaluating link directories of "db_proxy_server":
-
-    "."
-
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
-CMake Warning (dev) in CMakeLists.txt:
-  Policy CMP0081 is not set: Relative paths not allowed in LINK_DIRECTORIES
-  target property.  Run "cmake --help-policy CMP0081" for policy details.
-  Use the cmake_policy command to set the policy and suppress this warning.
-
-  Found relative path while evaluating link directories of "db_proxy_server":
-
-    "../bin"
-
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
-CMake Warning (dev) in CMakeLists.txt:
-  Policy CMP0081 is not set: Relative paths not allowed in LINK_DIRECTORIES
-  target property.  Run "cmake --help-policy CMP0081" for policy details.
-  Use the cmake_policy command to set the policy and suppress this warning.
-
-  Found relative path while evaluating link directories of "db_proxy_server":
-
-    "../base/pb/lib/linux"
-
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
-CMake Warning (dev) in CMakeLists.txt:
-  Policy CMP0081 is not set: Relative paths not allowed in LINK_DIRECTORIES
-  target property.  Run "cmake --help-policy CMP0081" for policy details.
-  Use the cmake_policy command to set the policy and suppress this warning.
-
-  Found relative path while evaluating link directories of "db_proxy_server":
-
-    "../base/slog/lib"
-
-This warning is for project developers.  Use -Wno-dev to suppress it.
-
--- Generating done
--- Build files have been written to: /home/wby/project/my_teamtalk/server/src/db_proxy_server/cmake-build-debug
+-- Configuring incomplete, errors occurred!
+See also "/home/wby/project/im/my_teamtalk/server/src/db_proxy_server/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/home/wby/project/im/my_teamtalk/server/src/db_proxy_server/cmake-build-debug/CMakeFiles/CMakeError.log".
