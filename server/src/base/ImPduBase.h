@@ -50,6 +50,7 @@ typedef struct {
     uint16_t    reversed;    // 保留
 } PduHeader_t;
 
+//protocol data unit
 class DLL_MODIFIER CImPdu
 {
 public:

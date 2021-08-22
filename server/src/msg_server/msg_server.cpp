@@ -66,9 +66,9 @@ int main(int argc, char* argv[])
 	uint32_t route_server_count = 0;
 	serv_info_t* route_server_list = read_server_config(&config_file, "RouteServerIP", "RouteServerPort", route_server_count);
 
-    uint32_t push_server_count = 0;
-    serv_info_t* push_server_list = read_server_config(&config_file, "PushServerIP",
-                                                       "PushServerPort", push_server_count);
+//    uint32_t push_server_count = 0;
+  //  serv_info_t* push_server_list = read_server_config(&config_file, "PushServerIP",
+  //                                                     "PushServerPort", push_server_count);
     
     uint32_t file_server_count = 0;
     serv_info_t* file_server_list = read_server_config(&config_file, "FileServerIP",

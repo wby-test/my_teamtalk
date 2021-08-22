@@ -28,7 +28,7 @@ public:
     static CSyncCenter* getInstance();
     
     uint32_t getLastUpdate() {
-               CAutoLock auto_lock(&last_update_lock_);
+                CAutoLock auto_lock(&last_update_lock_);
                 return m_nLastUpdate;
            }
       uint32_t getLastUpdateGroup() {
@@ -50,25 +50,22 @@ private:
     
 private:
     void getDept(uint32_t nDeptId, DBDeptInfo_t** pDept);
-    DBDeptMap_t* m_pDeptInfo;
+    DBDeptMap_t*        m_pDeptInfo;
 
     static CSyncCenter* m_pInstance;
-    uint32_t    m_nLastUpdateGroup;
-    uint32_t    m_nLastUpdate;
+    uint32_t            m_nLastUpdateGroup;
+    uint32_t            m_nLastUpdate;
 
-    CCondition* m_pCondGroupChat;
-    CLock*      m_pLockGroupChat;
-    static bool        m_bSyncGroupChatRuning;
-    bool m_bSyncGroupChatWaitting;
+    CCondition*         m_pCondGroupChat;
+    CLock*              m_pLockGroupChat;
+    static bool         m_bSyncGroupChatRunning;
+    bool                m_bSyncGroupChatWaiting;
 #ifdef _WIN32
     DWORD		m_nGroupChatThreadId;
 #else
-    pthread_t	m_nGroupChatThreadId;
+    pthread_t	        m_nGroupChatThreadId;
 #endif
-    CLock last_update_lock_;
-
-
+    CLock               last_update_lock_;
 };
-
 
 #endif /*defined(__CACHEMANAGER_H__) */

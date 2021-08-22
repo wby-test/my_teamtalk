@@ -55,5 +55,8 @@ iKutil.log
 *.map
 
 /debug/
-
-/.vscode/
+*.idea/
+*.vscode/
+/im-server-1/
+/im-server*/
+cmake-build-debug

@@ -21,7 +21,7 @@ CBaseSocket* FindBaseSocket(net_handle_t fd)
 	if (iter != g_socket_map.end())
 	{
 		pSocket = iter->second;
-		pSocket->AddRef(); //引用次数加1，类似于shared_ptr
+		pSocket->AddRef(); ////引用次数加1，类似于shared_ptr
 	}
 
 	return pSocket;
@@ -192,7 +192,7 @@ void CBaseSocket::OnWrite()
 		int error = 0;
 		socklen_t len = sizeof(error);
 #ifdef _WIN32
-
+////notice : the diff linux with windows, type of fourth param
 		getsockopt(m_socket, SOL_SOCKET, SO_ERROR, (char*)&error, &len);
 #else
 		getsockopt(m_socket, SOL_SOCKET, SO_ERROR, (void*)&error, &len);

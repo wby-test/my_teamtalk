@@ -68,7 +68,7 @@ void init_db_serv_conn(serv_info_t* server_list, uint32_t server_count, uint32_t
 	log("DB server connection index for login business: [0, %u), for other business: [%u, %u) ",
 			g_db_server_login_count, g_db_server_login_count, g_db_server_count);
 
-// template function
+//// template function
 	serv_init<CDBServConn>(g_db_server_list, g_db_server_count);
 
 	netlib_register_timer(db_server_conn_timer_callback, NULL, 1000);
@@ -201,7 +201,7 @@ void CDBServConn::HandlePdu(CImPdu* pPdu)
         case CID_OTHER_HEARTBEAT:
             break;
         case CID_OTHER_VALIDATE_RSP:
-            _HandleValidateResponse(pPdu );
+            _HandleValidateResponse(pPdu);
             break;
         case CID_LOGIN_RES_DEVICETOKEN:
             _HandleSetDeviceTokenResponse(pPdu);
