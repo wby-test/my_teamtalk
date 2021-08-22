@@ -1,0 +1,1 @@
+/home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles/msg_server.dir

@@ -10,10 +10,10 @@ CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
 -- The C compiler identification is GNU 10.3.0
 -- The CXX compiler identification is GNU 10.3.0
 -- Detecting C compiler ABI info
-CMake Error: Generator: execution of make failed. Make command was: /user/bin/cmake -f Makefile cmTC_bb465/fast && 
+CMake Error: Generator: execution of make failed. Make command was: /user/bin/cmake -f Makefile cmTC_2a181/fast && 
 -- Detecting C compiler ABI info - failed
 -- Check for working C compiler: /usr/bin/cc
-CMake Error: Generator: execution of make failed. Make command was: /user/bin/cmake -f Makefile cmTC_b863f/fast && 
+CMake Error: Generator: execution of make failed. Make command was: /user/bin/cmake -f Makefile cmTC_a5ee5/fast && 
 -- Check for working C compiler: /usr/bin/cc - broken
 CMake Error at /snap/clion/162/bin/cmake/linux/share/cmake-3.20/Modules/CMakeTestCCompiler.cmake:66 (message):
   The C compiler
@@ -26,8 +26,8 @@ CMake Error at /snap/clion/162/bin/cmake/linux/share/cmake-3.20/Modules/CMakeTes
 
     Change Dir: /home/wby/project/im/my_teamtalk/server/src/db_proxy_server/cmake-build-debug/CMakeFiles/CMakeTmp
     
-    Run Build Command(s):/user/bin/cmake -f Makefile cmTC_b863f/fast && No such file or directory
-    Generator: execution of make failed. Make command was: /user/bin/cmake -f Makefile cmTC_b863f/fast && 
+    Run Build Command(s):/user/bin/cmake -f Makefile cmTC_a5ee5/fast && No such file or directory
+    Generator: execution of make failed. Make command was: /user/bin/cmake -f Makefile cmTC_a5ee5/fast && 
     
 
   
