@@ -1,0 +1,1 @@
+/bin/c++       CMakeFiles/route_server.dir/UserInfo.cpp.o CMakeFiles/route_server.dir/route_server.cpp.o CMakeFiles/route_server.dir/RouteConn.cpp.o  -o /home/wby/src/my_teamtalk/server/src/bin/route_server  -L.  -L../bin  -L../base/pb/lib/linux  -L../base/slog/lib -rdynamic -lbase -lslog -lprotobuf-lite -lpthread -Wl,-rpath,.:../bin:../base/pb/lib/linux:../base/slog/lib 
