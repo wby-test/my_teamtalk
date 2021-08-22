@@ -1,6 +1,5 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/msg_server.dir/AttachData.cpp.o"
-  "CMakeFiles/msg_server.dir/DBServConn.cpp.o"
   "CMakeFiles/msg_server.dir/FileHandler.cpp.o"
   "CMakeFiles/msg_server.dir/FileServConn.cpp.o"
   "CMakeFiles/msg_server.dir/GroupChat.cpp.o"
@@ -11,6 +10,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/msg_server.dir/RouteServConn.cpp.o"
   "CMakeFiles/msg_server.dir/jsonxx.cpp.o"
   "CMakeFiles/msg_server.dir/msg_server.cpp.o"
+  "CMakeFiles/msg_server.dir/DBServConn.cpp.o"
   "/home/wby/src/my_teamtalk/server/src/bin/msg_server.pdb"
   "/home/wby/src/my_teamtalk/server/src/bin/msg_server"
 )

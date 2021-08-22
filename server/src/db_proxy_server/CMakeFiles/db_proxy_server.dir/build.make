@@ -52,32 +52,9 @@ include CMakeFiles/db_proxy_server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/db_proxy_server.dir/flags.make
 
-CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
-CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o: AutoPool.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o"
-	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/AutoPool.cpp
-
-CMakeFiles/db_proxy_server.dir/AutoPool.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/db_proxy_server.dir/AutoPool.cpp.i"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/db_proxy_server/AutoPool.cpp > CMakeFiles/db_proxy_server.dir/AutoPool.cpp.i
-
-CMakeFiles/db_proxy_server.dir/AutoPool.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/db_proxy_server.dir/AutoPool.cpp.s"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/db_proxy_server/AutoPool.cpp -o CMakeFiles/db_proxy_server.dir/AutoPool.cpp.s
-
-CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.requires:
-.PHONY : CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.requires
-
-CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.provides: CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.requires
-	$(MAKE) -f CMakeFiles/db_proxy_server.dir/build.make CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.provides.build
-.PHONY : CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.provides
-
-CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.provides.build: CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o
-
 CMakeFiles/db_proxy_server.dir/CachePool.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
 CMakeFiles/db_proxy_server.dir/CachePool.cpp.o: CachePool.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/CachePool.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/CachePool.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/CachePool.cpp
 
@@ -100,7 +77,7 @@ CMakeFiles/db_proxy_server.dir/CachePool.cpp.o.provides.build: CMakeFiles/db_pro
 
 CMakeFiles/db_proxy_server.dir/DBPool.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
 CMakeFiles/db_proxy_server.dir/DBPool.cpp.o: DBPool.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/DBPool.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/DBPool.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/DBPool.cpp
 
@@ -123,7 +100,7 @@ CMakeFiles/db_proxy_server.dir/DBPool.cpp.o.provides.build: CMakeFiles/db_proxy_
 
 CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
 CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o: HandlerMap.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/HandlerMap.cpp
 
@@ -144,32 +121,9 @@ CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o.provides: CMakeFiles/db_proxy_se
 
 CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o.provides.build: CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o
 
-CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
-CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o: ProxyConn.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_5)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o"
-	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/ProxyConn.cpp
-
-CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.i"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/db_proxy_server/ProxyConn.cpp > CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.i
-
-CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.s"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/db_proxy_server/ProxyConn.cpp -o CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.s
-
-CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.requires:
-.PHONY : CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.requires
-
-CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.provides: CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.requires
-	$(MAKE) -f CMakeFiles/db_proxy_server.dir/build.make CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.provides.build
-.PHONY : CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.provides
-
-CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.provides.build: CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o
-
 CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
 CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o: ProxyTask.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/ProxyTask.cpp
 
@@ -189,6 +143,52 @@ CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o.provides: CMakeFiles/db_proxy_ser
 .PHONY : CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o.provides
 
 CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o.provides.build: CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o
+
+CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
+CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o: AutoPool.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o"
+	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/AutoPool.cpp
+
+CMakeFiles/db_proxy_server.dir/AutoPool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/db_proxy_server.dir/AutoPool.cpp.i"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/db_proxy_server/AutoPool.cpp > CMakeFiles/db_proxy_server.dir/AutoPool.cpp.i
+
+CMakeFiles/db_proxy_server.dir/AutoPool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/db_proxy_server.dir/AutoPool.cpp.s"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/db_proxy_server/AutoPool.cpp -o CMakeFiles/db_proxy_server.dir/AutoPool.cpp.s
+
+CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.requires:
+.PHONY : CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.requires
+
+CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.provides: CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.requires
+	$(MAKE) -f CMakeFiles/db_proxy_server.dir/build.make CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.provides.build
+.PHONY : CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.provides
+
+CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.provides.build: CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o
+
+CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
+CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o: db_proxy_server.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o"
+	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/db_proxy_server.cpp
+
+CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.i"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/db_proxy_server/db_proxy_server.cpp > CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.i
+
+CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.s"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/db_proxy_server/db_proxy_server.cpp -o CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.s
+
+CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.requires:
+.PHONY : CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.requires
+
+CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.provides: CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.requires
+	$(MAKE) -f CMakeFiles/db_proxy_server.dir/build.make CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.provides.build
+.PHONY : CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.provides
+
+CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.provides.build: CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o
 
 CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
 CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o: SyncCenter.cpp
@@ -213,28 +213,28 @@ CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o.provides: CMakeFiles/db_proxy_se
 
 CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o.provides.build: CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o
 
-CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
-CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o: db_proxy_server.cpp
+CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
+CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o: ProxyConn.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles $(CMAKE_PROGRESS_8)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o"
-	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/db_proxy_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o"
+	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/db_proxy_server/ProxyConn.cpp
 
-CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.i"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/db_proxy_server/db_proxy_server.cpp > CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.i
+CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.i"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/db_proxy_server/ProxyConn.cpp > CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.i
 
-CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.s"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/db_proxy_server/db_proxy_server.cpp -o CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.s
+CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.s"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/db_proxy_server/ProxyConn.cpp -o CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.s
 
-CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.requires:
-.PHONY : CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.requires
+CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.requires:
+.PHONY : CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.requires
 
-CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.provides: CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.requires
-	$(MAKE) -f CMakeFiles/db_proxy_server.dir/build.make CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.provides.build
-.PHONY : CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.provides
+CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.provides: CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.requires
+	$(MAKE) -f CMakeFiles/db_proxy_server.dir/build.make CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.provides.build
+.PHONY : CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.provides
 
-CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.provides.build: CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o
+CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.provides.build: CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o
 
 CMakeFiles/db_proxy_server.dir/business/AudioModel.cpp.o: CMakeFiles/db_proxy_server.dir/flags.make
 CMakeFiles/db_proxy_server.dir/business/AudioModel.cpp.o: business/AudioModel.cpp
@@ -675,14 +675,14 @@ CMakeFiles/db_proxy_server.dir/business/UserModel.cpp.o.provides.build: CMakeFil
 
 # Object files for target db_proxy_server
 db_proxy_server_OBJECTS = \
-"CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o" \
 "CMakeFiles/db_proxy_server.dir/CachePool.cpp.o" \
 "CMakeFiles/db_proxy_server.dir/DBPool.cpp.o" \
 "CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o" \
-"CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o" \
 "CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o" \
-"CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o" \
+"CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o" \
 "CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o" \
+"CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o" \
+"CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o" \
 "CMakeFiles/db_proxy_server.dir/business/AudioModel.cpp.o" \
 "CMakeFiles/db_proxy_server.dir/business/DepartAction.cpp.o" \
 "CMakeFiles/db_proxy_server.dir/business/DepartModel.cpp.o" \
@@ -706,14 +706,14 @@ db_proxy_server_OBJECTS = \
 # External object files for target db_proxy_server
 db_proxy_server_EXTERNAL_OBJECTS =
 
-/home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/CachePool.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/DBPool.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o
-/home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o
-/home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o
+/home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o
+/home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o
+/home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/business/AudioModel.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/business/DepartAction.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/db_proxy_server: CMakeFiles/db_proxy_server.dir/business/DepartModel.cpp.o
@@ -742,14 +742,14 @@ db_proxy_server_EXTERNAL_OBJECTS =
 CMakeFiles/db_proxy_server.dir/build: /home/wby/src/my_teamtalk/server/src/bin/db_proxy_server
 .PHONY : CMakeFiles/db_proxy_server.dir/build
 
-CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.requires
 CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/CachePool.cpp.o.requires
 CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/DBPool.cpp.o.requires
 CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/HandlerMap.cpp.o.requires
-CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.requires
 CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/ProxyTask.cpp.o.requires
-CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o.requires
+CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/AutoPool.cpp.o.requires
 CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/db_proxy_server.cpp.o.requires
+CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/SyncCenter.cpp.o.requires
+CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/ProxyConn.cpp.o.requires
 CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/business/AudioModel.cpp.o.requires
 CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/business/DepartAction.cpp.o.requires
 CMakeFiles/db_proxy_server.dir/requires: CMakeFiles/db_proxy_server.dir/business/DepartModel.cpp.o.requires

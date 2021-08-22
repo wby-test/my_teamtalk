@@ -75,32 +75,9 @@ CMakeFiles/msg_server.dir/AttachData.cpp.o.provides: CMakeFiles/msg_server.dir/A
 
 CMakeFiles/msg_server.dir/AttachData.cpp.o.provides.build: CMakeFiles/msg_server.dir/AttachData.cpp.o
 
-CMakeFiles/msg_server.dir/DBServConn.cpp.o: CMakeFiles/msg_server.dir/flags.make
-CMakeFiles/msg_server.dir/DBServConn.cpp.o: DBServConn.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/DBServConn.cpp.o"
-	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/DBServConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/DBServConn.cpp
-
-CMakeFiles/msg_server.dir/DBServConn.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/msg_server.dir/DBServConn.cpp.i"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/msg_server/DBServConn.cpp > CMakeFiles/msg_server.dir/DBServConn.cpp.i
-
-CMakeFiles/msg_server.dir/DBServConn.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/msg_server.dir/DBServConn.cpp.s"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/msg_server/DBServConn.cpp -o CMakeFiles/msg_server.dir/DBServConn.cpp.s
-
-CMakeFiles/msg_server.dir/DBServConn.cpp.o.requires:
-.PHONY : CMakeFiles/msg_server.dir/DBServConn.cpp.o.requires
-
-CMakeFiles/msg_server.dir/DBServConn.cpp.o.provides: CMakeFiles/msg_server.dir/DBServConn.cpp.o.requires
-	$(MAKE) -f CMakeFiles/msg_server.dir/build.make CMakeFiles/msg_server.dir/DBServConn.cpp.o.provides.build
-.PHONY : CMakeFiles/msg_server.dir/DBServConn.cpp.o.provides
-
-CMakeFiles/msg_server.dir/DBServConn.cpp.o.provides.build: CMakeFiles/msg_server.dir/DBServConn.cpp.o
-
 CMakeFiles/msg_server.dir/FileHandler.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/FileHandler.cpp.o: FileHandler.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/FileHandler.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/FileHandler.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/FileHandler.cpp
 
@@ -123,7 +100,7 @@ CMakeFiles/msg_server.dir/FileHandler.cpp.o.provides.build: CMakeFiles/msg_serve
 
 CMakeFiles/msg_server.dir/FileServConn.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/FileServConn.cpp.o: FileServConn.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/FileServConn.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/FileServConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/FileServConn.cpp
 
@@ -146,7 +123,7 @@ CMakeFiles/msg_server.dir/FileServConn.cpp.o.provides.build: CMakeFiles/msg_serv
 
 CMakeFiles/msg_server.dir/GroupChat.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/GroupChat.cpp.o: GroupChat.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/GroupChat.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/GroupChat.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/GroupChat.cpp
 
@@ -169,7 +146,7 @@ CMakeFiles/msg_server.dir/GroupChat.cpp.o.provides.build: CMakeFiles/msg_server.
 
 CMakeFiles/msg_server.dir/ImUser.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/ImUser.cpp.o: ImUser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/ImUser.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/ImUser.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/ImUser.cpp
 
@@ -192,7 +169,7 @@ CMakeFiles/msg_server.dir/ImUser.cpp.o.provides.build: CMakeFiles/msg_server.dir
 
 CMakeFiles/msg_server.dir/LoginServConn.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/LoginServConn.cpp.o: LoginServConn.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/LoginServConn.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/LoginServConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/LoginServConn.cpp
 
@@ -215,7 +192,7 @@ CMakeFiles/msg_server.dir/LoginServConn.cpp.o.provides.build: CMakeFiles/msg_ser
 
 CMakeFiles/msg_server.dir/MsgConn.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/MsgConn.cpp.o: MsgConn.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/MsgConn.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/MsgConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/MsgConn.cpp
 
@@ -238,7 +215,7 @@ CMakeFiles/msg_server.dir/MsgConn.cpp.o.provides.build: CMakeFiles/msg_server.di
 
 CMakeFiles/msg_server.dir/PushServConn.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/PushServConn.cpp.o: PushServConn.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_9)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/PushServConn.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/PushServConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/PushServConn.cpp
 
@@ -261,7 +238,7 @@ CMakeFiles/msg_server.dir/PushServConn.cpp.o.provides.build: CMakeFiles/msg_serv
 
 CMakeFiles/msg_server.dir/RouteServConn.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/RouteServConn.cpp.o: RouteServConn.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/RouteServConn.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/RouteServConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/RouteServConn.cpp
 
@@ -284,7 +261,7 @@ CMakeFiles/msg_server.dir/RouteServConn.cpp.o.provides.build: CMakeFiles/msg_ser
 
 CMakeFiles/msg_server.dir/jsonxx.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/jsonxx.cpp.o: jsonxx.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/jsonxx.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/jsonxx.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/jsonxx.cpp
 
@@ -307,7 +284,7 @@ CMakeFiles/msg_server.dir/jsonxx.cpp.o.provides.build: CMakeFiles/msg_server.dir
 
 CMakeFiles/msg_server.dir/msg_server.cpp.o: CMakeFiles/msg_server.dir/flags.make
 CMakeFiles/msg_server.dir/msg_server.cpp.o: msg_server.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/msg_server.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/msg_server.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/msg_server.cpp
 
@@ -328,10 +305,32 @@ CMakeFiles/msg_server.dir/msg_server.cpp.o.provides: CMakeFiles/msg_server.dir/m
 
 CMakeFiles/msg_server.dir/msg_server.cpp.o.provides.build: CMakeFiles/msg_server.dir/msg_server.cpp.o
 
+CMakeFiles/msg_server.dir/DBServConn.cpp.o: CMakeFiles/msg_server.dir/flags.make
+CMakeFiles/msg_server.dir/DBServConn.cpp.o: DBServConn.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/msg_server/CMakeFiles $(CMAKE_PROGRESS_12)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/msg_server.dir/DBServConn.cpp.o"
+	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/msg_server.dir/DBServConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/msg_server/DBServConn.cpp
+
+CMakeFiles/msg_server.dir/DBServConn.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/msg_server.dir/DBServConn.cpp.i"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/msg_server/DBServConn.cpp > CMakeFiles/msg_server.dir/DBServConn.cpp.i
+
+CMakeFiles/msg_server.dir/DBServConn.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/msg_server.dir/DBServConn.cpp.s"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/msg_server/DBServConn.cpp -o CMakeFiles/msg_server.dir/DBServConn.cpp.s
+
+CMakeFiles/msg_server.dir/DBServConn.cpp.o.requires:
+.PHONY : CMakeFiles/msg_server.dir/DBServConn.cpp.o.requires
+
+CMakeFiles/msg_server.dir/DBServConn.cpp.o.provides: CMakeFiles/msg_server.dir/DBServConn.cpp.o.requires
+	$(MAKE) -f CMakeFiles/msg_server.dir/build.make CMakeFiles/msg_server.dir/DBServConn.cpp.o.provides.build
+.PHONY : CMakeFiles/msg_server.dir/DBServConn.cpp.o.provides
+
+CMakeFiles/msg_server.dir/DBServConn.cpp.o.provides.build: CMakeFiles/msg_server.dir/DBServConn.cpp.o
+
 # Object files for target msg_server
 msg_server_OBJECTS = \
 "CMakeFiles/msg_server.dir/AttachData.cpp.o" \
-"CMakeFiles/msg_server.dir/DBServConn.cpp.o" \
 "CMakeFiles/msg_server.dir/FileHandler.cpp.o" \
 "CMakeFiles/msg_server.dir/FileServConn.cpp.o" \
 "CMakeFiles/msg_server.dir/GroupChat.cpp.o" \
@@ -341,13 +340,13 @@ msg_server_OBJECTS = \
 "CMakeFiles/msg_server.dir/PushServConn.cpp.o" \
 "CMakeFiles/msg_server.dir/RouteServConn.cpp.o" \
 "CMakeFiles/msg_server.dir/jsonxx.cpp.o" \
-"CMakeFiles/msg_server.dir/msg_server.cpp.o"
+"CMakeFiles/msg_server.dir/msg_server.cpp.o" \
+"CMakeFiles/msg_server.dir/DBServConn.cpp.o"
 
 # External object files for target msg_server
 msg_server_EXTERNAL_OBJECTS =
 
 /home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/AttachData.cpp.o
-/home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/DBServConn.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/FileHandler.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/FileServConn.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/GroupChat.cpp.o
@@ -358,6 +357,7 @@ msg_server_EXTERNAL_OBJECTS =
 /home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/RouteServConn.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/jsonxx.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/msg_server.cpp.o
+/home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/DBServConn.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/build.make
 /home/wby/src/my_teamtalk/server/src/bin/msg_server: CMakeFiles/msg_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/wby/src/my_teamtalk/server/src/bin/msg_server"
@@ -368,7 +368,6 @@ CMakeFiles/msg_server.dir/build: /home/wby/src/my_teamtalk/server/src/bin/msg_se
 .PHONY : CMakeFiles/msg_server.dir/build
 
 CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/AttachData.cpp.o.requires
-CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/DBServConn.cpp.o.requires
 CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/FileHandler.cpp.o.requires
 CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/FileServConn.cpp.o.requires
 CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/GroupChat.cpp.o.requires
@@ -379,6 +378,7 @@ CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/PushServConn.cpp.o
 CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/RouteServConn.cpp.o.requires
 CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/jsonxx.cpp.o.requires
 CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/msg_server.cpp.o.requires
+CMakeFiles/msg_server.dir/requires: CMakeFiles/msg_server.dir/DBServConn.cpp.o.requires
 .PHONY : CMakeFiles/msg_server.dir/requires
 
 CMakeFiles/msg_server.dir/clean:

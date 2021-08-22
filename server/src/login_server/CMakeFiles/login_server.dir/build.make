@@ -75,32 +75,9 @@ CMakeFiles/login_server.dir/HttpConn.cpp.o.provides: CMakeFiles/login_server.dir
 
 CMakeFiles/login_server.dir/HttpConn.cpp.o.provides.build: CMakeFiles/login_server.dir/HttpConn.cpp.o
 
-CMakeFiles/login_server.dir/LoginConn.cpp.o: CMakeFiles/login_server.dir/flags.make
-CMakeFiles/login_server.dir/LoginConn.cpp.o: LoginConn.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/login_server/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/login_server.dir/LoginConn.cpp.o"
-	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/login_server.dir/LoginConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/login_server/LoginConn.cpp
-
-CMakeFiles/login_server.dir/LoginConn.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/login_server.dir/LoginConn.cpp.i"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/login_server/LoginConn.cpp > CMakeFiles/login_server.dir/LoginConn.cpp.i
-
-CMakeFiles/login_server.dir/LoginConn.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/login_server.dir/LoginConn.cpp.s"
-	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/login_server/LoginConn.cpp -o CMakeFiles/login_server.dir/LoginConn.cpp.s
-
-CMakeFiles/login_server.dir/LoginConn.cpp.o.requires:
-.PHONY : CMakeFiles/login_server.dir/LoginConn.cpp.o.requires
-
-CMakeFiles/login_server.dir/LoginConn.cpp.o.provides: CMakeFiles/login_server.dir/LoginConn.cpp.o.requires
-	$(MAKE) -f CMakeFiles/login_server.dir/build.make CMakeFiles/login_server.dir/LoginConn.cpp.o.provides.build
-.PHONY : CMakeFiles/login_server.dir/LoginConn.cpp.o.provides
-
-CMakeFiles/login_server.dir/LoginConn.cpp.o.provides.build: CMakeFiles/login_server.dir/LoginConn.cpp.o
-
 CMakeFiles/login_server.dir/ipparser.cpp.o: CMakeFiles/login_server.dir/flags.make
 CMakeFiles/login_server.dir/ipparser.cpp.o: ipparser.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/login_server/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/login_server/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/login_server.dir/ipparser.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/login_server.dir/ipparser.cpp.o -c /home/wby/src/my_teamtalk/server/src/login_server/ipparser.cpp
 
@@ -123,7 +100,7 @@ CMakeFiles/login_server.dir/ipparser.cpp.o.provides.build: CMakeFiles/login_serv
 
 CMakeFiles/login_server.dir/login_server.cpp.o: CMakeFiles/login_server.dir/flags.make
 CMakeFiles/login_server.dir/login_server.cpp.o: login_server.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/login_server/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/login_server/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/login_server.dir/login_server.cpp.o"
 	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/login_server.dir/login_server.cpp.o -c /home/wby/src/my_teamtalk/server/src/login_server/login_server.cpp
 
@@ -144,20 +121,43 @@ CMakeFiles/login_server.dir/login_server.cpp.o.provides: CMakeFiles/login_server
 
 CMakeFiles/login_server.dir/login_server.cpp.o.provides.build: CMakeFiles/login_server.dir/login_server.cpp.o
 
+CMakeFiles/login_server.dir/LoginConn.cpp.o: CMakeFiles/login_server.dir/flags.make
+CMakeFiles/login_server.dir/LoginConn.cpp.o: LoginConn.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/wby/src/my_teamtalk/server/src/login_server/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/login_server.dir/LoginConn.cpp.o"
+	/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/login_server.dir/LoginConn.cpp.o -c /home/wby/src/my_teamtalk/server/src/login_server/LoginConn.cpp
+
+CMakeFiles/login_server.dir/LoginConn.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/login_server.dir/LoginConn.cpp.i"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wby/src/my_teamtalk/server/src/login_server/LoginConn.cpp > CMakeFiles/login_server.dir/LoginConn.cpp.i
+
+CMakeFiles/login_server.dir/LoginConn.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/login_server.dir/LoginConn.cpp.s"
+	/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wby/src/my_teamtalk/server/src/login_server/LoginConn.cpp -o CMakeFiles/login_server.dir/LoginConn.cpp.s
+
+CMakeFiles/login_server.dir/LoginConn.cpp.o.requires:
+.PHONY : CMakeFiles/login_server.dir/LoginConn.cpp.o.requires
+
+CMakeFiles/login_server.dir/LoginConn.cpp.o.provides: CMakeFiles/login_server.dir/LoginConn.cpp.o.requires
+	$(MAKE) -f CMakeFiles/login_server.dir/build.make CMakeFiles/login_server.dir/LoginConn.cpp.o.provides.build
+.PHONY : CMakeFiles/login_server.dir/LoginConn.cpp.o.provides
+
+CMakeFiles/login_server.dir/LoginConn.cpp.o.provides.build: CMakeFiles/login_server.dir/LoginConn.cpp.o
+
 # Object files for target login_server
 login_server_OBJECTS = \
 "CMakeFiles/login_server.dir/HttpConn.cpp.o" \
-"CMakeFiles/login_server.dir/LoginConn.cpp.o" \
 "CMakeFiles/login_server.dir/ipparser.cpp.o" \
-"CMakeFiles/login_server.dir/login_server.cpp.o"
+"CMakeFiles/login_server.dir/login_server.cpp.o" \
+"CMakeFiles/login_server.dir/LoginConn.cpp.o"
 
 # External object files for target login_server
 login_server_EXTERNAL_OBJECTS =
 
 /home/wby/src/my_teamtalk/server/src/bin/login_server: CMakeFiles/login_server.dir/HttpConn.cpp.o
-/home/wby/src/my_teamtalk/server/src/bin/login_server: CMakeFiles/login_server.dir/LoginConn.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/login_server: CMakeFiles/login_server.dir/ipparser.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/login_server: CMakeFiles/login_server.dir/login_server.cpp.o
+/home/wby/src/my_teamtalk/server/src/bin/login_server: CMakeFiles/login_server.dir/LoginConn.cpp.o
 /home/wby/src/my_teamtalk/server/src/bin/login_server: CMakeFiles/login_server.dir/build.make
 /home/wby/src/my_teamtalk/server/src/bin/login_server: CMakeFiles/login_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/wby/src/my_teamtalk/server/src/bin/login_server"
@@ -168,9 +168,9 @@ CMakeFiles/login_server.dir/build: /home/wby/src/my_teamtalk/server/src/bin/logi
 .PHONY : CMakeFiles/login_server.dir/build
 
 CMakeFiles/login_server.dir/requires: CMakeFiles/login_server.dir/HttpConn.cpp.o.requires
-CMakeFiles/login_server.dir/requires: CMakeFiles/login_server.dir/LoginConn.cpp.o.requires
 CMakeFiles/login_server.dir/requires: CMakeFiles/login_server.dir/ipparser.cpp.o.requires
 CMakeFiles/login_server.dir/requires: CMakeFiles/login_server.dir/login_server.cpp.o.requires
+CMakeFiles/login_server.dir/requires: CMakeFiles/login_server.dir/LoginConn.cpp.o.requires
 .PHONY : CMakeFiles/login_server.dir/requires
 
 CMakeFiles/login_server.dir/clean:
