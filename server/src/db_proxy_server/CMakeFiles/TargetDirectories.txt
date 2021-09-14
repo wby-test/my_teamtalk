@@ -1,1 +1,0 @@
-/home/wby/src/my_teamtalk/server/src/db_proxy_server/CMakeFiles/db_proxy_server.dir

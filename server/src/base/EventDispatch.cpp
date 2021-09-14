@@ -370,7 +370,10 @@ void CEventDispatch::StartDispatch(uint32_t wait_timeout)
     m_running = true;
     
 	while (m_running)
-	{
+	{ 
+		//// timeout = -1 block untile interest event happen or have a signal happen  
+		//// timeout = 0 nonblock , ervery loop get some happened event
+		//// timeout = usinged int , in time unitle some interest event happened or signal happened 
 		nfds = epoll_wait(m_epfd, events, 1024, wait_timeout);
 		for (int i = 0; i < nfds; i++)
 		{

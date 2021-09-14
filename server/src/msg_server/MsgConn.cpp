@@ -299,6 +299,7 @@ void CMsgConn::HandlePdu(CImPdu* pPdu)
             _HandleQueryPushShieldRequest(pPdu);
             break;
         case CID_MSG_DATA:
+
             _HandleClientMsgData(pPdu);
             break;
         case CID_MSG_DATA_ACK:

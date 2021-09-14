@@ -195,6 +195,7 @@ void CBaseSocket::OnWrite()
 ////notice : the diff linux with windows, type of fourth param
 		getsockopt(m_socket, SOL_SOCKET, SO_ERROR, (char*)&error, &len);
 #else
+		//// 
 		getsockopt(m_socket, SOL_SOCKET, SO_ERROR, (void*)&error, &len);
 #endif
 		if (error) {

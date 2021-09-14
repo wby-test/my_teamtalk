@@ -60,4 +60,4 @@ iKutil.log
 *.idea/
 *.vscode/
 /im-server-1/
-cmake-build-debug
+/cmake-build-debug/

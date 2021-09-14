@@ -100,11 +100,11 @@ private:
 #elif __APPLE__
 	int 	m_kqfd;
 #else
-	int		m_epfd;
+	int		m_epfd;   // epoll event
 #endif
 	CLock			m_lock;
-	list<TimerItem*>	m_timer_list;
-	list<TimerItem*>	m_loop_list;
+	list<TimerItem*>	m_timer_list; // timer event
+	list<TimerItem*>	m_loop_list;  // timer event
 
 	static CEventDispatch* m_pEventDispatch;
     
